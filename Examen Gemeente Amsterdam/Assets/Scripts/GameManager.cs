@@ -4,6 +4,7 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 
 
@@ -12,11 +13,13 @@ public class GameManager : MonoBehaviour
     public Question[] questions;
     private static List<Question> unansweredQuestions;
 
+    public GameObject minigamePanel;
+    public GameObject startPanel;
 
     private Question currentQuestion;
 
     [SerializeField]
-    private Text factText;
+    private TMP_Text factText;
 
     [SerializeField]
     private Text trueAnswerText;
@@ -48,8 +51,10 @@ public class GameManager : MonoBehaviour
     
     
 
-    private void Start()
+    public void StartMinigame()
     {
+        minigamePanel.SetActive(true);
+        startPanel.SetActive(false);
 
         TimerOn = true;
 
