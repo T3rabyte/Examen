@@ -13,6 +13,8 @@ public class GameManager : MonoBehaviour
     public Question[] questions;
     private static List<Question> unansweredQuestions;
 
+    public GameObject Popup;
+
     public GameObject minigamePanel;
     public GameObject startPanel;
 
@@ -30,7 +32,6 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private Animator animator;
 
-
     [SerializeField]
     private Text TimerText;
 
@@ -40,6 +41,12 @@ public class GameManager : MonoBehaviour
     private float timeBetweenQuestions = 1f;
 
     private int correctAnswers = 0;
+
+    public float duration =5f;
+
+    float pendingFreezeDuration = 0f;
+
+    bool isFrozen = false;
 
     
     
@@ -71,6 +78,11 @@ public class GameManager : MonoBehaviour
     private void Update()
     {
 
+        if (pendingFreezeDuration > 0 && !isFrozen)
+        {
+            StartCoroutine(DoFreeze());
+        }
+
         if (TimerOn)
         {
             if (TimeLeft > 0)
@@ -92,12 +104,16 @@ public class GameManager : MonoBehaviour
         {
             Lose();
         }
+
+        
     }
 
     void SetCurrentQuestion()
     {
         int randomQuestionIndex = Random.Range(0, unansweredQuestions.Count);
         currentQuestion = unansweredQuestions[randomQuestionIndex];
+
+        float random = Random.Range(0, 1);
 
         factText.text = currentQuestion.fact;
 
@@ -107,11 +123,22 @@ public class GameManager : MonoBehaviour
         {
             trueAnswerText.text = "CORRECT!";
             falseAnswerText.text = "FALSE!";
+            
 
         }else
         {
             trueAnswerText.text = "WRONG!";
             falseAnswerText.text = "CORRECT!";
+            
+            if(random <= 0.5f)
+            {
+                Popup.SetActive(true);
+            }
+            else if(random >= 0.5f)
+            {
+                Freeze();
+            }
+            
         }
 
     }
@@ -174,5 +201,25 @@ public class GameManager : MonoBehaviour
 
         TimerText.text = string.Format("{0:00} : {1:00}", minutes, seconds);
     }
+    
+    public void Freeze()
+    {
+        pendingFreezeDuration = duration;
+
+    }
+
+    IEnumerator DoFreeze()
+        {
+            isFrozen = true;
+            var original = Time.timeScale;
+            Time.timeScale = 0f;
+
+            yield return new WaitForSecondsRealtime(duration);
+
+            Time.timeScale = original;
+            pendingFreezeDuration = 0;
+            isFrozen = false;
+        }
+
     
 }
