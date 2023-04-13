@@ -1,11 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using FishNet.Connection;
-using FishNet.Object;
 
-//This is made by Bobsi Unity - Youtube
-public class PlayerController : NetworkBehaviour
+public class PlayerController : MonoBehaviour
 {
     [Header("Base setup")]
     public float walkingSpeed = 7.5f;
@@ -22,25 +19,7 @@ public class PlayerController : NetworkBehaviour
     [HideInInspector]
     public bool canMove = true;
 
-    [SerializeField]
-    private float cameraYOffset = 0.4f;
     private Camera playerCamera;
-
-
-    public override void OnStartClient()
-    {
-        base.OnStartClient();
-        if (base.IsOwner)
-        {
-            playerCamera = Camera.main;
-            playerCamera.transform.position = new Vector3(transform.position.x, transform.position.y + cameraYOffset, transform.position.z);
-            playerCamera.transform.SetParent(transform);
-        }
-        else
-        {
-            gameObject.GetComponent<PlayerController>().enabled = false;
-        }
-    }
 
     void Start()
     {
