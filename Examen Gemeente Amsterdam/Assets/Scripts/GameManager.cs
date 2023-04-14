@@ -44,6 +44,11 @@ public class GameManager : MonoBehaviour
 
     public float duration =5f;
 
+
+    //in editor make sure these two floats are less than one, for  example: 0.5 = 50% chance
+    public float chanceP;
+    public float chanceF;
+
     float pendingFreezeDuration = 0f;
 
     bool isFrozen = false;
@@ -57,7 +62,7 @@ public class GameManager : MonoBehaviour
 
     
     
-
+    //this starts the whole minigame program once you have clicked on "start"
     public void StartMinigame()
     {
         minigamePanel.SetActive(true);
@@ -78,11 +83,7 @@ public class GameManager : MonoBehaviour
     private void Update()
     {
 
-        if (pendingFreezeDuration > 0 && !isFrozen)
-        {
-            StartCoroutine(DoFreeze());
-        }
-
+        //handles the tiemr
         if (TimerOn)
         {
             if (TimeLeft > 0)
@@ -97,6 +98,7 @@ public class GameManager : MonoBehaviour
             
         }
 
+        //handles the conditions that have to be met to activate a win or a lose
         if (correctAnswers == 20)
         {
             Win();
@@ -108,12 +110,12 @@ public class GameManager : MonoBehaviour
         
     }
 
+    //handles which questions get showed, which ones have been answered, 
+    //and what happens if they have been answered correctly or not.
     void SetCurrentQuestion()
     {
         int randomQuestionIndex = Random.Range(0, unansweredQuestions.Count);
         currentQuestion = unansweredQuestions[randomQuestionIndex];
-
-        float random = Random.Range(0, 1);
 
         factText.text = currentQuestion.fact;
 
@@ -122,7 +124,7 @@ public class GameManager : MonoBehaviour
         if (currentQuestion.isTrue)
         {
             trueAnswerText.text = "CORRECT!";
-            falseAnswerText.text = "FALSE!";
+            falseAnswerText.text = "WRONG!";
             
 
         }else
@@ -130,19 +132,12 @@ public class GameManager : MonoBehaviour
             trueAnswerText.text = "WRONG!";
             falseAnswerText.text = "CORRECT!";
             
-            if(random <= 0.5f)
-            {
-                Popup.SetActive(true);
-            }
-            else if(random >= 0.5f)
-            {
-                Freeze();
-            }
-            
         }
 
     }
 
+
+    //gives the program some time to register the next question
     IEnumerator TransitionToNextQuestion()
     {
 
@@ -152,6 +147,8 @@ public class GameManager : MonoBehaviour
         SetCurrentQuestion();
     }
 
+
+    //handles the pressing of the "true" button
     public void UserSelectTrue()
     {
 
@@ -160,14 +157,35 @@ public class GameManager : MonoBehaviour
         {
             correctAnswers += 1;
             Debug.Log("CORRECT!");
+            if (isFrozen == true)
+            {
+                StartCoroutine(DoFreeze());
+            }
         }else
         {
             Debug.Log("WRONG!");
+
+            float random = Random.Range(0, 1);
+
+            //handles the chance of any effect happening, when entering chances make sure to 
+            //keep in mind that popup will only activate if the number is equal to or lower than the given float value
+            //freeze effect works the same way except for that the value generated has to be equal to or higher than the given float value
+            if(random <= chanceP)
+            {
+                Popup.SetActive(true);
+            }
+            else if(random >= chanceF)
+            {
+                StartCoroutine(DoFreeze());
+                Debug.Log("DoFreeze");
+            }
         }
 
         StartCoroutine(TransitionToNextQuestion());
     }
 
+
+    //does the same as above but for "false"
     public void UserSelectFalse()
     {
         animator.SetTrigger("False");
@@ -175,13 +193,35 @@ public class GameManager : MonoBehaviour
         {
             correctAnswers += 1;
             Debug.Log("CORRECT!");
+
+            if (isFrozen == true)
+            {
+                StartCoroutine(DoFreeze());
+            }
         }else
         {
+            float random = Random.Range(0, 1);
+
+            //handles the chance of any effect happening, when entering chances make sure to 
+            //keep in mind that popup will only activate if the number is equal to or lower than the given float value
+            //freeze effect works the same way except for that the value generated has to be equal to or higher than the given float value
+            if(random <= chanceP)
+            {
+                Popup.SetActive(true);
+            }
+            else if(random >= chanceF)
+            {
+                Debug.Log("DoFreeze");
+                StartCoroutine(DoFreeze());
+            }
+
             Debug.Log("WRONG!");
         }
         StartCoroutine(TransitionToNextQuestion());
     }
 
+
+    //pretty self explainatory
     private void Win()
     {
         
@@ -192,6 +232,8 @@ public class GameManager : MonoBehaviour
         
     }
 
+
+    //handles the UI aspect of the timer
     void updateTimer(float currentTime)
     {
         currentTime += 1;
@@ -202,22 +244,28 @@ public class GameManager : MonoBehaviour
         TimerText.text = string.Format("{0:00} : {1:00}", minutes, seconds);
     }
     
+
+    //sets the freezeduration to the set duration making it so the "DoFreeze" if statement in update() is valid
     public void Freeze()
     {
         pendingFreezeDuration = duration;
+        Debug.Log(pendingFreezeDuration);
 
     }
 
+
+    //freezes the cursor to simulate a freeze effect
     IEnumerator DoFreeze()
         {
             isFrozen = true;
-            var original = Time.timeScale;
-            Time.timeScale = 0f;
+            Debug.Log("freeze");
+            Cursor.lockState = CursorLockMode.Locked;
 
-            yield return new WaitForSecondsRealtime(duration);
+            yield return new WaitForSeconds(duration);
 
-            Time.timeScale = original;
+            Cursor.lockState = CursorLockMode.None;
             pendingFreezeDuration = 0;
+            Debug.Log("unfreeze");
             isFrozen = false;
         }
 

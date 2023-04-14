@@ -1891,7 +1891,9 @@ MonoBehaviour:
   TimerText: {fileID: 1781821641}
   TimeLeft: 720
   TimerOn: 0
-  duration: 5
+  duration: 30
+  chanceP: -0.1
+  chanceF: 0.1
 --- !u!4 &824384658
 Transform:
   m_ObjectHideFlags: 0
@@ -2374,7 +2376,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1023256515
 RectTransform:
   m_ObjectHideFlags: 0
