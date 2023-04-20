@@ -15,6 +15,8 @@ public class Phone : MonoBehaviour
     public AudioClip[] tip;
     private AudioClip shootClip;
 
+    private bool Isplaying = false;
+
 
     void Start()
     {
@@ -30,37 +32,28 @@ public class Phone : MonoBehaviour
             RaycastHit hit;
             Ray ray = camera.ScreenPointToRay(Input.mousePosition);
 
-            if (Physics.Raycast(ray, out hit))
+            if (Physics.Raycast(ray, out hit) && hit.transform.tag == "Phone" && Isplaying == false)
             {
                 Transform objectHit = hit.transform;
-                Transform camPos = objectHit.Find("y");
-                gameObject.transform.SetParent(camPos);
-                gameObject.transform.localPosition = new Vector3(0, 0, 0);
-                player.GetComponent<PlayerController>().canRotate = false;
-                gameObject.transform.localRotation = Quaternion.Euler(0, 0, 0);
-                Cursor.lockState = CursorLockMode.None;
-                Cursor.visible = true;
-                crosshair.SetActive(false);
-                inObjectPosition = true;
+                Transform camPos = objectHit.Find("Phone Position");
+                
+                int index = Random.Range(0, tip.Length);
+                shootClip = tip[index];
+                audioSource.clip = shootClip;
+                audioSource.Play();
+                Isplaying=true;
+                StartCoroutine (WaitForAudio());
             }
-        }
-        if (Input.GetMouseButtonDown(1) && inObjectPosition) 
-        {
-            
-            int index = Random.Range(0, tip.Length);
-            shootClip = tip[index];
-            audioSource.clip = shootClip;
-            audioSource.Play();
-
-            /*gameObject.transform.SetParent(player.transform);
-            gameObject.transform.localPosition = new Vector3(0, 0, 0);
-            player.GetComponent<PlayerController>().canRotate = true;
-            Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = false;
-            crosshair.SetActive(true);
-            inObjectPosition = false;*/
         }
 
         
+    }
+
+    IEnumerator WaitForAudio()
+    {
+        audioSource.Play ();
+        yield return new WaitWhile (()=> audioSource.isPlaying);
+        Isplaying = false;
+    
     }
 }

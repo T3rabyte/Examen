@@ -8,6 +8,7 @@ TagManager:
   - MaterialButtonLayer
   - MaterialRadioButton
   - Phone
+  - Monitor
   layers:
   - Default
   - TransparentFX
