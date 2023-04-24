@@ -1144,6 +1144,117 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 949ce83dfc731ec40be465a3ef38093c, type: 3}
   m_PrefabInstance: {fileID: 285630921}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &304946102
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 9c1ab6cd551f1004b897908d21a48ffe, type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 9c1ab6cd551f1004b897908d21a48ffe, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 9c1ab6cd551f1004b897908d21a48ffe, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 9c1ab6cd551f1004b897908d21a48ffe, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 9c1ab6cd551f1004b897908d21a48ffe, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 9c1ab6cd551f1004b897908d21a48ffe, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 9c1ab6cd551f1004b897908d21a48ffe, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 9c1ab6cd551f1004b897908d21a48ffe, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 9c1ab6cd551f1004b897908d21a48ffe, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 9c1ab6cd551f1004b897908d21a48ffe, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 9c1ab6cd551f1004b897908d21a48ffe, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -5395038954009376849, guid: 9c1ab6cd551f1004b897908d21a48ffe, type: 3}
+      propertyPath: m_TagString
+      value: Monitor
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9c1ab6cd551f1004b897908d21a48ffe, type: 3}
+      propertyPath: m_Name
+      value: Laptop 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 9c1ab6cd551f1004b897908d21a48ffe, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1375051372}
+    - targetCorrespondingSourceObject: {fileID: -8485058880547403288, guid: 9c1ab6cd551f1004b897908d21a48ffe, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 636913520}
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: -5395038954009376849, guid: 9c1ab6cd551f1004b897908d21a48ffe, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 304946105}
+  m_SourcePrefab: {fileID: 100100000, guid: 9c1ab6cd551f1004b897908d21a48ffe, type: 3}
+--- !u!4 &304946103 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8485058880547403288, guid: 9c1ab6cd551f1004b897908d21a48ffe, type: 3}
+  m_PrefabInstance: {fileID: 304946102}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &304946104 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -5395038954009376849, guid: 9c1ab6cd551f1004b897908d21a48ffe, type: 3}
+  m_PrefabInstance: {fileID: 304946102}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &304946105
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 304946104}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -4224232068382264018, guid: 9c1ab6cd551f1004b897908d21a48ffe, type: 3}
+--- !u!4 &304946106 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 9c1ab6cd551f1004b897908d21a48ffe, type: 3}
+  m_PrefabInstance: {fileID: 304946102}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &310289060
 GameObject:
   m_ObjectHideFlags: 0
@@ -1890,7 +2001,78 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83962ed4d1eab0946ac3af6f437322c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  questions: []
+  questions:
+  - fact: 'Onderwerp: Verzoek om persoonlijke informatie  Beste [Naam],  Ik hoop
+      dat deze e-mail je goed vindt. Als onderdeel van onze voortdurende inspanningen
+      om nauwkeurige gegevens bij te houden voor onze gemeente, schrijf ik u om de
+      volgende persoonlijke informatie van u te vragen:  Voor-en achternaam Geboortedatum
+      Adres Contact nummer E-mailadres Alle andere relevante informatie voor onze
+      administratie Houd er rekening mee dat deze informatie uitsluitend zal worden
+      gebruikt voor het bijhouden van een nauwkeurige administratie en strikt vertrouwelijk
+      zal worden behandeld in overeenstemming met het privacybeleid van onze gemeente. 
+      Als u zich zorgen maakt of vragen heeft over dit verzoek, aarzel dan niet om
+      contact met mij op te nemen. Uw medewerking bij het verstrekken van de gevraagde
+      informatie wordt zeer op prijs gesteld.  Bedankt.  Hartelijke groeten,  [Uw
+      naam]'
+    isTrue: 0
+  - fact: 'Onderwerp: Kennisgeving van het verzamelen van persoonlijke informatie 
+      Beste [Naam],  Ik hoop dat deze e-mail je goed vindt. Als kantoormedewerker
+      voor onze gemeente wil ik u laten weten dat we persoonlijke informatie van
+      personen in onze gemeenschap verzamelen voor verschillende doeleinden, zoals
+      het bijhouden van archieven, het verlenen van diensten en het waarborgen van
+      de naleving van gemeentelijke voorschriften.  De soorten persoonlijke informatie
+      die we verzamelen kunnen bestaan uit, maar zijn niet beperkt tot, namen, adressen,
+      contactnummers, e-mailadressen en andere relevante informatie. We verzamelen
+      deze informatie via verschillende kanalen, waaronder persoonlijk, via telefoon,
+      e-mail of online formulieren.  Ik wil u verzekeren dat we de privacy en veiligheid
+      van uw persoonlijke gegevens serieus nemen en passende maatregelen hebben genomen
+      om deze te beschermen. We verzamelen en gebruiken persoonlijke informatie alleen
+      voor legitieme gemeentelijke doeleinden en in overeenstemming met de toepasselijke
+      wet- en regelgeving.  Als u vragen of opmerkingen heeft over het verzamelen
+      of gebruiken van uw persoonlijke gegevens, aarzel dan niet om contact met ons
+      op te nemen. We waarderen uw voortdurende steun en medewerking.  Met vriendelijke
+      groet,  [Uw naam]'
+    isTrue: 1
+  - fact: 'Onderwerp: Melding van inbreuk op persoonlijke gegevens Geachte [Naam],
+      Ik schrijf u om u te informeren dat we een inbreuk op persoonlijke gegevens
+      op onze afdeling hebben ondervonden. Helaas is sommige persoonlijke informatie,
+      waaronder namen, adressen en burgerservicenummers, mogelijk gecompromitteerd.
+      We nemen deze zaak zeer serieus en nemen alle nodige stappen om het incident
+      te onderzoeken en ervoor te zorgen dat het niet meer gebeurt. We hebben al
+      contact opgenomen met de getroffen personen en bieden kredietbewakingsdiensten
+      aan aan degenen van wie de informatie mogelijk is gecompromitteerd. Uit voorzorg
+      raad ik u aan uw rekeningen en kredietrapporten te controleren op verdachte
+      activiteiten. Aarzel niet om contact met mij op te nemen als u vragen of opmerkingen
+      heeft. We verontschuldigen ons voor het eventuele ongemak of de zorgen die
+      dit kan veroorzaken en danken u voor uw begrip. Met vriendelijke groet, [Uw
+      naam]'
+    isTrue: 1
+  - fact: "Beste klant],  We hopen dat deze e-mail je goed vindt. Uit onze gegevens
+      blijkt dat we enkele belangrijke persoonlijke informatie van uw account missen,
+      die we nodig hebben om uw identiteit te verifi\xEBren en de veiligheid van
+      uw account te waarborgen.  Daartoe verzoeken wij u vriendelijk om ons de volgende
+      informatie per e-mail te verstrekken:  Voor-en achternaam Geboortedatum Burgerservicenummer
+      of rijksregisternummer Huidige adres Telefoonnummer We begrijpen hoe belangrijk
+      het is om uw persoonlijke gegevens veilig te houden en we verzekeren u dat
+      alle verstrekte informatie vertrouwelijk zal worden behandeld en alleen zal
+      worden gebruikt voor het verifi\xEBren van uw identiteit en het handhaven van
+      uw accountbeveiliging.  Als u zich zorgen maakt of vragen heeft over dit verzoek,
+      aarzel dan niet om contact met ons op te nemen via [bankgegevens]. We waarderen
+      uw snelle aandacht voor deze kwestie en danken u voor uw aanhoudende vertrouwen
+      in onze instelling.  Eerlijk,  [Banknaam]"
+    isTrue: 0
+  - fact: 
+    isTrue: 0
+  - fact: 
+    isTrue: 0
+  - fact: 
+    isTrue: 0
+  - fact: 
+    isTrue: 0
+  - fact: 
+    isTrue: 0
+  - fact: 
+    isTrue: 0
   Popup: {fileID: 210921581}
   factText: {fileID: 697512478}
   trueAnswerText: {fileID: 2007846047}
@@ -2586,12 +2768,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 636913519}
-  m_LocalRotation: {x: 0.15705134, y: -0.4532222, z: 0.070407376, w: 0.8746242}
-  m_LocalPosition: {x: 18.82, y: 17.57, z: -12.19}
+  m_LocalRotation: {x: 0.16246782, y: -0.377235, z: 0.05680251, w: 0.9099843}
+  m_LocalPosition: {x: 16.378693, y: 16.313232, z: -15.305931}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1936100871}
+  m_Father: {fileID: 304946103}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &658313177
@@ -3267,97 +3449,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -0.5}
   m_SizeDelta: {x: 0, y: -1}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1001 &764708557
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 1745199895}
-    m_Modifications:
-    - target: {fileID: -8679921383154817045, guid: ce64dbe7dcc116843adeb24c228f4036, type: 3}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: ce64dbe7dcc116843adeb24c228f4036, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: ce64dbe7dcc116843adeb24c228f4036, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: ce64dbe7dcc116843adeb24c228f4036, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: ce64dbe7dcc116843adeb24c228f4036, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: ce64dbe7dcc116843adeb24c228f4036, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: ce64dbe7dcc116843adeb24c228f4036, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: ce64dbe7dcc116843adeb24c228f4036, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: ce64dbe7dcc116843adeb24c228f4036, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: ce64dbe7dcc116843adeb24c228f4036, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: ce64dbe7dcc116843adeb24c228f4036, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: ce64dbe7dcc116843adeb24c228f4036, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: ce64dbe7dcc116843adeb24c228f4036, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: ce64dbe7dcc116843adeb24c228f4036, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -521122626064382157, guid: ce64dbe7dcc116843adeb24c228f4036, type: 3}
-      propertyPath: m_TagString
-      value: Monitor
-      objectReference: {fileID: 0}
-    - target: {fileID: 919132149155446097, guid: ce64dbe7dcc116843adeb24c228f4036, type: 3}
-      propertyPath: m_Name
-      value: Laptop
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: ce64dbe7dcc116843adeb24c228f4036, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1375051372}
-    - targetCorrespondingSourceObject: {fileID: -2068602812969086582, guid: ce64dbe7dcc116843adeb24c228f4036, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 636913520}
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: -521122626064382157, guid: ce64dbe7dcc116843adeb24c228f4036, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1936100872}
-  m_SourcePrefab: {fileID: 100100000, guid: ce64dbe7dcc116843adeb24c228f4036, type: 3}
---- !u!4 &764708558 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: ce64dbe7dcc116843adeb24c228f4036, type: 3}
-  m_PrefabInstance: {fileID: 764708557}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &784329908
 GameObject:
   m_ObjectHideFlags: 0
@@ -6514,11 +6605,11 @@ RectTransform:
   m_GameObject: {fileID: 1375051371}
   m_LocalRotation: {x: 0.19509023, y: -0.3611206, z: 0.07563961, w: 0.9087411}
   m_LocalPosition: {x: 0, y: 0, z: -88.902565}
-  m_LocalScale: {x: 0.068343386, y: 0.06610018, z: 100}
+  m_LocalScale: {x: 0.06834339, y: 0.066100195, z: 100}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 487374447}
-  m_Father: {fileID: 764708558}
+  m_Father: {fileID: 304946106}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 24.155, y: -43.39, z: -0.215}
   m_AnchorMin: {x: 0, y: 0}
@@ -8224,9 +8315,6 @@ PrefabInstance:
       insertIndex: 0
       addedObject: {fileID: 285630922}
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: d7afc21e48bf49f4b85cb4474c0e3ea8, type: 3}
-      insertIndex: 1
-      addedObject: {fileID: 764708558}
-    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: d7afc21e48bf49f4b85cb4474c0e3ea8, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1591672139}
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: d7afc21e48bf49f4b85cb4474c0e3ea8, type: 3}
@@ -9403,37 +9491,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1934189582}
   m_CullTransparentMesh: 1
---- !u!1 &1936100870 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: -521122626064382157, guid: ce64dbe7dcc116843adeb24c228f4036, type: 3}
-  m_PrefabInstance: {fileID: 764708557}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &1936100871 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -2068602812969086582, guid: ce64dbe7dcc116843adeb24c228f4036, type: 3}
-  m_PrefabInstance: {fileID: 764708557}
-  m_PrefabAsset: {fileID: 0}
---- !u!65 &1936100872
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1936100870}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 10, y: 30, z: 50}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1981537650
 GameObject:
   m_ObjectHideFlags: 0
