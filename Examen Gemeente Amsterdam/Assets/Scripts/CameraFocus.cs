@@ -17,7 +17,7 @@ public class CameraFocus : MonoBehaviour
             RaycastHit hit;
             Ray ray = camera.ScreenPointToRay(Input.mousePosition);
 
-            if (Physics.Raycast(ray, out hit))
+            if (Physics.Raycast(ray, out hit) && hit.transform.tag == "Monitor")
             {
                 Transform objectHit = hit.transform;
                 Transform camPos = objectHit.Find("Cam Position");
