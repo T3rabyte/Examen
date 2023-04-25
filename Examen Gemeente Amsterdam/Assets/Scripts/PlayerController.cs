@@ -23,7 +23,6 @@ public class PlayerController : MonoBehaviour
     private float cameraYOffset = 0.4f;
     public Camera playerCamera;
 
-
     void Start()
     {
         characterController = GetComponent<CharacterController>();
