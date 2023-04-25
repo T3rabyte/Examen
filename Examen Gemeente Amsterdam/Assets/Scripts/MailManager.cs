@@ -8,7 +8,7 @@ using TMPro;
 
 
 
-public class GameManager2 : MonoBehaviour
+public class MailManager : MonoBehaviour
 {
     public Question[] questions;
     private static List<Question> unansweredQuestions;

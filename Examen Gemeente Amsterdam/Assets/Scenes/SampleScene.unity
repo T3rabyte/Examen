@@ -2061,17 +2061,17 @@ MonoBehaviour:
       uw snelle aandacht voor deze kwestie en danken u voor uw aanhoudende vertrouwen
       in onze instelling.  Eerlijk,  [Banknaam]"
     isTrue: 0
-  - fact: 
+  - fact: hallo
     isTrue: 0
-  - fact: 
+  - fact: hello
     isTrue: 0
-  - fact: 
+  - fact: hallo
     isTrue: 0
-  - fact: 
+  - fact: hello
     isTrue: 0
-  - fact: 
+  - fact: hallo
     isTrue: 0
-  - fact: 
+  - fact: hello
     isTrue: 0
   Popup: {fileID: 210921581}
   factText: {fileID: 697512478}
@@ -5457,8 +5457,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 824384657}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+      - m_Target: {fileID: 481262998}
+        m_TargetAssemblyTypeName: GameManager2, Assembly-CSharp
         m_MethodName: UserSelectTrue
         m_Mode: 1
         m_Arguments:
@@ -9664,8 +9664,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 824384657}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+      - m_Target: {fileID: 481262998}
+        m_TargetAssemblyTypeName: GameManager2, Assembly-CSharp
         m_MethodName: UserSelectFalse
         m_Mode: 1
         m_Arguments:
