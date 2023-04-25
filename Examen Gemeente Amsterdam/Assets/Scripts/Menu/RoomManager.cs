@@ -8,6 +8,7 @@ using Unity.Services.Lobbies;
 using Unity.Services.Lobbies.Models;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class RoomManager : MonoBehaviour
@@ -21,6 +22,8 @@ public class RoomManager : MonoBehaviour
 
     private MainMenuUI mainMenuUI;
     private LobbyManager lobbyManager;
+    [SerializeField]
+    private RelayManager relayManager;
 
     private void Start()
     {
@@ -43,11 +46,13 @@ public class RoomManager : MonoBehaviour
 
             if (player.Id == lobby.HostId)
                 playerUIObj.transform.Find("Host Image").gameObject.SetActive(true);
+
             if (AuthenticationService.Instance.PlayerId == lobby.HostId && player.Id != lobby.HostId)
             {
                 playerUIObj.transform.Find("Btn_KickPlayer").gameObject.SetActive(true);
                 playerUIObj.transform.Find("Btn_KickPlayer").GetComponent<Button>().onClick.AddListener(delegate { lobbyManager.RemoveFromLobby(lobby.Id, playerUIObj); });
             }
+
             roomContentList.Where(obj => obj.name == playerUIObj.GetComponent<PlayerMenuInfo>().playerInstanceRole).SingleOrDefault().transform.parent.parent.GetComponent<Button>().interactable = false;
             mainMenuUI.roomListItems.Add(playerUIObj);
         }
@@ -56,6 +61,8 @@ public class RoomManager : MonoBehaviour
             roomCodeObj.transform.Find("Room Code").GetComponentInChildren<TMP_Text>().text = lobby.LobbyCode;
             roomCodeObj.SetActive(true);
         }
+        if(AuthenticationService.Instance.PlayerId == lobby.HostId)
+            lobbyManager.roomStartBtn.gameObject.SetActive(true);
     }
 
     public async void UpdatePlayerRole(string newRole) 
@@ -102,5 +109,29 @@ public class RoomManager : MonoBehaviour
             GameObject playerUIObj = mainMenuUI.roomListItems.Where(obj => obj.GetComponent<PlayerMenuInfo>().playerInstanceId == player.Id).SingleOrDefault();
             playerUIObj.transform.SetParent(roomContentList.Where(obj => obj.name == player.Data["playerRole"].Value).SingleOrDefault().transform);
         }
+    }
+
+    public async void StartGame()
+    {
+        if (AuthenticationService.Instance.PlayerId == lobbyManager.joinedLobby.HostId)
+            try
+            {
+                Debug.Log("start game");
+
+                string relayCode = await relayManager.CreateRelay();
+
+                Lobby lobby = await Lobbies.Instance.UpdateLobbyAsync(lobbyManager.joinedLobby.Id, new UpdateLobbyOptions {
+                    Data = new Dictionary<string, DataObject> {
+                        { "RelayKey", new DataObject(DataObject.VisibilityOptions.Member, relayCode)}
+                    }
+                });
+
+                lobbyManager.joinedLobby = lobby;
+                SceneManager.LoadScene("SampleScene");
+            }
+            catch (LobbyServiceException ex) 
+            {
+                Debug.Log(ex);
+            }
     }
 }

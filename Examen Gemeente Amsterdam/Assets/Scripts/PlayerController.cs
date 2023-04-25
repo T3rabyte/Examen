@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Unity.Netcode;
 
 public class PlayerController : MonoBehaviour
 {
@@ -19,8 +20,6 @@ public class PlayerController : MonoBehaviour
     public bool canMove = false;
     public bool canRotate = true;
 
-    [SerializeField]
-    private float cameraYOffset = 0.4f;
     public Camera playerCamera;
 
     void Start()
