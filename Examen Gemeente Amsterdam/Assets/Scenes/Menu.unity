@@ -160,7 +160,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 100.86, y: 40.5}
+  m_AnchoredPosition: {x: 100.86011, y: 40.5}
   m_SizeDelta: {x: 169, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &21920552
@@ -1488,7 +1488,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 830947324}
+      - m_Target: {fileID: 830947325}
         m_TargetAssemblyTypeName: MainMenuUI, Assembly-CSharp
         m_MethodName: ShowPanel
         m_Mode: 5
@@ -2462,7 +2462,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 830947324}
+      - m_Target: {fileID: 830947325}
         m_TargetAssemblyTypeName: MainMenuUI, Assembly-CSharp
         m_MethodName: ShowPanel
         m_Mode: 5
@@ -3010,7 +3010,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 830947324}
+      - m_Target: {fileID: 830947325}
         m_TargetAssemblyTypeName: MainMenuUI, Assembly-CSharp
         m_MethodName: ShowPanel
         m_Mode: 5
@@ -4358,7 +4358,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -74.8, y: 19.8}
+  m_AnchoredPosition: {x: -74.80005, y: 19.800049}
   m_SizeDelta: {x: 142.0238, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &826252741
@@ -4405,7 +4405,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 830947325}
+      - m_Target: {fileID: 830947324}
         m_TargetAssemblyTypeName: LobbyManager, Assembly-CSharp
         m_MethodName: CreateLobby
         m_Mode: 1
@@ -4572,7 +4572,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 830947319}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 714a0c7586c52c54198e7dd0b07eef3c, type: 3}
+  m_Script: {fileID: 11500000, guid: c431de041847fb54e91d0b8ec9ef7a02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerNameInput: {fileID: 296523949}
+  quickJoinLobbyName: {fileID: 693638249}
+  lobbyCreateName: {fileID: 946866330}
+  isLobbyPrivate: {fileID: 84678963}
+  roomBackBtn: {fileID: 542619890}
+  roomStartBtn: {fileID: 612024299}
+--- !u!114 &830947325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 830947319}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd078be7fb4bf2f4cb3b92d11f9c9bea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   lobbyPanel: {fileID: 1521190189}
@@ -4584,24 +4602,6 @@ MonoBehaviour:
   - {fileID: 165822162}
   - {fileID: 1771130414}
   roomListItems: []
---- !u!114 &830947325
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 830947319}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e9d3774d7355df142a0c4617b7cbe300, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerNameInput: {fileID: 296523949}
-  quickJoinLobbyName: {fileID: 693638249}
-  lobbyCreateName: {fileID: 946866330}
-  isLobbyPrivate: {fileID: 84678963}
-  roomBackBtn: {fileID: 542619890}
-  roomStartBtn: {fileID: 612024299}
 --- !u!114 &830947326
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5794,7 +5794,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 100.86, y: -99}
+  m_AnchoredPosition: {x: 100.86011, y: -99}
   m_SizeDelta: {x: 169, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1171539811
@@ -5841,7 +5841,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 830947324}
+      - m_Target: {fileID: 830947325}
         m_TargetAssemblyTypeName: MainMenuUI, Assembly-CSharp
         m_MethodName: ShowPanel
         m_Mode: 5
@@ -6235,7 +6235,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 100.85922, y: -39.76088}
+  m_AnchoredPosition: {x: 100.85913, y: -39.760864}
   m_SizeDelta: {x: 169, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1214609431
@@ -6795,9 +6795,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 830947325}
+      - m_Target: {fileID: 830947324}
         m_TargetAssemblyTypeName: LobbyManager, Assembly-CSharp
-        m_MethodName: QuickJoin
+        m_MethodName: JoinLobbyByCode
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8407,7 +8407,6 @@ GameObject:
   - component: {fileID: 1771130415}
   - component: {fileID: 1771130418}
   - component: {fileID: 1771130417}
-  - component: {fileID: 1771130416}
   m_Layer: 5
   m_Name: Room Panel
   m_TagString: Untagged
@@ -8444,23 +8443,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1771130416
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1771130414}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 714a0c7586c52c54198e7dd0b07eef3c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lobbyPanel: {fileID: 1521190189}
-  lobbyViewContent: {fileID: 1891918973}
-  lobbyListObj: {fileID: 7816200432336765714, guid: 6c133e559a995e04fb9a2d1771811cb3, type: 3}
-  panelList: []
-  roomListItems: []
 --- !u!114 &1771130417
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9021,7 +9003,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 830947324}
+      - m_Target: {fileID: 830947325}
         m_TargetAssemblyTypeName: MainMenuUI, Assembly-CSharp
         m_MethodName: ShowPanel
         m_Mode: 5

@@ -192,10 +192,7 @@ public class LobbyManager : MonoBehaviour
         joinedLobby = null;
 
         foreach (GameObject contentObj in roomManager.roomContentList) 
-        {
-            Debug.Log("1");
             contentObj.transform.parent.parent.GetComponent<Button>().interactable = true;
-        }
     }
 
     public async Task<List<Lobby>> GetLobbyList() 
