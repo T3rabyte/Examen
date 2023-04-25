@@ -39,14 +39,10 @@ public class LobbyManager : MonoBehaviour
 
     private readonly List<string> randomPlayerNames = new() { "Ben", "Jan", "Henk", "Sjaak", "Harry"};
 
-    private async void Start()
+    private void Start()
     {
         mainMenuUI = GetComponent<MainMenuUI>();
-        roomManager= GetComponent<RoomManager>();
-        if (UnityServices.State != ServicesInitializationState.Initialized)
-        {
-            await InitializeUnityService();
-        }
+        roomManager = GetComponent<RoomManager>();
     }
 
     private async Task InitializeUnityService() 
@@ -168,15 +164,13 @@ public class LobbyManager : MonoBehaviour
         try
         {
             if (joinedLobby == null)
-                CancelInvoke("PollForLobbyUpdates");
+                ResetRoom();
             else
             {
                 joinedLobby = await LobbyService.Instance.GetLobbyAsync(joinedLobby.Id);
                 if (!joinedLobby.Players.Contains(joinedLobby.Players.Where(player => player.Id == AuthenticationService.Instance.PlayerId).SingleOrDefault()))
                 {
-                    CancelInvoke("PollForLobbyUpdates");
-                    mainMenuUI.ShowPanel("Lobby Panel");
-                    joinedLobby = null;
+                    ResetRoom();
                 }
                 else
                     roomManager.UpdateRolesInLobby(joinedLobby);
@@ -185,6 +179,22 @@ public class LobbyManager : MonoBehaviour
         catch (LobbyServiceException ex)
         {
             Debug.Log(ex);
+            ResetRoom();
+        }
+    }
+
+    public void ResetRoom() 
+    {
+        CancelInvoke();
+        mainMenuUI.DestroyItemsOnList(new List<List<GameObject>> { mainMenuUI.roomListItems });
+        roomBackBtn.onClick.RemoveListener(leaveFromLobbyAction);
+        mainMenuUI.ShowPanel("Lobby Panel");
+        joinedLobby = null;
+
+        foreach (GameObject contentObj in roomManager.roomContentList) 
+        {
+            Debug.Log("1");
+            contentObj.transform.parent.parent.GetComponent<Button>().interactable = true;
         }
     }
 
@@ -194,6 +204,7 @@ public class LobbyManager : MonoBehaviour
         {
             await InitializeUnityService();
         }
+        Debug.Log(UnityServices.State);
         try
         {
             QueryLobbiesOptions queryLobbiesOptions = new QueryLobbiesOptions
@@ -220,12 +231,11 @@ public class LobbyManager : MonoBehaviour
         try
         {
             string playerId = AuthenticationService.Instance.PlayerId;
-            await LobbyService.Instance.RemovePlayerAsync(lobbyId, playerId);
-            mainMenuUI.DestroyItemsOnList(new List<List<GameObject>> { mainMenuUI.roomListItems });
-            roomBackBtn.onClick.RemoveListener(leaveFromLobbyAction);
-            joinedLobby = null;
-            CancelInvoke("PollForLobbyUpdates");
-            CancelInvoke("LobbyHeartbeat");
+            if (playerId == joinedLobby.HostId)
+                await LobbyService.Instance.DeleteLobbyAsync(lobbyId);
+            else
+                await LobbyService.Instance.RemovePlayerAsync(lobbyId, playerId);
+            ResetRoom();
         }
         catch (LobbyServiceException e)
         {

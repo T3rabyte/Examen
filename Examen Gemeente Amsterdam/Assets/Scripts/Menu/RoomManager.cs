@@ -16,8 +16,8 @@ public class RoomManager : MonoBehaviour
     private GameObject roomPlayerObj;
     [SerializeField]
     private GameObject roomCodeObj;
-    [SerializeField]
-    private List<GameObject> roomContentList;
+
+    public List<GameObject> roomContentList;
 
     private MainMenuUI mainMenuUI;
     private LobbyManager lobbyManager;
@@ -48,7 +48,7 @@ public class RoomManager : MonoBehaviour
                 playerUIObj.transform.Find("Btn_KickPlayer").gameObject.SetActive(true);
                 playerUIObj.transform.Find("Btn_KickPlayer").GetComponent<Button>().onClick.AddListener(delegate { lobbyManager.RemoveFromLobby(lobby.Id, playerUIObj); });
             }
-            roomContentList.Where(obj => obj.name == playerUIObj.GetComponent<PlayerMenuInfo>().playerInstanceRole).SingleOrDefault().GetComponentInParent<Button>().interactable = false;
+            roomContentList.Where(obj => obj.name == playerUIObj.GetComponent<PlayerMenuInfo>().playerInstanceRole).SingleOrDefault().transform.parent.parent.GetComponent<Button>().interactable = false;
             mainMenuUI.roomListItems.Add(playerUIObj);
         }
         if (lobby.IsPrivate)
@@ -86,9 +86,14 @@ public class RoomManager : MonoBehaviour
         List<string> playerIds = new();
         foreach (Player player in joinedLobby.Players)
             playerIds.Add(player.Id);
-        foreach (GameObject playerUIObj in mainMenuUI.roomListItems)
-            if (!playerIds.Contains(playerUIObj.GetComponent<PlayerMenuInfo>().playerInstanceId))
-                Debug.Log("player found that should be deleted");
+
+        for (int i = mainMenuUI.roomListItems.Count -1; i >= 0; i--)
+            if (!playerIds.Contains(mainMenuUI.roomListItems[i].GetComponent<PlayerMenuInfo>().playerInstanceId))
+            {
+                GameObject playerUIObj = mainMenuUI.roomListItems[i];
+                mainMenuUI.roomListItems.Remove(playerUIObj);
+                Destroy(playerUIObj);
+            }
 
         foreach (Player player in joinedLobby.Players) 
         {
