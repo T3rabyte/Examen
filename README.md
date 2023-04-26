@@ -16,5 +16,8 @@ The game consists of an office where you play as a worker of the municipality of
 ## Contributing
 We welcome contributions to the Cybersecurity Awareness Game! If you would like to contribute, please see the [contributing page](https://github.com/T3rabyte/Examen/blob/main/CONTRIBUTING.md)
 
+## Questions/Suggestions/Bug Reports
+Please read the [Issues List](https://github.com/T3rabyte/Examen/issues) before suggesting a feature. If you have a question, need troubleshooting help, or want to brainstorm a new feature, please start a [Discussion](https://github.com/T3rabyte/Examen/discussions). If you'd like to suggest a feature or report a reproducible bug, please open an [Issue](https://github.com/T3rabyte/Examen/issues/new) on this repository. 
+
 ## Contact
 If you have any questions or feedback about the ACCESS DENIED, please contact us at miguelafonso9@gmail.com.
