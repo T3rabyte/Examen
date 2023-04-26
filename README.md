@@ -14,7 +14,7 @@ ACCESS DENIED is a Unity game that can be played on any modern PC. To play the g
 The game consists of an office where you play as a worker of the municipality of Amsterdam completing different tasks, each of which presents a different cybersecurity threat. The player must navigate through each Task within the allotted time, avoiding threats and answering questions about cybersecurity best practices. The game is designed to be both educational and fun, with engaging graphics and challenging gameplay.
 
 ## Contributing
-We welcome contributions to the Cybersecurity Awareness Game! If you would like to contribute, please see the [contributing page] (https://github.com/T3rabyte/Examen/blob/main/CONTRIBUTING.md)
+We welcome contributions to the Cybersecurity Awareness Game! If you would like to contribute, please see the [contributing page](https://github.com/T3rabyte/Examen/blob/main/CONTRIBUTING.md)
 
 ## Contact
 If you have any questions or feedback about the ACCESS DENIED, please contact us at miguelafonso9@gmail.com.
