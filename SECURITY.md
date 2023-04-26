@@ -8,7 +8,6 @@
 
 ## Reporting a Vulnerability
 
-Use this section to tell people how to report a vulnerability.
 Make sure the vulnerability is real: Before reporting a vulnerability, 
 make sure that it is a genuine issue and not a false positive. Try to replicate the vulnerability multiple times to ensure that it is not a one-off occurrence.
 
