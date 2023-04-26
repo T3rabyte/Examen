@@ -5,6 +5,8 @@
 ## ACCESS DENIED
 ACCESS DENIED is a project developed on behalf of the municipality of Amsterdam to raise awareness about cybersecurity. The game is designed to educate players about common cybersecurity threats and how to protect against them.
 
+## Example
+
 ## Getting Started
 To get started with the Cybersecurity Awareness Game simply click on the "downloads" button above.
 
