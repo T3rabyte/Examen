@@ -11,7 +11,7 @@ ACCESS DENIED is a project developed on behalf of the municipality of Amsterdam 
 To get started with the Cybersecurity Awareness Game simply click on the "downloads" button above.
 
 ## How to Play
-ACCESS DENIED is a Unity game that can be played on any modern PC. To play the game, simply navigate double click the downloaded Examen.exe file and follow the on-screen instructions.
+ACCESS DENIED is a Unity game that can be played on any modern PC. To play the game, simply navigate to the location you downloaded the game and double click the downloaded ACCESS_DENIED.exe file and follow the on-screen instructions.
 
 The game consists of an office where you play as a worker of the municipality of Amsterdam completing different tasks, each of which presents a different cybersecurity threat. The player must navigate through each Task within the allotted time, avoiding threats and answering questions about cybersecurity best practices. The game is designed to be both educational and fun, with engaging graphics and challenging gameplay.
 
