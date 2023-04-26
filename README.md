@@ -1,5 +1,5 @@
 # Examen
-[download](https://github.com/T3rabyte/Examen/releases/latest) [release](https://github.com/T3rabyte/Examen/releases)
+[![GitHub release (latest by date)](https://img.shields.io/github/downloads/T3rabyte/Examen/latest/total)](https://github.com/T3rabyte/Examen/releases/latest) [![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/T3rabyte/Examen)](https://github.com/T3rabyte/Examen/releases) 
 
 
 ## Cybersecurity Awareness Game
