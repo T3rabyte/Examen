@@ -230,7 +230,7 @@ public class GameManager : MonoBehaviour
     public void UserSelectFalse()
     {
         animator.SetTrigger("False");
-        if (currentQuestion.isTrue)
+        if (!currentQuestion.isTrue)
         {
             correctAnswers += 1;
             Debug.Log("CORRECT!");
