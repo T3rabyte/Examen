@@ -8,17 +8,15 @@ using TMPro;
 
 
 
-public class GameManager : MonoBehaviour
+public class MailManager : MonoBehaviour
 {
     public Question[] questions;
     private static List<Question> unansweredQuestions;
 
-    public GameObject Popup;
-
-    public GameObject minigamePanel;
-    public GameObject startPanel;
 
     private Question currentQuestion;
+
+    public GameObject Popup;
 
     [SerializeField]
     private TMP_Text factText;
@@ -32,44 +30,18 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private Animator animator;
 
-    [SerializeField]
-    private Text TimerText;
-
-    public GameObject antiVirus;
-
-    public GameObject progressbar;
-
-    public GameObject installertextA;
-    
-    public GameObject installertextB;
-
-    public Slider Slider;
-
-    public float TimeLeft;
-    public bool TimerOn = false;
-
     private float timeBetweenQuestions = 1f;
 
-    private int correctAnswers = 0;
-
-    public float duration = 5f;
-
-    private bool isinstalling = false;
-
-    
-
-
-    //in editor make sure these two floats are less than one, for  example: 0.5 = 50% chance
     public float chanceP;
     public float chanceF;
 
     float pendingFreezeDuration = 0f;
 
     bool isFrozen = false;
-
-
-
     
+    public float duration = 5f;
+
+
     
 
     /*void Awake() {
@@ -78,13 +50,11 @@ public class GameManager : MonoBehaviour
 
     
     
-    //this starts the whole minigame program once you have clicked on "start"
-    public void StartMinigame()
-    {
-        minigamePanel.SetActive(true);
-        startPanel.SetActive(false);
 
-        TimerOn = true;
+    private void Start()
+    {
+
+        
 
         if (unansweredQuestions == null || unansweredQuestions.Count == 0)
         {
@@ -95,62 +65,12 @@ public class GameManager : MonoBehaviour
         SetCurrentQuestion();
     }
 
-
-
-    void Awake()
-    {
-        //Slider = gameObject.GetComponent<Slider>();
-    }
     
     private void Update()
     {
 
-        //handles the tiemr
-        if (TimerOn)
-        {
-            if (TimeLeft > 0)
-            {
-                TimeLeft -= Time.deltaTime;
-                updateTimer(TimeLeft);
-            }else
-            {
-                TimeLeft = 0;
-                TimerOn = false;
-            }
-            
-        }
-
-        //handles the conditions that have to be met to activate a win or a lose
-        if (correctAnswers == 20)
-        {
-            Win();
-        }else if (TimeLeft <= 0 && correctAnswers < 20)
-        {
-            Lose();
-        }
-
-        if(isinstalling == true)
-        {
-            if (Slider.value >= 1)
-            {
-                isinstalling = false;
-                chanceF += 0.1f;
-                chanceP -= 0.1f;
-                installertextA.SetActive(false);
-                installertextB.SetActive(true);
-                Debug.Log("installed!");
-                
-            }
-            
-            
-            Slider.value += 0.01f * Time.deltaTime;
-        }
-
-        
     }
 
-    //handles which questions get showed, which ones have been answered, 
-    //and what happens if they have been answered correctly or not.
     void SetCurrentQuestion()
     {
         int randomQuestionIndex = Random.Range(0, unansweredQuestions.Count);
@@ -163,20 +83,16 @@ public class GameManager : MonoBehaviour
         if (currentQuestion.isTrue)
         {
             trueAnswerText.text = "CORRECT!";
-            falseAnswerText.text = "WRONG!";
-            
+            falseAnswerText.text = "FALSE!";
 
         }else
         {
             trueAnswerText.text = "WRONG!";
             falseAnswerText.text = "CORRECT!";
-            
         }
 
     }
 
-
-    //gives the program some time to register the next question
     IEnumerator TransitionToNextQuestion()
     {
 
@@ -186,22 +102,17 @@ public class GameManager : MonoBehaviour
         SetCurrentQuestion();
     }
 
-
-    //handles the pressing of the "true" button
     public void UserSelectTrue()
     {
 
         animator.SetTrigger("True");
         if (currentQuestion.isTrue)
         {
-
             if (isFrozen == true)
             {
                 StartCoroutine(DoFreeze());
             }
-            correctAnswers += 1;
             Debug.Log("CORRECT!");
-            
         }else
         {
             Debug.Log("WRONG!");
@@ -225,20 +136,16 @@ public class GameManager : MonoBehaviour
         StartCoroutine(TransitionToNextQuestion());
     }
 
-
-    //does the same as above but for "false"
     public void UserSelectFalse()
     {
         animator.SetTrigger("False");
         if (currentQuestion.isTrue)
         {
-            correctAnswers += 1;
-            Debug.Log("CORRECT!");
-
             if (isFrozen == true)
             {
                 StartCoroutine(DoFreeze());
             }
+            Debug.Log("CORRECT!");
         }else
         {
             float random = Random.Range(0, 1);
@@ -255,14 +162,11 @@ public class GameManager : MonoBehaviour
                 Debug.Log("DoFreeze");
                 StartCoroutine(DoFreeze());
             }
-
             Debug.Log("WRONG!");
         }
         StartCoroutine(TransitionToNextQuestion());
     }
 
-
-    //pretty self explainatory
     private void Win()
     {
         
@@ -273,20 +177,6 @@ public class GameManager : MonoBehaviour
         
     }
 
-
-    //handles the UI aspect of the timer
-    void updateTimer(float currentTime)
-    {
-        currentTime += 1;
-
-        float minutes = Mathf.FloorToInt(currentTime / 60);
-        float seconds = Mathf.FloorToInt(currentTime % 60);
-
-        TimerText.text = string.Format("{0:00} : {1:00}", minutes, seconds);
-    }
-    
-
-    //sets the freezeduration to the set duration making it so the "DoFreeze" if statement in update() is valid
     public void Freeze()
     {
         pendingFreezeDuration = duration;
@@ -294,9 +184,7 @@ public class GameManager : MonoBehaviour
 
     }
 
-
-    //freezes the cursor to simulate a freeze effect
-    IEnumerator DoFreeze()
+     IEnumerator DoFreeze()
         {
             isFrozen = true;
             Debug.Log("freeze");
@@ -310,12 +198,6 @@ public class GameManager : MonoBehaviour
             isFrozen = false;
         }
 
-    public void startinstall()
-    {
-        isinstalling = true;
-        installertextA.SetActive(true);
-    }
     
-
     
 }
