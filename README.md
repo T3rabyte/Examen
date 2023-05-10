@@ -2,6 +2,7 @@
 [![GitHub release (latest Sable)](https://badgen.net/github/release/T3rabyte/Examen/stable)](https://github.com/T3rabyte/Examen/releases/tag/stable) 
 [![GitHub release (latest by date)](https://badgen.net/github/release/T3rabyte/Examen)](https://github.com/T3rabyte/Examen/releases/latest)
 [![GitHub issue (Open issues)](https://badgen.net/github/open-issues/T3rabyte/Examen/)](https://github.com/T3rabyte/Examen/issues)
+[![GitHub issue (Open issues)](https://badgen.net/github/last-commit/T3rabyte/Examen/develop)](https://github.com/T3rabyte/Examen/tree/develop)
 
 
 
