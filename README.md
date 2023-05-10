@@ -1,5 +1,8 @@
 # ACCESS DENIED
-[![GitHub release (latest by date)](https://img.shields.io/github/downloads/T3rabyte/Examen/latest/total)](https://github.com/T3rabyte/Examen/releases/latest) [![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/T3rabyte/Examen)](https://github.com/T3rabyte/Examen/releases) 
+[![GitHub release (latest Sable)](https://badgen.net/github/release/T3rabyte/Examen/stable)](https://github.com/T3rabyte/Examen/releases/tag/stable) 
+[![GitHub release (latest by date)](https://badgen.net/github/release/T3rabyte/Examen)](https://github.com/T3rabyte/Examen/releases/latest)
+[![GitHub issue (Open issues)](https://badgen.net/github/open-issues/T3rabyte/Examen/)](https://github.com/T3rabyte/Examen/issues)
+[![GitHub release (latest Sable)](https://badgen.net/github/assets-dl/T3rabyte/Examen/stable)](https://github.com/T3rabyte/Examen/releases/tag/stable)
 
 
 ## ACCESS DENIED
