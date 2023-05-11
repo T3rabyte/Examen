@@ -230,7 +230,7 @@ public class GameManager : MonoBehaviour
     public void UserSelectFalse()
     {
         animator.SetTrigger("False");
-        if (currentQuestion.isTrue)
+        if (!currentQuestion.isTrue)
         {
             correctAnswers += 1;
             Debug.Log("CORRECT!");
@@ -239,6 +239,7 @@ public class GameManager : MonoBehaviour
             {
                 StartCoroutine(DoFreeze());
             }
+            
         }else
         {
             float random = Random.Range(0, 1);
