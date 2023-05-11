@@ -1,9 +1,9 @@
-# Contributing to Examen
+# Contributing to ACCESS DENIED
 We welcome contributions from anyone, whether you're new to programming or an experienced developer. By contributing to Examen, 
 you'll help us make it better for everyone.
 
 ## How to contribute
-Here are some ways you can contribute to Examen:
+Here are some ways you can contribute to ACCESS DENIED:
 
 Report issues: If you encounter a bug or have a feature request, please [submit an issue](https://github.com/T3rabyte/Examen/issues/new) so that we can address it. 
 Please be as detailed as possible in your description, including any relevant code snippets, error messages, or screenshots.
