@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.IO;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
@@ -32,8 +33,7 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private Animator animator;
 
-    [SerializeField]
-    private Text TimerText;
+    
 
     public GameObject antiVirus;
 
@@ -45,8 +45,9 @@ public class GameManager : MonoBehaviour
 
     public Slider Slider;
 
-    public float TimeLeft;
-    public bool TimerOn = false;
+    public Timer timer;
+
+    
 
     private float timeBetweenQuestions = 1f;
 
@@ -69,22 +70,14 @@ public class GameManager : MonoBehaviour
 
 
 
-    
-    
 
-    /*void Awake() {
-        DontDestroyOnLoad(transform.gameObject);
-    }*/
-
-    
-    
     //this starts the whole minigame program once you have clicked on "start"
     public void StartMinigame()
     {
         minigamePanel.SetActive(true);
         startPanel.SetActive(false);
 
-        TimerOn = true;
+        timer.TimerOn = true;
 
         if (unansweredQuestions == null || unansweredQuestions.Count == 0)
         {
@@ -96,35 +89,43 @@ public class GameManager : MonoBehaviour
     }
 
 
-
+    //the moment the script loads it sets the filepath of the JSONText.json file, 
+    //reads the text in the json file, and sets it to be the value of questions.
+    //if for whatever reason the file cannot be found it will throw an error. 
     void Awake()
     {
-        //Slider = gameObject.GetComponent<Slider>();
+        string filePath = Path.Combine(Application.streamingAssetsPath, "JSONText.json");
+        if (File.Exists(filePath))
+        {
+            string data = File.ReadAllText(filePath);
+            var questionData = JsonUtility.FromJson<QuestionData>(data);
+            questions = questionData.questions;
+        }
+        else
+        {
+            Debug.LogError("Questions JSON file not found!");
+        }
+        
+        //gets the timer script so we can use it's values
+        timer = GetComponent<Timer>();
+
+    }
+
+    public class QuestionData
+    {
+        public Question[] questions;
     }
     
     private void Update()
     {
 
-        //handles the tiemr
-        if (TimerOn)
-        {
-            if (TimeLeft > 0)
-            {
-                TimeLeft -= Time.deltaTime;
-                updateTimer(TimeLeft);
-            }else
-            {
-                TimeLeft = 0;
-                TimerOn = false;
-            }
-            
-        }
+       
 
         //handles the conditions that have to be met to activate a win or a lose
         if (correctAnswers == 20)
         {
             Win();
-        }else if (TimeLeft <= 0 && correctAnswers < 20)
+        }else if (timer.TimeLeft <= 0 && correctAnswers < 20)
         {
             Lose();
         }
@@ -156,6 +157,17 @@ public class GameManager : MonoBehaviour
         int randomQuestionIndex = Random.Range(0, unansweredQuestions.Count);
         currentQuestion = unansweredQuestions[randomQuestionIndex];
 
+        
+
+        foreach (Question question in questions)
+        {
+            string fact = question.fact;
+            bool istrue = question.isTrue;
+
+            // Use the values as needed
+            // ...
+        }
+        
         factText.text = currentQuestion.fact;
 
         unansweredQuestions.RemoveAt(randomQuestionIndex);
@@ -174,6 +186,8 @@ public class GameManager : MonoBehaviour
         }
 
     }
+
+    
 
 
     //gives the program some time to register the next question
@@ -276,15 +290,7 @@ public class GameManager : MonoBehaviour
 
 
     //handles the UI aspect of the timer
-    void updateTimer(float currentTime)
-    {
-        currentTime += 1;
-
-        float minutes = Mathf.FloorToInt(currentTime / 60);
-        float seconds = Mathf.FloorToInt(currentTime % 60);
-
-        TimerText.text = string.Format("{0:00} : {1:00}", minutes, seconds);
-    }
+    
     
 
     //sets the freezeduration to the set duration making it so the "DoFreeze" if statement in update() is valid

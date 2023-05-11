@@ -3453,6 +3453,7 @@ GameObject:
   m_Component:
   - component: {fileID: 824384658}
   - component: {fileID: 824384657}
+  - component: {fileID: 824384659}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -3472,98 +3473,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec94b8bf19547d74287b772ed7982d6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  questions:
-  - fact: Hackers kunnen toegang krijgen tot uw persoonlijke gegevens door uw wachtwoord
-      te raden.
-    isTrue: 1
-  - fact: Biometrische authenticatie is altijd veiliger dan het gebruik van een wachtwoord.
-    isTrue: 0
-  - fact: Openbare Wi-Fi-netwerken zijn altijd veilig te gebruiken
-    isTrue: 0
-  - fact: Het gebruik van tweefactorauthenticatie maakt het voor hackers moeilijker
-      om toegang te krijgen tot uw accounts.
-    isTrue: 1
-  - fact: Malware kan zonder uw medeweten op uw computer worden gedownload.
-    isTrue: 1
-  - fact: Cyberbeveiligingsbedreigingen treffen alleen grote bedrijven, geen individuen.
-    isTrue: 0
-  - fact: Cybersecurity-aanvallen komen alleen van externe bronnen.
-    isTrue: 0
-  - fact: "Het is veilig om op links in e-mails van onbekende afzenders te klikken
-      zolang u antivirussoftware hebt ge\xEFnstalleerd"
-    isTrue: 0
-  - fact: Uw persoonlijke gegevens kunnen worden gestolen door iemand die over uw
-      schouder meekijkt terwijl u deze in een computer invoert.
-    isTrue: 1
-  - fact: U kunt uw persoonlijke gegevens beschermen door deze nooit online te delen.
-    isTrue: 0
-  - fact: U moet altijd hetzelfde wachtwoord gebruiken voor al uw accounts.
-    isTrue: 0
-  - fact: Sterke wachtwoorden zijn gemakkelijk te onthouden.
-    isTrue: 0
-  - fact: Als u een VPN gebruikt, worden uw persoonlijke gegevens altijd beschermd.
-    isTrue: 0
-  - fact: Cyberbeveiligingsbedreigingen zijn altijd opzettelijk.
-    isTrue: 0
-  - fact: Hackers richten zich alleen op computers met verouderde besturingssystemen.
-    isTrue: 0
-  - fact: "U kunt uw persoonlijke gegevens beschermen door uw socialemediaprofielen
-      in te stellen op priv\xE9."
-    isTrue: 0
-  - fact: Wachtwoordmanagers zijn een veilige manier om uw wachtwoorden op te slaan.
-    isTrue: 1
-  - fact: U kunt uw persoonlijke gegevens beschermen door niet online te winkelen.
-    isTrue: 0
-  - fact: Cyberbeveiligingsaanvallen kunnen fysieke schade aan uw apparaten veroorzaken.
-    isTrue: 1
-  - fact: Het is veilig om hetzelfde wachtwoord voor meerdere accounts te gebruiken,
-      zolang het maar sterk is.
-    isTrue: 0
-  - fact: Het is veilig om software van elke website te downloaden.
-    isTrue: 0
-  - fact: "Persoonlijke informatie is alleen waardevol voor hackers als het financi\xEBle
-      informatie bevat."
-    isTrue: 0
-  - fact: Het is veilig om uw persoonlijke apparaten aan te sluiten op openbare laadstations.
-    isTrue: 0
-  - fact: U kunt uw persoonlijke gegevens beschermen door cookies in uw webbrowser
-      uit te schakelen.
-    isTrue: 1
-  - fact: Als u een wachtwoordbeheerder gebruikt, hoeft u geen wachtwoorden te onthouden.
-    isTrue: 1
-  - fact: Uw persoonlijke gegevens kunnen worden gestolen door een skimming-apparaat
-      dat op een geldautomaat is geplaatst.
-    isTrue: 1
-  - fact: Cybersecurity-bedreigingen worden altijd onmiddellijk gedetecteerd.
-    isTrue: 0
-  - fact: U kunt uw persoonlijke gegevens beschermen door sociale media helemaal
-      te vermijden.
-    isTrue: 0
-  - fact: U moet altijd uw persoonlijke gegevens verstrekken als iemand hier online
-      om vraagt.
-    isTrue: 0
-  - fact: "Het gebruik van een wachtwoordzin is een veiligere manier om uw accounts
-      te beschermen dan het gebruik van een wachtwoord van \xE9\xE9n woord."
-    isTrue: 1
-  - fact: Uw persoonlijke gegevens kunnen worden gestolen door een hacker die toegang
-      krijgt tot de database van een bedrijf.
-    isTrue: 1
-  - fact: Het is altijd veilig om bijlagen van e-mails te downloaden, zolang ze afkomstig
-      zijn van een betrouwbare bron.
-    isTrue: 0
-  - fact: Cyberbeveiligingsbedreigingen kunnen worden voorkomen door simpelweg uw
-      computer uit te zetten.
-    isTrue: 0
-  - fact: U kunt uw persoonlijke gegevens beschermen door gebruik te maken van een
-      kredietbewakingsdienst.
-    isTrue: 1
-  - fact: Hackers richten zich alleen op personen die rijk of beroemd zijn.
-    isTrue: 0
-  - fact: Het is veilig om hetzelfde wachtwoord voor meerdere accounts te gebruiken,
-      zolang ze niet verbonden zijn.
-    isTrue: 0
-  - fact: Wachtwoorden moeten om de zes maanden worden gewijzigd om veilig te blijven.
-    isTrue: 1
+  questions: []
   Popup: {fileID: 1598336972}
   minigamePanel: {fileID: 1814840038}
   startPanel: {fileID: 1023256514}
@@ -3571,14 +3481,12 @@ MonoBehaviour:
   trueAnswerText: {fileID: 90471253}
   falseAnswerText: {fileID: 511218008}
   animator: {fileID: 1814840040}
-  TimerText: {fileID: 1781821641}
   antiVirus: {fileID: 658313179}
   progressbar: {fileID: 1819233851}
   installertextA: {fileID: 1081271336}
   installertextB: {fileID: 689119202}
   Slider: {fileID: 1819233853}
-  TimeLeft: 720
-  TimerOn: 0
+  timer: {fileID: 2037602692}
   duration: 30
   chanceP: 0.5
   chanceF: 0.5
@@ -3593,10 +3501,26 @@ Transform:
   m_LocalPosition: {x: 0.26887292, y: 0.34592107, z: -0.20886059}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 2037602691}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &824384659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 824384656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3bc76b20e4a228438c190c332cb8d32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TimeLeft: 600
+  TimerOn: 0
+  TimerText: {fileID: 1781821641}
 --- !u!1 &828417811 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 949ce83dfc731ec40be465a3ef38093c, type: 3}
@@ -10049,6 +9973,53 @@ Transform:
   m_Father: {fileID: 285630922}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 4.544, y: 0.371, z: 0.002}
+--- !u!1 &2037602690
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2037602691}
+  - component: {fileID: 2037602692}
+  m_Layer: 0
+  m_Name: timer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2037602691
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2037602690}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 824384658}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2037602692
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2037602690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3bc76b20e4a228438c190c332cb8d32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TimeLeft: 1700
+  TimerOn: 0
+  TimerText: {fileID: 1781821641}
 --- !u!1 &2044226853
 GameObject:
   m_ObjectHideFlags: 0
