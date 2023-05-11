@@ -1,9 +1,10 @@
 # ACCESS DENIED
 [![GitHub release (latest Sable)](https://img.shields.io/github/v/release/T3rabyte/Examen)](https://github.com/T3rabyte/Examen/releases/tag/stable) 
 [![GitHub release (latest by date)](https://img.shields.io/github/v/release/T3rabyte/Examen?include_prereleases)](https://github.com/T3rabyte/Examen/releases/latest)
-[![GitHub issue (Open issues)](https://img.shields.io/github/issues/T3rabyte/Examen/total.svg)](https://github.com/T3rabyte/Examen/issues)
+[![GitHub issue (Open issues)](https://img.shields.io/github/issues/T3rabyte/Examen)](https://github.com/T3rabyte/Examen/issues)
 <br /> [![GitHub issue (Open issues)](https://img.shields.io/github/last-commit/T3rabyte/Examen)](https://github.com/T3rabyte/Examen/tree/develop)
-[![GitHub download (downloads)](https://img.shields.io/github/downloads/T3rabyte/Examen/total.svg)](https://github.com/T3rabyte/Examen/releases/latest)
+[![GitHub download (downloads)](https://img.shields.io/github/downloads/T3rabyte/Examen/total)](https://github.com/T3rabyte/Examen/releases/latest)
+[![GitHub download (downloads)](https://img.shields.io/github/commit-activity/w/T3rabyte/Examen)](https://github.com/T3rabyte/Examen/releases/latest)
 
 
 
