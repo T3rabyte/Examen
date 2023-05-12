@@ -40,7 +40,7 @@ public class LobbyManager : MonoBehaviour
     [SerializeField]
     public Button roomStartBtn;
 
-    private readonly List<string> randomPlayerNames = new() { "Ben", "Jan", "Henk", "Sjaak", "Harry"};
+    private readonly List<string> randomPlayerNames = new() { "Sam", "Isa", "Bo", "Jip", "Lou", "Charlie", "Noa", "Dani", "Quinn", "Bowie" };
 
     private void Start()
     {
