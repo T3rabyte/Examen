@@ -9,6 +9,7 @@ using Unity.Services.Lobbies;
 using Unity.Services.Lobbies.Models;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class LobbyManager : MonoBehaviour
@@ -18,6 +19,8 @@ public class LobbyManager : MonoBehaviour
 
     private MainMenuUI mainMenuUI;
     private RoomManager roomManager;
+    [SerializeField]
+    private RelayManager relayManager;
 
     private UnityAction leaveFromLobbyAction;
 
@@ -35,7 +38,7 @@ public class LobbyManager : MonoBehaviour
     [SerializeField]
     private Button roomBackBtn;
     [SerializeField]
-    private Button roomStartBtn;
+    public Button roomStartBtn;
 
     private readonly List<string> randomPlayerNames = new() { "Ben", "Jan", "Henk", "Sjaak", "Harry"};
 
@@ -67,7 +70,10 @@ public class LobbyManager : MonoBehaviour
             CreateLobbyOptions createLobbyOptions = new CreateLobbyOptions
             {
                 IsPrivate = isLobbyPrivate.isOn,
-                Player = NewPlayer()
+                Player = NewPlayer(),
+                Data = new Dictionary<string, DataObject> {
+                    { "RelayKey", new DataObject(DataObject.VisibilityOptions.Member, "0")}
+                }
             };
             joinedLobby = await LobbyService.Instance.CreateLobbyAsync(lobbyCreateName.text, 2, createLobbyOptions);
             InvokeRepeating("LobbyHeartbeat", 20f, 20f);
@@ -169,8 +175,16 @@ public class LobbyManager : MonoBehaviour
             {
                 joinedLobby = await LobbyService.Instance.GetLobbyAsync(joinedLobby.Id);
                 if (!joinedLobby.Players.Contains(joinedLobby.Players.Where(player => player.Id == AuthenticationService.Instance.PlayerId).SingleOrDefault()))
-                {
                     ResetRoom();
+
+                else if (joinedLobby.Data["RelayKey"].Value != "0")
+                {
+                    if (AuthenticationService.Instance.PlayerId != joinedLobby.HostId)
+                    {
+                        relayManager.JoinRelay(joinedLobby.Data["RelayKey"].Value);
+                        SceneManager.LoadScene("SampleScene");
+                        ResetRoom();
+                    }
                 }
                 else
                     roomManager.UpdateRolesInLobby(joinedLobby);
@@ -192,10 +206,7 @@ public class LobbyManager : MonoBehaviour
         joinedLobby = null;
 
         foreach (GameObject contentObj in roomManager.roomContentList) 
-        {
-            Debug.Log("1");
             contentObj.transform.parent.parent.GetComponent<Button>().interactable = true;
-        }
     }
 
     public async Task<List<Lobby>> GetLobbyList() 

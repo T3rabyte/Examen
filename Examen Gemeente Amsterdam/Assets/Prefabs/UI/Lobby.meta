@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Examen Gemeente Amsterdam/Assets/MaterialUI/ComponentPrefabs.meta
+guid: 657f51c2cb5c52040a420c89407378fc
+========
 guid: 439f3e5a20ac3c344ac4dbf315507a06
+>>>>>>>> Epic#2_multiplayer:Examen Gemeente Amsterdam/Assets/Prefabs/UI/Lobby.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
