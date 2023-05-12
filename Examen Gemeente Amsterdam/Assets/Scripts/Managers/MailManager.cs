@@ -5,16 +5,15 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using TMPro;
-
-
+using System.IO;
 
 public class MailManager : MonoBehaviour
 {
-    public Question[] questions;
-    private static List<Question> unansweredQuestions;
+    public Mails[] Mails;
+    private static List<Mails> unansweredMails;
 
 
-    private Question currentQuestion;
+    private Mails currentMail;
 
     public GameObject Popup;
 
@@ -30,7 +29,7 @@ public class MailManager : MonoBehaviour
     [SerializeField]
     private Animator animator;
 
-    private float timeBetweenQuestions = 1f;
+    private float timeBetweenMails = 1f;
 
     public float chanceP;
     public float chanceF;
@@ -41,46 +40,55 @@ public class MailManager : MonoBehaviour
     
     public float duration = 5f;
 
-
-    
-
-    /*void Awake() {
-        DontDestroyOnLoad(transform.gameObject);
-    }*/
-
     
     
-
-    private void Start()
+    private void Awake()
     {
+         string filePath = Path.Combine(Application.streamingAssetsPath, "mails.json");
+        if (File.Exists(filePath))
+        {
+            string data = File.ReadAllText(filePath);
+            var MailData = JsonUtility.FromJson<MailData>(data);
+            Mails = MailData.Mails;
+        }
+        else
+        {
+            Debug.LogError("Mails JSON file not found!");
+        }
 
+        if (unansweredMails == null || unansweredMails.Count == 0)
+        {
+            unansweredMails = Mails.ToList<Mails>();
+        }
         
 
-        if (unansweredQuestions == null || unansweredQuestions.Count == 0)
+        SetCurrentMail();
+    }
+
+    public class MailData
+    {
+        public Mails[] Mails;
+    }
+
+    void SetCurrentMail()
+    {
+        int randomMailIndex = Random.Range(0, unansweredMails.Count);
+        currentMail = unansweredMails[randomMailIndex];
+
+        foreach (Mails Mail in Mails)
         {
-            unansweredQuestions = questions.ToList<Question>();
+            string fact = Mail.fact;
+            bool istrue = Mail.isTrue;
+
+            // Use the values as needed
+            // ...
         }
-        GetComponent<Timer>();
 
-        SetCurrentQuestion();
-    }
+        factText.text = currentMail.fact;
 
-    
-    private void Update()
-    {
+        unansweredMails.RemoveAt(randomMailIndex);
 
-    }
-
-    void SetCurrentQuestion()
-    {
-        int randomQuestionIndex = Random.Range(0, unansweredQuestions.Count);
-        currentQuestion = unansweredQuestions[randomQuestionIndex];
-
-        factText.text = currentQuestion.fact;
-
-        unansweredQuestions.RemoveAt(randomQuestionIndex);
-
-        if (currentQuestion.isTrue)
+        if (currentMail.isTrue)
         {
             trueAnswerText.text = "CORRECT!";
             falseAnswerText.text = "FALSE!";
@@ -93,20 +101,20 @@ public class MailManager : MonoBehaviour
 
     }
 
-    IEnumerator TransitionToNextQuestion()
+    IEnumerator TransitionToNextMail()
     {
 
-        yield return new WaitForSeconds(timeBetweenQuestions);
+        yield return new WaitForSeconds(timeBetweenMails);
 
         //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        SetCurrentQuestion();
+        SetCurrentMail();
     }
 
     public void UserSelectTrue()
     {
 
         animator.SetTrigger("True");
-        if (currentQuestion.isTrue)
+        if (currentMail.isTrue)
         {
             if (isFrozen == true)
             {
@@ -133,13 +141,13 @@ public class MailManager : MonoBehaviour
             }
         }
 
-        StartCoroutine(TransitionToNextQuestion());
+        StartCoroutine(TransitionToNextMail());
     }
 
     public void UserSelectFalse()
     {
         animator.SetTrigger("False");
-        if (currentQuestion.isTrue)
+        if (currentMail.isTrue)
         {
             if (isFrozen == true)
             {
@@ -164,7 +172,7 @@ public class MailManager : MonoBehaviour
             }
             Debug.Log("WRONG!");
         }
-        StartCoroutine(TransitionToNextQuestion());
+        StartCoroutine(TransitionToNextMail());
     }
 
     private void Win()
