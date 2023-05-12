@@ -1,5 +1,9 @@
 fileFormatVersion: 2
-guid: 2aa7a7fcfe8018c41a866e94794a467e
+<<<<<<<< HEAD:Examen Gemeente Amsterdam/Assets/MaterialUI.meta
+guid: e8410d8067df50c41887365f8e2f3e96
+========
+guid: b0b3b1d426d6cd445b174f7c6b2b031c
+>>>>>>>> Epic#2_multiplayer:Examen Gemeente Amsterdam/Assets/Scripts/Menu.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
