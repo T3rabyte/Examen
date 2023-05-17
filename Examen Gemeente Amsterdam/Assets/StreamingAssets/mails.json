@@ -1,6 +1,6 @@
 {
 	
-	"questions": [
+	"Mails": [
 		{
 		  "fact": "Hackers kunnen toegang krijgen tot uw persoonlijke gegevens door uw wachtwoord te raden.",
 		  "isTrue": true
@@ -150,5 +150,5 @@
 			"isTrue": false
 	  	}
 
-	]
+	  ]
 }

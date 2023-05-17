@@ -287,9 +287,6 @@ public class GameManager : MonoBehaviour
     {
         
     }
-
-
-    //handles the UI aspect of the timer
     
     
 
