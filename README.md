@@ -52,6 +52,7 @@ Om er voor te zorgen dat mensen samen kunnen spelen gebruiken we unity's Lobby p
 
 ![alt text](https://cdn.discordapp.com/attachments/1089835395098869822/1110179645845950474/ezgif.com-video-to-gif.gif "Lobby create gif")
 ![alt text](https://cdn.discordapp.com/attachments/1089835395098869822/1110180506525519912/ezgif.com-video-to-gif_1.gif "Random name gif")
+![alt text](https://cdn.discordapp.com/attachments/1089835395098869822/1110188298724442194/ezgif.com-video-to-gif_2.gif "Join Lobby gif")
 
 ```mermaid
 graph TD;
