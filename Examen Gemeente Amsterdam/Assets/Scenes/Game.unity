@@ -6560,7 +6560,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_HighlightedColor: {r: 1, g: 1, b: 1, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
@@ -6597,7 +6597,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  m_IsOn: 0
+  m_IsOn: 1
 --- !u!114 &1405987483
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6611,8 +6611,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uiHandleRectTransform: {fileID: 1106890715}
-  backgroundActiveColor: {r: 0.13602892, g: 0.6886792, b: 0.04223035, a: 0}
-  handleActiveColor: {r: 0.052918315, g: 1, b: 0, a: 0}
+  backgroundActiveColor: {r: 0.13602892, g: 0.6886792, b: 0.04223035, a: 1}
+  handleActiveColor: {r: 0.052918315, g: 1, b: 0, a: 1}
 --- !u!1 &1413953827
 GameObject:
   m_ObjectHideFlags: 0
@@ -10909,6 +10909,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Laptop
       objectReference: {fileID: 0}
+    - target: {fileID: 2601639170821444870, guid: d2783200802b6cc43a7b2fc78b121c9a, type: 3}
+      propertyPath: m_TagString
+      value: CameraInput
+      objectReference: {fileID: 0}
     - target: {fileID: 2944097256098833067, guid: d2783200802b6cc43a7b2fc78b121c9a, type: 3}
       propertyPath: m_Name
       value: Instellingen
@@ -11049,6 +11053,30 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 2944097257727869810, guid: d2783200802b6cc43a7b2fc78b121c9a, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.016
+      objectReference: {fileID: 0}
+    - target: {fileID: 2944097257727869810, guid: d2783200802b6cc43a7b2fc78b121c9a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.00000004175
+      objectReference: {fileID: 0}
+    - target: {fileID: 2944097257727869810, guid: d2783200802b6cc43a7b2fc78b121c9a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2944097257727869810, guid: d2783200802b6cc43a7b2fc78b121c9a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.00000084264076
+      objectReference: {fileID: 0}
+    - target: {fileID: 2944097257727869810, guid: d2783200802b6cc43a7b2fc78b121c9a, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 6.9944
+      objectReference: {fileID: 0}
+    - target: {fileID: 2944097257727869810, guid: d2783200802b6cc43a7b2fc78b121c9a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0.0001
+      objectReference: {fileID: 0}
     - target: {fileID: 2944097257727869811, guid: d2783200802b6cc43a7b2fc78b121c9a, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -11098,7 +11126,7 @@ PrefabInstance:
       value: 180
       objectReference: {fileID: 0}
     m_RemovedComponents:
-    - {fileID: 2944097257047255144, guid: d2783200802b6cc43a7b2fc78b121c9a, type: 3}
+    - {fileID: 1801134407607812120, guid: d2783200802b6cc43a7b2fc78b121c9a, type: 3}
     m_RemovedGameObjects:
     - {fileID: 2891805147518303925, guid: d2783200802b6cc43a7b2fc78b121c9a, type: 3}
     m_AddedGameObjects:
