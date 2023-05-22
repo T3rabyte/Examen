@@ -29,3 +29,63 @@ Please read the [Issues List](https://github.com/T3rabyte/Examen/issues) before 
 
 ## Contact
 If you have any questions or feedback about the ACCESS DENIED, please contact us at miguelafonso939@gmail.com.
+
+# Examen Repo
+
+opdracht vanuit de klant
+
+# Geproduceerde Game Onderdelen
+
+Student, Teun:
+
+ - [Lobby systeem](https://github.com/T3rabyte/Proef-Examen/tree/origin/minigame%232_memory/proef%20proeve/Assets/src/Singing%20Frogs "SingingForgs minigame")
+ - [Multiplayer intergratie](https://github.com/T3rabyte/Proef-Examen/tree/origin/minigame%232_memory/proef%20proeve/Assets/src/Singing%20Frogs "SingingForgs minigame")
+ - [Input systeem](https://github.com/T3rabyte/Proef-Examen/tree/origin/minigame%232_memory/proef%20proeve/Assets/src/memory "SingingForgs minigame")
+
+Student, Miguel:
+
+ - [Voorbeeld](https://google.com/)
+
+# Lobby systeem by Teun
+
+Om er voor te zorgen dat mensen samen kunnen spelen gebruiken we unity's Lobby package en infrastuctuur. De gebruiker wordt anoniem ingelogd wanneer ze op de samen spelen knop drukken. Waarna ze een overzight krijgen van alle open lobby's die ze zouden kunnen joinen. Ook kunnen ze vanuit daar zelf een lobby aanmaken en prive lobby's joinen aan de hand van een code die de beherder van een lobby krijgt. Wanneer ze een lobby aanmaken of joinen kunnen ze een rol kiezen. Ook is de lobby leider in staat mensen te verwijderen uit de lobby. Zodra iedereen in de lobby een rol heeft gekozen kan de lobby leider de game starten en wordt iedereen in het game level gegooid.
+
+![alt text](https://cdn.discordapp.com/attachments/417058981526110240/1086290575105466378/SingingFrogs.gif "SingingFrogs gif")
+
+```mermaid
+graph TD;
+    start((Start)) --> fillDic(Fill dictonary with frogs sprites);
+    fillDic --> genOrder(Generate order);
+    genOrder --> startMini(Frogs sing order);
+    startMini --> userInput[/User repeats order/];
+    userInput --> correctOrder{User repeated correct order?};
+    correctOrder -->|no| startMini;
+    correctOrder -->|yes| complete{Has the user correctly done this 5 times?};
+    complete -->|no| genOrder;
+    complete -->|yes| finished(Player gets end screen and th eoption to play again);
+    finished -->|player wants to play again| empty(reset game);
+    empty --> genOrder;
+    finished -->|player chooses to return to main screen| end_d((end));
+```
+
+# Multiplayer intergratie by Teun
+
+tekst.
+
+![alt text](https://cdn.discordapp.com/attachments/417058981526110240/1086290575105466378/SingingFrogs.gif "SingingFrogs gif")
+
+```mermaid
+graph TD;
+    start((Start)) --> fillDic(Fill dictonary with frogs sprites);
+    fillDic --> genOrder(Generate order);
+    genOrder --> startMini(Frogs sing order);
+    startMini --> userInput[/User repeats order/];
+    userInput --> correctOrder{User repeated correct order?};
+    correctOrder -->|no| startMini;
+    correctOrder -->|yes| complete{Has the user correctly done this 5 times?};
+    complete -->|no| genOrder;
+    complete -->|yes| finished(Player gets end screen and th eoption to play again);
+    finished -->|player wants to play again| empty(reset game);
+    empty --> genOrder;
+    finished -->|player chooses to return to main screen| end_d((end));
+```
