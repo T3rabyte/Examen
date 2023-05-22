@@ -54,9 +54,10 @@ Om er voor te zorgen dat mensen samen kunnen spelen gebruiken we unity's Lobby p
 
 ```mermaid
 graph TD;
-    start((Start)) --> fillDic(Fill dictonary with frogs sprites);
-    fillDic --> genOrder(Generate order);
-    genOrder --> startMini(Frogs sing order);
+    start((Game starts up + cinematic gets shown)) --> mainMenu(user presses multiplayer button);
+    mainMenu --> roomList(User gets shown panel with lobbys to join);
+    roomList --> |user presses back button| mainMenu;
+    roomList --> startMini(Frogs sing order);
     startMini --> userInput[/User repeats order/];
     userInput --> correctOrder{User repeated correct order?};
     correctOrder -->|no| startMini;
@@ -64,7 +65,7 @@ graph TD;
     complete -->|no| genOrder;
     complete -->|yes| finished(Player gets end screen and th eoption to play again);
     finished -->|player wants to play again| empty(reset game);
-    empty --> genOrder;
+    empty --> roomList;
     finished -->|player chooses to return to main screen| end_d((end));
 ```
 
