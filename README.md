@@ -50,7 +50,7 @@ Student, Miguel:
 
 Om er voor te zorgen dat mensen samen kunnen spelen gebruiken we unity's Lobby package en infrastuctuur. De gebruiker wordt anoniem ingelogd wanneer ze op de samen spelen knop drukken. Waarna ze een overzight krijgen van alle open lobby's die ze zouden kunnen joinen. Ook kunnen ze vanuit daar zelf een lobby aanmaken en prive lobby's joinen aan de hand van een code die de beherder van een lobby krijgt. Wanneer ze een lobby aanmaken of joinen kunnen ze een rol kiezen. Ook is de lobby leider in staat mensen te verwijderen uit de lobby. Zodra iedereen in de lobby een rol heeft gekozen kan de lobby leider de game starten en wordt iedereen in het game level gegooid.
 
-![alt text](https://cdn.discordapp.com/attachments/417058981526110240/1086290575105466378/SingingFrogs.gif "SingingFrogs gif")
+![alt text]([https://cdn.discordapp.com/attachments/417058981526110240/1086290575105466378/SingingFrogs.gif](https://cdn.discordapp.com/attachments/1089835395098869822/1110176159414636544/ezgif.com-video-to-gif.gif) "Lobby create gif")
 
 ```mermaid
 graph TD;
