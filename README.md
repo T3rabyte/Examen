@@ -61,6 +61,9 @@ graph TD;
     name --> roomList;
     roomList --> |User presses join by code button| codeJoin{Is the code input filled?};
     codeJoin --> |No| nothingResponse(Nothing happens);
+    codeJoin --> |Yes| joinLobby(Player joins lobby of specified lobby);
+    roomList --> |User presses join button of a lobby in the lobby list| joinLobby;
+    
     nothingResponse --> roomList;
     roomList --> startMini(Frogs sing order);
     startMini --> userInput[/User repeats order/];
