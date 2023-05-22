@@ -63,18 +63,11 @@ graph TD;
     codeJoin --> |No| nothingResponse(Nothing happens);
     codeJoin --> |Yes| joinLobby(Player joins lobby of specified lobby);
     roomList --> |User presses join button of a lobby in the lobby list| joinLobby;
-    
-    nothingResponse --> roomList;
-    roomList --> startMini(Frogs sing order);
-    startMini --> userInput[/User repeats order/];
-    userInput --> correctOrder{User repeated correct order?};
-    correctOrder -->|no| startMini;
-    correctOrder -->|yes| complete{Has the user correctly done this 5 times?};
-    complete -->|no| genOrder;
-    complete -->|yes| finished(Player gets end screen and th eoption to play again);
-    finished -->|player wants to play again| empty(reset game);
-    empty --> roomList;
-    finished -->|player chooses to return to main screen| end_d((end));
+    roomList --> |User presses lobby create button| createRoom(user gets a menu to configurate the lobby);
+    createRoom --> |User presses back button| roomList;
+    createRoom --> |User presses create confitm button| privateRoom{Is private toggled on?};
+    privateRoom --> |No| createOpenRoom(creates open lobby and joins the user as host);
+    privateRoom --> |Yes| createPrivateRoom(creates private lobby and shows code to share withn others, also joins the user as host);
 ```
 
 # Multiplayer intergratie by Teun
