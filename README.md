@@ -56,7 +56,11 @@ Om er voor te zorgen dat mensen samen kunnen spelen gebruiken we unity's Lobby p
 graph TD;
     start((Game starts up + cinematic gets shown)) --> mainMenu(user presses multiplayer button);
     mainMenu --> roomList(User gets shown panel with lobbys to join);
-    roomList --> |user presses back button| mainMenu;
+    roomList --> |User presses back button| mainMenu;
+    roomList --> |User presses dice button| name(Sets random player name);
+    roomList --> |User presses join by code button| codeJoin{Is the code input filled?};
+    codeJoin --> |No| nothingResponse(Nothing happens);
+    nothingResponse --> roomlist;
     roomList --> startMini(Frogs sing order);
     startMini --> userInput[/User repeats order/];
     userInput --> correctOrder{User repeated correct order?};
