@@ -100,7 +100,7 @@ classDiagram
         -InitializeUnityService()
         -SetRandomPlayerName()
         +CreateLobby()
-        -NewPlayer(string playerRole)
+        -NewPlayer(string playerRole) Player
         +JoinLobbyById(string lobbyId)
         +SetLobbyleaveButton()
         +JoinLobbyByCode()
@@ -110,6 +110,23 @@ classDiagram
         +GetLobbyList() List<Lobby>
         +LeaveFromLobby(string lobbyId)
         +RemoveFromLobby(string lobbyId, GameObject player) 
+    }
+    class RoomManager{
+        -GameObject roomPlayerObj
+        -GameObject roomCodeObj
+        +List<GameObject> roomContentList
+        -MainMenuUI mainMenuUI
+        -LobbyManager lobbyManager
+        -RelayManager relaymanager
+        -List<Player> joinedPlayerList
+        +InstantiateRoomItems(Lobby lobby)
+        +UpdatePlayerRole(string newRole) 
+        +UpdateRolesInLobby(Lobby joinedLobby) 
+        +StartGame()
+    }
+    class RoleManager{
+        +string role
+        -OnGameSceneLoaded(Scene scene, LoadSceneMode mode)
     }
 ```
 # Multiplayer intergratie by Teun
