@@ -80,8 +80,8 @@ graph TD;
     type --> |Audio| audio(Retrieves a random audio file from the audio clip list of the object);
     audio --> playAudio(plays the chosen audio from the object chosen);
     buttonType --> |Right mouse button| checkInObject{Is the camera in a objects camera position?};
-    checkInObject --> |Yes| returnCam(Returns the player camera to the player model);
-    checkInObject --> |no| nothingCam(Nothing happens);
+    checkInObject --> |Yes| returnCam((Returns the player camera to the player model));
+    checkInObject --> |no| nothingCam((Nothing happens));
 ```
 
 ## Getting Started
