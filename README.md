@@ -83,10 +83,6 @@ graph TD;
     checkInObject --> |Yes| returnCam(Returns the player camera to the player model);
     checkInObject --> |no| nothingCam(Nothing happens);
     nothingCam --> end((End));
-    returnCam --> end2((End));
-    playAudio --> end3((End));
-    camera --> end4((End));
-    nothing --> end5((End));
 ```
 
 ## Getting Started
