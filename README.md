@@ -59,7 +59,7 @@ graph TD;
 ```mermaid
 graph TD;
     start((Player joins lobby)) --> |Player presses leave button| mainMenu(user leaves the lobby and goes back to main menu);
-    start --> |Player presse one of the buttons to change there role| updateRole(updates the role of the player over the lobby to the prefered role);
+    start --> |Player presses one of the buttons to change there role| updateRole(updates the role of the player over the lobby to the prefered role);
     start --> |Lobby host kicks player| removePlayer(removes the player from the lobby and updates that to the side of the kicked player);
     start --> |Player presses start game button| startGame{have all the players selected a role thats not neutral?};
     startGame --> |Yes| gameStarts(game loads);
