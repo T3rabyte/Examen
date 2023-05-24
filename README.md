@@ -20,7 +20,15 @@ Student, Teun:
 
 Student, Miguel:
 
- - [Voorbeeld](https://google.com/)
+ - [UI implementation](https://google.com/)
+ - [social media system](https://google.com/)
+ - [quiz system](https://google.com/)
+ - [JSON integration](https://google.com/)
+ - [Mail system](https://google.com/)
+ - [calling for tips mechanic](https://google.com/)
+ - [hack chance system](https://google.com/)
+ - [Antivirus installer](https://google.com/)
+ - [hacks](https://google.com/)
 
 # Lobby systeem by Teun
 
