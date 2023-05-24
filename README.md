@@ -93,7 +93,7 @@ classDiagram
         -Toggle isLobbyPrivate
         -Button roomBackBtn
         -Button roomStartBtn
-        -List<string> randomPlayerNames {readonly}
+        -List<string> randomPlayerNames
         -InitializeUnityService()
         -SetRandomPlayerName()
     }
