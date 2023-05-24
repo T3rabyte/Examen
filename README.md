@@ -64,21 +64,12 @@ Voor het oorspronkelijke concept was het plan dat sommige elementen gesynced wer
 
 ![alt text](https://cdn.discordapp.com/attachments/417058981526110240/1110909144820629636/ezgif.com-video-to-gif.gif "Multiplayer gif")
 
-```mermaid
-graph TD;
-    start((Start)) --> fillDic(Fill dictonary with frogs sprites);
-    fillDic --> genOrder(Generate order);
-    genOrder --> startMini(Frogs sing order);
-    startMini --> userInput[/User repeats order/];
-    userInput --> correctOrder{User repeated correct order?};
-    correctOrder -->|no| startMini;
-    correctOrder -->|yes| complete{Has the user correctly done this 5 times?};
-    complete -->|no| genOrder;
-    complete -->|yes| finished(Player gets end screen and th eoption to play again);
-    finished -->|player wants to play again| empty(reset game);
-    empty --> genOrder;
-    finished -->|player chooses to return to main screen| end_d((end));
-```
+# Input systeem by Teun
+
+Om het tijdens de game makkelijk te maken voor de spelers om te zien wat er op de monitoren gebeurt is er een script gemaakt dat de camera van de speler op een locatie zet die dichter bij het scherm staat. Later werdt dit script omgebouwd zodat er ook een audio object aangeroepen kan worden.
+
+![alt text](https://cdn.discordapp.com/attachments/417058981526110240/1110914969324769300/ezgif.com-video-to-gif_1.gif "Input Systeem gif")
+
 ## Getting Started
 To get started with the Cybersecurity Awareness Game simply click on the "downloads" button above.
 
