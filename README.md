@@ -68,7 +68,7 @@ graph TD;
 ---
 title: Animal example
 ---
-classDiagram;
+classDiagram
     class MainMenuUi{
         -GameObject lobbyPanel
         -GameObject lobbyViewContent
