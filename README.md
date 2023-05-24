@@ -64,7 +64,21 @@ graph TD;
     startGame --> |Yes| gameStarts(game loads);
     startGame --> |No| start;
 ```
-
+```mermaid
+classDiagram;
+    class MainMenuUi{
+        -GameObject lobbyPanel
+        -GameObject lobbyViewContent
+        -GameObject lobbyListObj
+        -List<GameObject> panelList
+        -List<GameObject> lobbyListItems
+        +List<GameObject> roomListItems
+        -Lobbymanager lobbymanager
+        -InstantiateLobbyList()
+        +DestroyItemsOnLists(List<List<GameObjects>> lists)
+        +ShowPanel(string panelName)
+    }
+```
 # Multiplayer intergratie by Teun
 
 Voor het oorspronkelijke concept was het plan dat sommige elementen gesynced werden tussen de 2 spelers. waaronder bijvoorbeeld de kantoor medewerkers positie en rotatie zodat ze hacker hem kon zien bewegen wanneer de hacker zijn camera hacked. Of wanneer de hacker een minigame volbracht er een panalty kwam bij de kantoor medewerker in de voor van een popup of een freeze die de kantoor medewerker hindert te winnen. Hiervoor is gekozen voor Unity's Relay.
