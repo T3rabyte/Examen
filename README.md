@@ -1,3 +1,4 @@
+# Examen Repo
 # ACCESS DENIED
 [![GitHub release (latest Sable)](https://img.shields.io/github/v/release/T3rabyte/Examen)](https://github.com/T3rabyte/Examen/releases/tag/stable) 
 [![GitHub release (latest by date)](https://img.shields.io/github/v/release/T3rabyte/Examen?include_prereleases)](https://github.com/T3rabyte/Examen/releases/latest)
@@ -6,33 +7,8 @@
 [![GitHub download (downloads)](https://img.shields.io/github/downloads/T3rabyte/Examen/total)](https://github.com/T3rabyte/Examen/releases/latest)
 [![GitHub download (downloads)](https://img.shields.io/github/commit-activity/w/T3rabyte/Examen)](https://github.com/T3rabyte/Examen/releases/latest)
 
-
-
 ## ACCESS DENIED
-ACCESS DENIED is a project developed on behalf of the municipality of Amsterdam to raise awareness about cybersecurity. The game is designed to educate players about common cybersecurity threats and how to protect against them.
-
-## Example
-
-## Getting Started
-To get started with the Cybersecurity Awareness Game simply click on the "downloads" button above.
-
-## How to Play
-ACCESS DENIED is a Unity game that can be played on any modern PC. To play the game, simply navigate to the location you downloaded the game and double click the downloaded ACCESS_DENIED.exe file and follow the on-screen instructions.
-
-The game consists of an office where you play as a worker of the municipality of Amsterdam completing different tasks, each of which presents a different cybersecurity threat. The player must navigate through each Task within the allotted time, avoiding threats and answering questions about cybersecurity best practices. The game is designed to be both educational and fun, with engaging graphics and challenging gameplay.
-
-## Contributing
-We welcome contributions to the Cybersecurity Awareness Game! If you would like to contribute, please see the [contributing page](https://github.com/T3rabyte/Examen/blob/main/CONTRIBUTING.md)
-
-## Questions/Suggestions/Bug Reports
-Please read the [Issues List](https://github.com/T3rabyte/Examen/issues) before suggesting a feature. If you have a question, need troubleshooting help, or want to brainstorm a new feature, please start a [Discussion](https://github.com/T3rabyte/Examen/discussions). If you'd like to suggest a feature or report a reproducible bug, please open an [Issue](https://github.com/T3rabyte/Examen/issues/new) on this repository. View the [contributing page](https://github.com/T3rabyte/Examen/blob/main/CONTRIBUTING.md) for more information.
-
-## Contact
-If you have any questions or feedback about the ACCESS DENIED, please contact us at miguelafonso939@gmail.com.
-
-# Examen Repo
-
-opdracht vanuit de klant
+Voor de gemeente Amsterdam moest een game gerealiseerd worden die hun medewerkers leert bewust te worden over online privacy waarbij onderwerpen als datalekken en persoonsgegevens terug komen. Na het spelen van de game moeten de spelers meer  weten over deze onderwerpen en hoe ze hier mee om kunnen gaan. Ook moest de game makkelijk bereikbaar zijn voor hun medewerkers.
 
 # Geproduceerde Game Onderdelen
 
@@ -48,7 +24,7 @@ Student, Miguel:
 
 # Lobby systeem by Teun
 
-Om er voor te zorgen dat mensen samen kunnen spelen gebruiken we unity's Lobby package en infrastuctuur. De gebruiker wordt anoniem ingelogd wanneer ze op de samen spelen knop drukken. Waarna ze een overzight krijgen van alle open lobby's die ze zouden kunnen joinen. Ook kunnen ze vanuit daar zelf een lobby aanmaken en prive lobby's joinen aan de hand van een code die de beherder van een lobby krijgt. Wanneer ze een lobby aanmaken of joinen kunnen ze een rol kiezen. Ook is de lobby leider in staat mensen te verwijderen uit de lobby. Zodra iedereen in de lobby een rol heeft gekozen kan de lobby leider de game starten en wordt iedereen in het game level gegooid.
+Om er voor te zorgen dat mensen samen kunnen spelen gebruiken we unity's Lobby package en infrastuctuur. De gebruiker wordt anoniem ingelogd wanneer ze op de samen spelen knop drukken. Waarna ze een overzight krijgen van alle open lobby's die ze zouden kunnen joinen. Ook kunnen ze vanuit daar zelf een lobby aanmaken en prive lobby's joinen aan de hand van een code die de beherder van een lobby krijgt. Wanneer ze een lobby aanmaken of joinen kunnen ze een rol kiezen. Ook is de lobby leider in staat mensen te verwijderen uit de lobby. Zodra iedereen in de lobby een rol heeft gekozen kan de lobby leider de game starten en wordt iedereen naar het game level verplaatst.
 
 ![alt text](https://cdn.discordapp.com/attachments/1089835395098869822/1110179645845950474/ezgif.com-video-to-gif.gif "Lobby create gif")
 ![alt text](https://cdn.discordapp.com/attachments/1089835395098869822/1110180506525519912/ezgif.com-video-to-gif_1.gif "Random name gif")
@@ -84,7 +60,7 @@ graph TD;
 
 # Multiplayer intergratie by Teun
 
-tekst.
+Voor het oorspronkelijke concept was het plan dat sommige elementen gesynced werden tussen de 2 spelers. waaronder bijvoorbeeld de kantoor medewerkers positie en rotatie zodat ze hacker hem kon zien bewegen wanneer de hacker zijn camera hacked. Of wanneer de hacker een minigame volbracht er een panalty kwam bij de kantoor medewerker in de voor van een popup of een freeze die de kantoor medewerker hindert te winnen. Hiervoor is gekozen voor Unity's Replay.
 
 ![alt text](https://cdn.discordapp.com/attachments/417058981526110240/1086290575105466378/SingingFrogs.gif "SingingFrogs gif")
 
@@ -103,3 +79,16 @@ graph TD;
     empty --> genOrder;
     finished -->|player chooses to return to main screen| end_d((end));
 ```
+## Getting Started
+To get started with the Cybersecurity Awareness Game simply click on the "downloads" button above.
+
+## How to Play
+ACCESS DENIED is a Unity game that can be played on any modern PC. To play the game, simply navigate to the location you downloaded the game and double click the downloaded ACCESS_DENIED.exe file and follow the on-screen instructions.
+
+The game consists of an office where you play as a worker of the municipality of Amsterdam completing different tasks, each of which presents a different cybersecurity threat. The player must navigate through each Task within the allotted time, avoiding threats and answering questions about cybersecurity best practices. The game is designed to be both educational and fun, with engaging graphics and challenging gameplay.
+
+## Questions/Suggestions/Bug Reports
+Please read the [Issues List](https://github.com/T3rabyte/Examen/issues) before suggesting a feature. If you have a question, need troubleshooting help, or want to brainstorm a new feature, please start a [Discussion](https://github.com/T3rabyte/Examen/discussions). If you'd like to suggest a feature or report a reproducible bug, please open an [Issue](https://github.com/T3rabyte/Examen/issues/new) on this repository. View the [contributing page](https://github.com/T3rabyte/Examen/blob/main/CONTRIBUTING.md) for more information.
+
+## Contact
+If you have any questions or feedback about the ACCESS DENIED, please contact us at miguelafonso939@gmail.com.
