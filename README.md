@@ -81,6 +81,22 @@ classDiagram
         +DestroyItemsOnLists(List<List<GameObjects>> lists)
         +ShowPanel(string panelName)
     }
+    class LobbyManager{
+        +Lobby joinedLobby
+        -MainMenuUI mainMenuUI
+        -RoomManager roomManager
+        -RelayManager relayManager
+        -UnityAction leaveFromLobbyAction
+        -TMP_InputField playerNameInput
+        -TMP_InputField quickJoinLobbyName
+        -TMP_InputField lobbyCreateName
+        -Toggle isLobbyPrivate
+        -Button roomBackBtn
+        -Button roomStartBtn
+        -List<string> randomPlayerNames {readonly}
+        -InitializeUnityService()
+        -SetRandomPlayerName()
+    }
 ```
 # Multiplayer intergratie by Teun
 
