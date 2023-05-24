@@ -90,7 +90,6 @@ graph TD;
     buttonType --> |Right mouse button| checkInObject{Is the camera in a objects camera position?};
     checkInObject --> |Yes| returnCam(Returns the player camera to the player model);
     checkInObject --> |no| nothingCam(Nothing happens);
-    nothingCam --> end((End));
 ```
 
 ## Getting Started
