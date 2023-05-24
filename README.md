@@ -70,6 +70,7 @@ graph TD;
 title: Lobby systeem class diagram
 ---
 classDiagram
+    MainMenuUI <|-- LobbyManager
     class MainMenuUi{
         -GameObject lobbyPanel
         -GameObject lobbyViewContent
