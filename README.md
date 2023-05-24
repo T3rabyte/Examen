@@ -74,7 +74,7 @@ classDiagram
     LobbyManager <|-- MainMenuUI
     MainMenuUI <|-- RoomManager
     LobbyManager <|-- RoomManager
-    RoomManager <|-- MainMenuUI
+    RoomManager <|-- LobbyManager
     class MainMenuUI{
         -GameObject lobbyPanel
         -GameObject lobbyViewContent
