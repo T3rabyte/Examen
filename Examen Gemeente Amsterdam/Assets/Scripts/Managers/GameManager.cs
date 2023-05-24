@@ -19,6 +19,10 @@ public class GameManager : MonoBehaviour
     public GameObject minigamePanel;
     public GameObject startPanel;
 
+    [SerializeField] private GameObject win;
+
+    [SerializeField] private GameObject lose;
+
     private Question currentQuestion;
 
     [SerializeField] private TMP_Text factText;
@@ -277,12 +281,12 @@ public class GameManager : MonoBehaviour
     //pretty self explainatory
     private void Win()
     {
-        
+        gameObject.SetActive(win);
     }
 
     private void Lose()
     {
-        
+        gameObject.SetActive(lose);
     }
     
     
