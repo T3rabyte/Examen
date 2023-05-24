@@ -96,6 +96,17 @@ classDiagram
         -List<string> randomPlayerNames
         -InitializeUnityService()
         -SetRandomPlayerName()
+        +CreateLobby()
+        -NewPlayer(string playerRole)
+        +JoinLobbyById(string lobbyId)
+        +SetLobbyleaveButton()
+        +JoinLobbyByCode()
+        -LobbyHeartbeat()
+        -PollForLobbyUpdates()
+        +ResetRoom()
+        +GetLobbyList() List<Lobby>
+        +LeaveFromLobby(string lobbyId)
+        +RemoveFromLobby(string lobbyId, GameObject player) 
     }
 ```
 # Multiplayer intergratie by Teun
