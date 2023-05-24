@@ -66,7 +66,7 @@ graph TD;
 ```
 ```mermaid
 ---
-title: Animal example
+title: Lobby systeem class diagram
 ---
 classDiagram
     class MainMenuUi{
