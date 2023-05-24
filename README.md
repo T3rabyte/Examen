@@ -74,7 +74,7 @@ Om het tijdens de game makkelijk te maken voor de spelers om te zien wat er op d
 graph TD;
     start((Player presses mouse button)) --> buttonType{What mouse button did the user press?}
     buttonType --> |Left mouse button| check{Does the object the player aims at have a collider and one of the input tags};
-    check --> |No| nothing(Nothing happens);
+    check --> |No| nothing((Nothing happens));
     check --> |Yes| type{What is the tag of the object?};
     type --> |Camera| camera((Sets the camera position to the position of the camera position child of the object));
     type --> |Audio| audio(Retrieves a random audio file from the audio clip list of the object);
