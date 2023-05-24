@@ -26,7 +26,6 @@ Student, Miguel:
  - [JSON integration](https://google.com/)
  - [Mail system](https://google.com/)
  - [calling for tips mechanic](https://google.com/)
- - [hack chance system](https://google.com/)
  - [Antivirus installer](https://google.com/)
  - [hacks](https://google.com/)
 
