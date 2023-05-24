@@ -72,6 +72,9 @@ title: Lobby systeem class diagram
 classDiagram
     MainMenuUI <|-- LobbyManager
     LobbyManager <|-- MainMenuUI
+    MainMenuUI <|-- RoomManager
+    LobbyManager <|-- RoomManager
+    RoomManager <|-- MainMenuUI
     class MainMenuUI{
         -GameObject lobbyPanel
         -GameObject lobbyViewContent
