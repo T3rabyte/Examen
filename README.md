@@ -65,6 +65,9 @@ graph TD;
     startGame --> |No| start;
 ```
 ```mermaid
+---
+title: Animal example
+---
 classDiagram;
     class MainMenuUi{
         -GameObject lobbyPanel
