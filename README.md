@@ -47,7 +47,7 @@ graph TD;
     name --> roomList;
     roomList --> |User presses join by code button| codeJoin{Is the code input filled?};
     codeJoin --> |No| nothingResponse(Nothing happens);
-    codeJoin --> |Yes| joinLobby(Player joins lobby of specified lobby);
+    codeJoin --> |Yes| joinLobby(Player joins chosen lobby);
     roomList --> |User presses join button of a lobby in the lobby list| joinLobby;
     roomList --> |User presses lobby create button| createRoom(user gets a menu to configurate the lobby);
     createRoom --> |User presses back button| roomList;
