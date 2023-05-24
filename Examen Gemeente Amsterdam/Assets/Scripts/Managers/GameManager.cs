@@ -281,12 +281,12 @@ public class GameManager : MonoBehaviour
     //pretty self explainatory
     private void Win()
     {
-        gameObject.SetActive(win);
+        win.SetActive(true);
     }
 
     private void Lose()
     {
-        gameObject.SetActive(lose);
+        lose.SetActive(true);
     }
     
     
