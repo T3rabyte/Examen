@@ -288,6 +288,13 @@ public class GameManager : MonoBehaviour
     {
         lose.SetActive(true);
     }
+
+
+  
+    public void MMButton()
+    {
+        SceneManager.LoadScene("Menu");
+    }
     
     
 
