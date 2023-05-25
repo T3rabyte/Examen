@@ -33,6 +33,17 @@ public class RoomManager : MonoBehaviour
         lobbyManager = GetComponent<LobbyManager>();
     }
 
+    private void Update()
+    {
+        foreach (GameObject roomContent in roomContentList) 
+        {
+            if (roomContent.name != "Neutral" && roomContent.transform.childCount > 0)
+                roomContent.transform.parent.parent.GetComponent<Button>().interactable = false;
+            else
+                roomContent.transform.parent.parent.GetComponent<Button>().interactable = true;
+        }
+    }
+
 
     public void InstantiateRoomItems(Lobby lobby)
     {
@@ -55,7 +66,6 @@ public class RoomManager : MonoBehaviour
                 playerUIObj.transform.Find("Btn_KickPlayer").GetComponent<Button>().onClick.AddListener(delegate { lobbyManager.RemoveFromLobby(lobby.Id, playerUIObj); });
             }
 
-            roomContentList.Where(obj => obj.name == playerUIObj.GetComponent<PlayerMenuInfo>().playerInstanceRole).SingleOrDefault().transform.parent.parent.GetComponent<Button>().interactable = false;
             mainMenuUI.roomListItems.Add(playerUIObj);
         }
         if (lobby.IsPrivate)
@@ -80,7 +90,6 @@ public class RoomManager : MonoBehaviour
             });
             GameObject playerUIObj = mainMenuUI.roomListItems.Where(obj => obj.GetComponent<PlayerMenuInfo>().playerInstanceId == AuthenticationService.Instance.PlayerId).SingleOrDefault();
             playerUIObj.transform.SetParent(roomContentList.Where(obj => obj.name == newRole).SingleOrDefault().transform);
-            roomContentList.Where(obj => obj.name == playerUIObj.GetComponent<PlayerMenuInfo>().playerInstanceRole).SingleOrDefault().GetComponentInParent<Button>().interactable = true;
             playerUIObj.GetComponent<PlayerMenuInfo>().playerInstanceRole = newRole;
             roomContentList.Where(obj => obj.name == newRole).SingleOrDefault().GetComponentInParent<Button>().interactable = false;
             GameObject.Find("RoleManager").GetComponent<RoleManager>().role = newRole;
