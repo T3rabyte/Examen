@@ -147,7 +147,7 @@ public class MailManager : MonoBehaviour
     public void UserSelectFalse()
     {
         animator.SetTrigger("False");
-        if (currentMail.isTrue)
+        if (!currentMail.isTrue)
         {
             if (isFrozen == true)
             {
@@ -173,16 +173,6 @@ public class MailManager : MonoBehaviour
             Debug.Log("WRONG!");
         }
         StartCoroutine(TransitionToNextMail());
-    }
-
-    private void Win()
-    {
-        
-    }
-
-    private void Lose()
-    {
-        
     }
 
     public void Freeze()

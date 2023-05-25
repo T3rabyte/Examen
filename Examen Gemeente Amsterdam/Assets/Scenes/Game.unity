@@ -1847,31 +1847,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 62120694631495164, guid: 8882a2571d0025742a5bbb87ceaa40e3, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: 1.6
       objectReference: {fileID: 0}
     - target: {fileID: 62120694631495164, guid: 8882a2571d0025742a5bbb87ceaa40e3, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 1.6
       objectReference: {fileID: 0}
     - target: {fileID: 62120694631495164, guid: 8882a2571d0025742a5bbb87ceaa40e3, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1
+      value: 1.6
       objectReference: {fileID: 0}
     - target: {fileID: 62120694631495164, guid: 8882a2571d0025742a5bbb87ceaa40e3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 183.29999
+      value: 105.3
       objectReference: {fileID: 0}
     - target: {fileID: 62120694631495164, guid: 8882a2571d0025742a5bbb87ceaa40e3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 132.5
+      value: 195
       objectReference: {fileID: 0}
     - target: {fileID: 62120694631495164, guid: 8882a2571d0025742a5bbb87ceaa40e3, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 301.3
+      value: 324
       objectReference: {fileID: 0}
     - target: {fileID: 62120694631495164, guid: 8882a2571d0025742a5bbb87ceaa40e3, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.8575246
+      value: 0.6681957
       objectReference: {fileID: 0}
     - target: {fileID: 62120694631495164, guid: 8882a2571d0025742a5bbb87ceaa40e3, type: 3}
       propertyPath: m_LocalRotation.x
@@ -1879,7 +1879,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 62120694631495164, guid: 8882a2571d0025742a5bbb87ceaa40e3, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.5144431
+      value: -0.7439856
       objectReference: {fileID: 0}
     - target: {fileID: 62120694631495164, guid: 8882a2571d0025742a5bbb87ceaa40e3, type: 3}
       propertyPath: m_LocalRotation.z
@@ -1891,7 +1891,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 62120694631495164, guid: 8882a2571d0025742a5bbb87ceaa40e3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -61.92
+      value: -96.144
       objectReference: {fileID: 0}
     - target: {fileID: 62120694631495164, guid: 8882a2571d0025742a5bbb87ceaa40e3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -5236,7 +5236,7 @@ RectTransform:
   m_GameObject: {fileID: 697512476}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -0.0033}
-  m_LocalScale: {x: 1, y: 0.64999986, z: 1}
+  m_LocalScale: {x: 1, y: 0.8391175, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1564974664}
@@ -5244,7 +5244,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 127.5, y: 137}
+  m_AnchoredPosition: {x: 127.5, y: 109}
   m_SizeDelta: {x: 458.9, y: 310.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &697512478
@@ -5312,7 +5312,7 @@ MonoBehaviour:
   m_charWidthMaxAdj: 0
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
-  m_overflowMode: 0
+  m_overflowMode: 1
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
@@ -6267,13 +6267,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioClips:
-  - {fileID: 8300000, guid: f5f421b3fc6f79542962c430681698bb, type: 3}
-  - {fileID: 8300000, guid: 9a779bd48bbd9554c9a75fe690790d17, type: 3}
-  - {fileID: 8300000, guid: b3f1b0e85ac7df94ea6b91a598e04d5f, type: 3}
-  - {fileID: 8300000, guid: 21bb639362ec9dc4bb6573087c9ccef2, type: 3}
-  - {fileID: 8300000, guid: e993297d91c4a0e4988e3671a6ea8323, type: 3}
-  - {fileID: 8300000, guid: 054e54ca7958d4745838aaacf150025e, type: 3}
-  - {fileID: 8300000, guid: cc3b3eccd52bbdc488555dcfeba694f5, type: 3}
+  - {fileID: 8300000, guid: 0732051fc9827ed468dbb0c8ea88f2b1, type: 3}
+  - {fileID: 8300000, guid: a777598111d6ec543931d5dd2597f681, type: 3}
+  - {fileID: 8300000, guid: 0c3f2681a9ef3b24ab5120792db26470, type: 3}
+  - {fileID: 8300000, guid: 8060d4dec015013469de1b3971ba6ff4, type: 3}
+  - {fileID: 8300000, guid: d4faf8d617a8172418cc4cb1755be0d2, type: 3}
+  - {fileID: 8300000, guid: cedb7cd1ee2e9f84989ff1ae3de51419, type: 3}
   audioSource: {fileID: 888712338}
 --- !u!64 &888712337
 MeshCollider:
