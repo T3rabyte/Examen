@@ -19,19 +19,19 @@ public class GameManager : MonoBehaviour
     public GameObject minigamePanel;
     public GameObject startPanel;
 
+    [SerializeField] private GameObject win;
+
+    [SerializeField] private GameObject lose;
+
     private Question currentQuestion;
 
-    [SerializeField]
-    private TMP_Text factText;
+    [SerializeField] private TMP_Text factText;
 
-    [SerializeField]
-    private Text trueAnswerText;
+    [SerializeField] private Text trueAnswerText;
 
-    [SerializeField]
-    private Text falseAnswerText;
+    [SerializeField] private Text falseAnswerText;
 
-    [SerializeField]
-    private Animator animator;
+    [SerializeField] private Animator animator;
 
     
 
@@ -61,8 +61,9 @@ public class GameManager : MonoBehaviour
 
 
     //in editor make sure these two floats are less than one, for  example: 0.5 = 50% chance
-    public float chanceP;
-    public float chanceF;
+    [SerializeField] private float chanceP;
+
+    [SerializeField] private float chanceF;
 
     float pendingFreezeDuration = 0f;
 
@@ -280,12 +281,12 @@ public class GameManager : MonoBehaviour
     //pretty self explainatory
     private void Win()
     {
-        
+        win.SetActive(true);
     }
 
     private void Lose()
     {
-        
+        lose.SetActive(true);
     }
     
     
@@ -320,6 +321,12 @@ public class GameManager : MonoBehaviour
         installertextA.SetActive(true);
     }
     
+
+    public void Toggle()
+    {
+        chanceF += 0.1f ; 
+        chanceP -= 0.1f;
+    }
 
     
 }
