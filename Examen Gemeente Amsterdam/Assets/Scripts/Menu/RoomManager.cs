@@ -25,10 +25,23 @@ public class RoomManager : MonoBehaviour
     [SerializeField]
     private RelayManager relayManager;
 
+    private List<Player> joinedPlayerList;
+
     private void Start()
     {
         mainMenuUI = GetComponent<MainMenuUI>();
         lobbyManager = GetComponent<LobbyManager>();
+    }
+
+    private void Update()
+    {
+        foreach (GameObject roomContent in roomContentList) 
+        {
+            if (roomContent.name != "Neutral" && roomContent.transform.childCount > 0)
+                roomContent.transform.parent.parent.GetComponent<Button>().interactable = false;
+            else
+                roomContent.transform.parent.parent.GetComponent<Button>().interactable = true;
+        }
     }
 
 
@@ -53,7 +66,6 @@ public class RoomManager : MonoBehaviour
                 playerUIObj.transform.Find("Btn_KickPlayer").GetComponent<Button>().onClick.AddListener(delegate { lobbyManager.RemoveFromLobby(lobby.Id, playerUIObj); });
             }
 
-            roomContentList.Where(obj => obj.name == playerUIObj.GetComponent<PlayerMenuInfo>().playerInstanceRole).SingleOrDefault().transform.parent.parent.GetComponent<Button>().interactable = false;
             mainMenuUI.roomListItems.Add(playerUIObj);
         }
         if (lobby.IsPrivate)
@@ -78,9 +90,9 @@ public class RoomManager : MonoBehaviour
             });
             GameObject playerUIObj = mainMenuUI.roomListItems.Where(obj => obj.GetComponent<PlayerMenuInfo>().playerInstanceId == AuthenticationService.Instance.PlayerId).SingleOrDefault();
             playerUIObj.transform.SetParent(roomContentList.Where(obj => obj.name == newRole).SingleOrDefault().transform);
-            roomContentList.Where(obj => obj.name == playerUIObj.GetComponent<PlayerMenuInfo>().playerInstanceRole).SingleOrDefault().GetComponentInParent<Button>().interactable = true;
             playerUIObj.GetComponent<PlayerMenuInfo>().playerInstanceRole = newRole;
             roomContentList.Where(obj => obj.name == newRole).SingleOrDefault().GetComponentInParent<Button>().interactable = false;
+            GameObject.Find("RoleManager").GetComponent<RoleManager>().role = newRole;
         }
         catch(LobbyServiceException ex)
         {
@@ -109,10 +121,19 @@ public class RoomManager : MonoBehaviour
             GameObject playerUIObj = mainMenuUI.roomListItems.Where(obj => obj.GetComponent<PlayerMenuInfo>().playerInstanceId == player.Id).SingleOrDefault();
             playerUIObj.transform.SetParent(roomContentList.Where(obj => obj.name == player.Data["playerRole"].Value).SingleOrDefault().transform);
         }
+        joinedPlayerList = joinedLobby.Players;
     }
 
     public async void StartGame()
     {
+        foreach (Player player in joinedPlayerList)
+        {
+            if (player.Data["playerRole"].Value == "Neutral")
+            {
+                Debug.Log("1 or more players where flaged as neutral!");
+                return;
+            }
+        }
         if (AuthenticationService.Instance.PlayerId == lobbyManager.joinedLobby.HostId)
             try
             {
@@ -120,16 +141,17 @@ public class RoomManager : MonoBehaviour
 
                 string relayCode = await relayManager.CreateRelay();
 
-                Lobby lobby = await Lobbies.Instance.UpdateLobbyAsync(lobbyManager.joinedLobby.Id, new UpdateLobbyOptions {
+                Lobby lobby = await Lobbies.Instance.UpdateLobbyAsync(lobbyManager.joinedLobby.Id, new UpdateLobbyOptions
+                {
                     Data = new Dictionary<string, DataObject> {
                         { "RelayKey", new DataObject(DataObject.VisibilityOptions.Member, relayCode)}
                     }
                 });
 
                 lobbyManager.joinedLobby = lobby;
-                SceneManager.LoadScene("SampleScene");
+                SceneManager.LoadScene("Game");
             }
-            catch (LobbyServiceException ex) 
+            catch (LobbyServiceException ex)
             {
                 Debug.Log(ex);
             }
