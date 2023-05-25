@@ -131,6 +131,7 @@ public class RoomManager : MonoBehaviour
             if (player.Data["playerRole"].Value == "Neutral")
             {
                 Debug.Log("1 or more players where flaged as neutral!");
+                mainMenuUI.ShowError("1 of meerdere spelers zijn nog neutraal!");
                 return;
             }
         }

@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using Unity.Services.Lobbies.Models;
 using UnityEngine;
@@ -14,7 +15,10 @@ public class MainMenuUI : MonoBehaviour
     
     [SerializeField]
     private GameObject lobbyListObj;
-    
+
+    private TMP_Text errorText;
+    [SerializeField]
+    private GameObject errorMessageObj;
 
     [SerializeField]
     private List<GameObject> panelList;
@@ -27,6 +31,7 @@ public class MainMenuUI : MonoBehaviour
     private void Start()
     {
         lobbyManager= GetComponent<LobbyManager>();
+        errorText = errorMessageObj.GetComponentInChildren<TMP_Text>();
     }
 
     private async void InstantiateLobbyList() 
@@ -64,6 +69,12 @@ public class MainMenuUI : MonoBehaviour
         if (panelName == lobbyPanel.name)
             InstantiateLobbyList();
 
+        if (panelName == "Quit Game Panel")
+        {
+            panelList.Where(obj => obj.name == "Quit Game Panel").SingleOrDefault().SetActive(true);
+            return;
+        }
+
         foreach (GameObject panel in panelList)
         {
             if (panelName == "Create Lobby Panel" && panel.name == "Lobby Panel")
@@ -75,5 +86,16 @@ public class MainMenuUI : MonoBehaviour
             else
                 panel.SetActive(true);
         }
+    }
+
+    public void ShowError(string message) 
+    {
+        errorText.text = message;
+        errorMessageObj.SetActive(true);
+    }
+
+    public void QuitGame() 
+    {
+        Application.Quit();
     }
 }
