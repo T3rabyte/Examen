@@ -86,6 +86,8 @@ classDiagram
         -InstantiateLobbyList()
         +DestroyItemsOnLists(List<List<GameObjects>> lists)
         +ShowPanel(string panelName)
+        +ShowError(string message)
+        +QuitGame()
     }
     class LobbyManager{
         +Lobby joinedLobby
