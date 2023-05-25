@@ -159,7 +159,7 @@ graph TD;
 ```
 # Player controller by Teun
 
-De player controller is een cruciaal onderdeel van een game-ervaring in Unity. Het stelt spelers in staat om vloeiend door de virtuele wereld te navigeren. Met de controller kunnen spelers lopen, rennen, springen in de game. Dankzij de aanpasbaarheid van de controller is het makkelijk om eigenshappen als de snelheid of de speler kan bewegen of roteren.
+De player controller is een cruciaal onderdeel van onze game ervaring. Het stelt spelers in staat om vloeiend door de virtuele wereld te navigeren. Met de controller kunnen spelers lopen, rennen, springen in de game. Dankzij de aanpasbaarheid van de controller is het makkelijk om eigenshappen als de snelheid of de speler kan bewegen of roteren.
 
 ## Getting Started
 To get started with the Cybersecurity Awareness Game simply click on the "downloads" button above.
