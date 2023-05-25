@@ -21,14 +21,14 @@ Student, Teun:
 
 Student, Miguel:
 
- - [UI implementation](https://google.com/)
- - [social media system](https://google.com/)
- - [quiz system](https://google.com/)
- - [JSON integration](https://google.com/)
- - [Mail system](https://google.com/)
- - [calling for tips mechanic](https://google.com/)
- - [Antivirus installer](https://google.com/)
- - [hacks](https://google.com/)
+ - [UI implementation](https://github.com/T3rabyte/Examen/tree/US%239_SocialMedia)
+ - [social media system](https://github.com/T3rabyte/Examen/tree/US%239_SocialMedia)
+ - [quiz system](https://github.com/T3rabyte/Examen/tree/US%2320_mails)
+ - [JSON integration](https://github.com/T3rabyte/Examen/tree/US%2320_mails)
+ - [Mail system](https://github.com/T3rabyte/Examen/tree/US%2320_mails)
+ - [calling for tips mechanic](https://github.com/T3rabyte/Examen/tree/US%236_Tips)
+ - [Antivirus installer](https://github.com/T3rabyte/Examen/tree/US%238_AntiVirus)
+ - [hacks](https://github.com/T3rabyte/Examen/tree/US%231_PopupAttack)
 
 # Lobby systeem by Teun
 
