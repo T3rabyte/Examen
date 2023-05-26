@@ -30,7 +30,7 @@ Student, Miguel:
  - [Antivirus installer](https://github.com/T3rabyte/Examen/tree/US%238_AntiVirus)
  - [hacks](https://github.com/T3rabyte/Examen/tree/US%231_PopupAttack)
 
-# Lobby systeem by Teun
+# Lobby systeem
 
 Om er voor te zorgen dat mensen samen kunnen spelen gebruiken we unity's Lobby package en infrastuctuur. De gebruiker wordt anoniem ingelogd wanneer ze op de samen spelen knop drukken. Waarna ze een overzight krijgen van alle open lobby's die ze zouden kunnen joinen. Ook kunnen ze vanuit daar zelf een lobby aanmaken en prive lobby's joinen aan de hand van een code die de beherder van een lobby krijgt. Wanneer ze een lobby aanmaken of joinen kunnen ze een rol kiezen. Ook is de lobby leider in staat mensen te verwijderen uit de lobby. Zodra iedereen in de lobby een rol heeft gekozen kan de lobby leider de game starten en wordt iedereen naar het game level verplaatst.
 
@@ -134,13 +134,13 @@ classDiagram
         -OnGameSceneLoaded(Scene scene, LoadSceneMode mode)
     }
 ```
-# Multiplayer intergratie by Teun
+# Multiplayer intergratie
 
 Voor het oorspronkelijke concept was het plan dat sommige elementen gesynced werden tussen de 2 spelers. waaronder bijvoorbeeld de kantoor medewerkers positie en rotatie zodat ze hacker hem kon zien bewegen wanneer de hacker zijn camera hacked. Of wanneer de hacker een minigame volbracht er een panalty kwam bij de kantoor medewerker in de voor van een popup of een freeze die de kantoor medewerker hindert te winnen. Hiervoor is gekozen voor Unity's Relay.
 
 ![alt text](https://cdn.discordapp.com/attachments/417058981526110240/1110909144820629636/ezgif.com-video-to-gif.gif "Multiplayer gif")
 
-# Input systeem by Teun
+# Input systeem
 
 Om het tijdens de game makkelijk te maken voor de spelers om te zien wat er op de monitoren gebeurt is er een script gemaakt dat de camera van de speler op een locatie zet die dichter bij het scherm staat. Later werdt dit script omgebouwd zodat er ook een audio object aangeroepen kan worden.
 
@@ -159,7 +159,7 @@ graph TD;
     checkInObject --> |Yes| returnCam(Returns the player camera to the player model);
     checkInObject --> |no| nothingCam(Nothing happens);
 ```
-# Player controller by Teun
+# Player controller
 
 De player controller is een cruciaal onderdeel van onze game ervaring. Het stelt spelers in staat om vloeiend door de virtuele wereld te navigeren. Met de controller kunnen spelers lopen, rennen, springen in de game. Dankzij de aanpasbaarheid van de controller is het makkelijk om eigenshappen als de snelheid of de speler kan bewegen of roteren.
 
