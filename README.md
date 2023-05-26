@@ -14,10 +14,10 @@ Voor de gemeente Amsterdam moest een game gerealiseerd worden die hun medewerker
 
 Student, Teun:
 
- - [Lobby systeem](https://github.com/T3rabyte/Proef-Examen/tree/origin/minigame%232_memory/proef%20proeve/Assets/src/Singing%20Frogs "SingingForgs minigame")
- - [Multiplayer intergratie](https://github.com/T3rabyte/Proef-Examen/tree/origin/minigame%232_memory/proef%20proeve/Assets/src/Singing%20Frogs "SingingForgs minigame")
- - [Input systeem](https://github.com/T3rabyte/Proef-Examen/tree/origin/minigame%232_memory/proef%20proeve/Assets/src/memory "SingingForgs minigame")
- - [Player controller](https://github.com/T3rabyte/Proef-Examen/tree/origin/minigame%232_memory/proef%20proeve/Assets/src/memory "SingingForgs minigame")
+ - [Lobby systeem](https://github.com/T3rabyte/Examen/tree/1.0/Examen%20Gemeente%20Amsterdam/Assets/Scripts/Menu "Lobby systeem")
+ - [Multiplayer intergratie](https://github.com/T3rabyte/Examen/tree/1.0/Examen%20Gemeente%20Amsterdam/Assets/Scripts/Managers/Networking "SingingForgs minigame")
+ - [Input systeem](https://github.com/T3rabyte/Examen/tree/1.0/Examen%20Gemeente%20Amsterdam/Assets/Scripts/Controllers "Input systeem")
+ - [Player controller](https://github.com/T3rabyte/Examen/tree/1.0/Examen%20Gemeente%20Amsterdam/Assets/Scripts/Controllers "Player controller")
 
 Student, Miguel:
 
