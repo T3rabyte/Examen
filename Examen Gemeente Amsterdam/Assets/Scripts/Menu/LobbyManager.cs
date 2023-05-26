@@ -40,7 +40,7 @@ public class LobbyManager : MonoBehaviour
     [SerializeField]
     public Button roomStartBtn;
 
-    private readonly List<string> randomPlayerNames = new() { "Sam", "Isa", "Bo", "Jip", "Lou", "Charlie", "Noa", "Dani", "Quinn", "Bowie" };
+    private readonly List<string> randomPlayerNames = new() { "Sam", "Isa", "Bo", "Jip", "Lou", "Charlie", "Noa", "Dani", "Quinn", "Bowie", "Mohammed", "Abdulah", "Abhas", "Falak", "Hara", "Anya", "Hiti", "Mahadevi", "Momo", "Narumi", "Ryoko", "Suki", "Tokiwa", "Zofia", "Kacper", "Iwan", "Roza" };
 
     private void Start()
     {
@@ -182,7 +182,7 @@ public class LobbyManager : MonoBehaviour
                     if (AuthenticationService.Instance.PlayerId != joinedLobby.HostId)
                     {
                         relayManager.JoinRelay(joinedLobby.Data["RelayKey"].Value);
-                        SceneManager.LoadScene("SampleScene");
+                        SceneManager.LoadScene("Game");
                         ResetRoom();
                     }
                 }

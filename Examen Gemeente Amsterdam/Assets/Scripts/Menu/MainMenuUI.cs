@@ -30,7 +30,9 @@ public class MainMenuUI : MonoBehaviour
 
     private void Start()
     {
-        lobbyManager= GetComponent<LobbyManager>();
+        QualitySettings.vSyncCount = 0;  // VSync must be disabled
+        Application.targetFrameRate = 60;
+        lobbyManager = GetComponent<LobbyManager>();
         errorText = errorMessageObj.GetComponentInChildren<TMP_Text>();
     }
 
