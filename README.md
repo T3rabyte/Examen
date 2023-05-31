@@ -23,9 +23,8 @@ Student, Miguel:
 
  - [UI implementation](https://github.com/T3rabyte/Examen/tree/US%239_SocialMedia)
  - [social media system](https://github.com/T3rabyte/Examen/tree/US%239_SocialMedia)
- - [quiz system](https://github.com/T3rabyte/Examen/tree/US%2320_mails)
+ - [quiz & Mails system](https://github.com/T3rabyte/Examen/tree/US%2320_mails)
  - [JSON integration](https://github.com/T3rabyte/Examen/tree/US%2320_mails)
- - [Mail system](https://github.com/T3rabyte/Examen/tree/US%2320_mails)
  - [calling for tips mechanic](https://github.com/T3rabyte/Examen/tree/US%236_Tips)
  - [Antivirus installer](https://github.com/T3rabyte/Examen/tree/US%238_AntiVirus)
  - [hacks](https://github.com/T3rabyte/Examen/tree/US%231_PopupAttack)
