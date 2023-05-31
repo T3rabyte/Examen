@@ -17,7 +17,7 @@ Student, Teun:
  - [Lobby systeem](https://github.com/T3rabyte/Examen/tree/1.0/Examen%20Gemeente%20Amsterdam/Assets/Scripts/Menu "Lobby systeem")
  - [Multiplayer intergratie](https://github.com/T3rabyte/Examen/tree/1.0/Examen%20Gemeente%20Amsterdam/Assets/Scripts/Managers/Networking "SingingForgs minigame")
  - [Input systeem](https://github.com/T3rabyte/Examen/tree/1.0/Examen%20Gemeente%20Amsterdam/Assets/Scripts/Controllers "Input systeem")
- - [Player controller](https://github.com/T3rabyte/Examen/tree/1.0/Examen%20Gemeente%20Amsterdam/Assets/Scripts/Controllers "Player controller")
+ 
 
 Student, Miguel:
 
