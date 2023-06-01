@@ -160,7 +160,7 @@ graph TD;
 ```
 # Player controller
 
-De player controller is een cruciaal onderdeel van onze game ervaring. Het stelt spelers in staat om vloeiend door de virtuele wereld te navigeren. Met de controller kunnen spelers lopen, rennen, springen in de game. Dankzij de aanpasbaarheid van de controller is het makkelijk om eigenshappen als de snelheid of de speler kan bewegen of roteren.
+De player controller is een cruciaal onderdeel van onze game ervaring. Het stelt spelers in staat om vloeiend door de virtuele wereld te navigeren. Met de controller kunnen spelers in 3 dimensies om hun heen kijken in de game. Dankzij de aanpasbaarheid van de controller is het makkelijk om eigenshappen als de snelheid, of de speler kan bewegen, of roteren aan te passen.
 
 ## Getting Started
 To get started with the Cybersecurity Awareness Game simply click on the "downloads" button above.
