@@ -20,6 +20,9 @@ public class MailManager : MonoBehaviour
     [SerializeField]
     private TMP_Text factText;
 
+    [SerializeField] 
+    private TMP_Text explanationText;
+
     [SerializeField]
     private Text trueAnswerText;
 
@@ -85,6 +88,7 @@ public class MailManager : MonoBehaviour
         }
 
         factText.text = currentMail.fact;
+        explanationText.text = currentMail.explanation;
 
         unansweredMails.RemoveAt(randomMailIndex);
 

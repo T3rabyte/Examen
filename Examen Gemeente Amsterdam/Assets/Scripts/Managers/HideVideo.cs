@@ -25,5 +25,11 @@ public class HideVideo : MonoBehaviour
             VideoPlayer.gameObject.SetActive(false);
             video.SetActive(false);
         }
+
+        if(Input.GetKeyDown("space"))
+        {
+            VideoPlayer.gameObject.SetActive(false);
+            video.SetActive(false);
+        }
     }   
 }

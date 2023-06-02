@@ -3,151 +3,188 @@
 	"questions": [
 		{
 		  "fact": "Hackers kunnen toegang krijgen tot uw persoonlijke gegevens door uw wachtwoord te raden.",
-		  "isTrue": true
+		  "isTrue": true,
+		  "explanation": "This statement is true because..."
 		},
 		{
 		  "fact": "Biometrische authenticatie is altijd veiliger dan het gebruik van een wachtwoord.",
-		  "isTrue": false
+		  "isTrue": false,
+		  "explanation": "This statement is true because..."
 		},
 		{
 			"fact": "Openbare Wi-Fi-netwerken zijn altijd veilig te gebruiken",
-			"isTrue": false
+			"isTrue": false,
+			"explanation": "This statement is true because..."
 		},
 		{
 			"fact": "Het gebruik van tweefactorauthenticatie maakt het voor hackers moeilijker om toegang te krijgen tot uw accounts.",
-			"isTrue": true
+			"isTrue": true,
+			"explanation": "This statement is true because..."
 		},
 		{
 			"fact": "Malware kan zonder uw medeweten op uw computer worden gedownload.",
-			"isTrue": true
+			"isTrue": true,
+			"explanation": "This statement is true because..."
 		},
 		{
 			"fact": "Cyberbeveiligingsbedreigingen treffen alleen grote bedrijven, geen individuen.",
-			"isTrue": false
+			"isTrue": false,
+			"explanation": "This statement is true because..."
 		},
 		{
 			"fact": "Cybersecurity-aanvallen komen alleen van externe bronnen.",
-			"isTrue": false
+			"isTrue": false,
+			"explanation": "This statement is true because..."
 		},
 		{
 			"fact": "Het is veilig om op links in e-mails van onbekende afzenders te klikken zolang u antivirussoftware hebt geïnstalleerd",
-			"isTrue": false
+			"isTrue": false,
+			"explanation": "This statement is true because..."
 		},
 		{
 			"fact": "Uw persoonlijke gegevens kunnen worden gestolen door iemand die over uw schouder meekijkt terwijl u deze in een computer invoert.",
-			"isTrue": true
+			"isTrue": true,
+			"explanation": "This statement is true because..."
 		},
 		{
 			"fact": "U kunt uw persoonlijke gegevens beschermen door deze nooit online te delen.",
-			"isTrue": true
+			"isTrue": true,
+			"explanation": "This statement is true because..."
 		},
 		{
 			"fact": "Sterke wachtwoorden zijn gemakkelijk te onthouden.",
-			"isTrue": false
+			"isTrue": false,
+			"explanation": "This statement is true because..."
 		},
 		{
 			"fact": "U moet altijd hetzelfde wachtwoord gebruiken voor al uw accounts.",
-			"isTrue": false
+			"isTrue": false,
+			"explanation": "This statement is true because..."
 		},
 		{
 			  "fact": "Als u een VPN gebruikt, worden uw persoonlijke gegevens altijd beschermd.",
-			  "isTrue": false
+			  "isTrue": false,
+			  "explanation": "This statement is true because..."
 		},
 		{
 			  "fact": "Cyberbeveiligingsbedreigingen zijn altijd opzettelijk.",
-			  "isTrue": false
+			  "isTrue": false,
+			  "explanation": "This statement is true because..."
 		},
 		{
 			  "fact": "Hackers richten zich alleen op computers met verouderde besturingssystemen.",
-			  "isTrue": false
+			  "isTrue": false,
+			  "explanation": "This statement is true because..."
 		},
 		{
 			  "fact": "U kunt uw persoonlijke gegevens beschermen door uw socialemediaprofielen in te stellen op privé.",
-			  "isTrue": true
+			  "isTrue": true,
+			  "explanation": "This statement is true because..."
 		},
 		{
 			  "fact": "Wachtwoordmanagers zijn een veilige manier om uw wachtwoorden op te slaan.",
-			  "isTrue": true
+			  "isTrue": true,
+			  "explanation": "This statement is true because..."
 		},
 		{
 			  "fact": "U kunt uw persoonlijke gegevens beschermen door niet online te winkelen.",
-			  "isTrue": false
+			  "isTrue": false,
+			  "explanation": "This statement is true because..."
 		},
 		{
 			  "fact": "Cyberbeveiligingsaanvallen kunnen fysieke schade aan uw apparaten veroorzaken.",
-			  "isTrue": true
+			  "isTrue": true,
+			  "explanation": "This statement is true because..."
 		},
 		{
 			  "fact": "Het is veilig om hetzelfde wachtwoord voor meerdere accounts te gebruiken, zolang het maar sterk is.",
-			  "isTrue": false
+			  "isTrue": false,
+			  "explanation": "This statement is true because..."
 		},
 		{
 			"fact": "Het is veilig om software van elke website te downloaden.",
-			"isTrue": false
+			"isTrue": false,
+			"explanation": "This statement is true because..."
 		},
 		{
 			"fact": "Persoonlijke informatie is alleen waardevol voor hackers als het financiële informatie bevat.",
-			"isTrue": false
+			"isTrue": false,
+			"explanation": "This statement is true because..."
 		},
 		{
 			  "fact": "U kunt uw persoonlijke gegevens beschermen door cookies in uw webbrowser uit te schakelen.",
-			  "isTrue": true
+			  "isTrue": true,
+			  "explanation": "This statement is true because..."
 		},
 		{
 			  "fact": "Het is veilig om uw persoonlijke apparaten aan te sluiten op openbare laadstations.",
-			  "isTrue": false
+			  "isTrue": false,
+			  "explanation": "This statement is true because..."
 		},
 		{
 			  "fact": "Als u een wachtwoordbeheerder gebruikt, hoeft u geen wachtwoorden te onthouden.",
-			  "isTrue": true
+			  "isTrue": true,
+			  "explanation": "This statement is true because..."
 		},
 		{
 			  "fact": "Cybersecurity-bedreigingen worden altijd onmiddellijk gedetecteerd.",
-			  "isTrue": false
+			  "isTrue": false,
+			  "explanation": "This statement is true because..."
 		},
 		{
 			  "fact": "Uw persoonlijke gegevens kunnen worden gestolen door een skimming-apparaat dat op een geldautomaat is geplaatst.",
-			  "isTrue": true
+			  "isTrue": true,
+			  "explanation": "This statement is true because..."
 		},
 		{
 			  "fact": "U kunt uw persoonlijke gegevens beschermen door sociale media helemaal te vermijden.",
-			  "isTrue": false
+			  "isTrue": false,
+			  "explanation": "This statement is true because..."
 		},
 		{
 			  "fact": "Het gebruik van een wachtwoordzin is een veiligere manier om uw accounts te beschermen dan het gebruik van een wachtwoord van één woord.",
-			  "isTrue": true
+			  "isTrue": true,
+			  "explanation": "This statement is true because..."
 		},
 		{
 			  "fact": "U moet altijd uw persoonlijke gegevens verstrekken als iemand hier online om vraagt.",
-			  "isTrue": false
+			  "isTrue": false,
+			  "explanation": "This statement is true because..."
 		},
 		{
 			"fact": "Uw persoonlijke gegevens kunnen worden gestolen door een hacker die toegang krijgt tot de database van een bedrijf.",
-			"isTrue": true
+			"isTrue": true,
+			"explanation": "This statement is true because..."
 	  	},
 	  	{
 			"fact": "Het is altijd veilig om bijlagen van e-mails te downloaden, zolang ze afkomstig zijn van een betrouwbare bron.",
-			"isTrue": false
+			"isTrue": false,
+			"explanation": "This statement is true because... i said so"
 	  	},
 	  	{
 			"fact": "U kunt uw persoonlijke gegevens beschermen door gebruik te maken van een kredietbewakingsdienst.",
-			"isTrue": true
+			"isTrue": true,
+			"explanation": "This statement is true because..."
 	  	},
 	  	{
 			"fact": "Cyberbeveiligingsbedreigingen kunnen worden voorkomen door simpelweg uw computer uit te zetten.",
-			"isTrue": false
+			"isTrue": false,
+			"explanation": "This statement is true because..."
 	  	},
 	  	{
 			"fact": "Hackers richten zich alleen op personen die rijk of beroemd zijn.",
-			"isTrue": false
+			"isTrue": false,
+			"explanation": "This statement is true because..."
 	  	},
 	  	{
 			"fact": "Wachtwoorden moeten om de zes maanden worden gewijzigd om veilig te blijven.",
-			"isTrue": true
+			"isTrue": true,
+			"explanation": "This statement is true because..."
 	  	},
 	  	{
 			"fact": "Het is veilig om hetzelfde wachtwoord voor meerdere accounts te gebruiken, zolang ze niet verbonden zijn.",
-			"isTrue": false
+			"isTrue": false,
+			"explanation": "This statement is true because..."
 	  	}
 
 	]
