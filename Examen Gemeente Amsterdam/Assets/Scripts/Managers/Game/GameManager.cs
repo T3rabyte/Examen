@@ -51,7 +51,7 @@ public class GameManager : MonoBehaviour
 
     
 
-    private float timeBetweenQuestions = 1f;
+    private float timeBetweenQuestions = 10f;
 
     private int correctAnswers = 0;
 
