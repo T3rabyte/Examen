@@ -9,6 +9,10 @@ public class MouseInputManager : MonoBehaviour
     public GameObject crosshair;
     public bool cameraFocusedToObj;
     public bool isPlayingAudio;
+    private OutlineObject OutlineObject;
+    [SerializeField]
+    private float outlineWidth = 2f;
+    private bool showOutline = true;
 
     private void Start()
     {
@@ -17,19 +21,38 @@ public class MouseInputManager : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0)) 
-        {
-            RaycastHit hit;
-            Ray ray = camera.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
+        Ray ray = camera.ScreenPointToRay(Input.mousePosition);
 
-            if (Physics.Raycast(ray, out hit))
+        if (Physics.Raycast(ray, out hit))
+        {
+            if (showOutline)
+            {
+                if (OutlineObject != null && OutlineObject.transform != hit.transform)
+                    OutlineObject.Deselect();
+
+                if (hit.transform.GetComponent<OutlineObject>() != null)
+                {
+                    OutlineObject = hit.transform.GetComponent<OutlineObject>();
+                    OutlineObject.Select(outlineWidth);
+                }
+            }
+
+            if (Input.GetMouseButtonDown(0))
+            {
                 if (hit.transform.tag == "CameraInput")
                     SetCameraPosition(hit);
                 else if (hit.transform.tag == "AudioInput" && !isPlayingAudio)
                     SelectAudioClip(hit.transform.gameObject);
+            }
         }
+        else 
+            if(OutlineObject != null)
+                OutlineObject.Deselect();
+
         if (Input.GetMouseButtonDown(1) && cameraFocusedToObj) 
         {
+            showOutline = true;
             gameObject.transform.SetParent(player.transform);
             gameObject.transform.localPosition = new Vector3(0, 0, 0);
             player.GetComponent<PlayerController>().canRotate = true;
@@ -42,6 +65,8 @@ public class MouseInputManager : MonoBehaviour
 
     void SetCameraPosition(RaycastHit hit) 
     {
+        showOutline = false;
+        OutlineObject.Deselect();
         Transform objectHit = hit.transform;
         Transform camPos = objectHit.Find("Cam Position");
         gameObject.transform.SetParent(camPos);
