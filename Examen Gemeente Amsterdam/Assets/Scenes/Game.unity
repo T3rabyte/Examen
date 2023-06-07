@@ -6269,6 +6269,8 @@ MonoBehaviour:
   installertextB: {fileID: 689119202}
   Slider: {fileID: 1819233853}
   timer: {fileID: 2037602692}
+  newtimeBetweenQuestions: 10
+  originaltimeBetweenQuestions: 1
   duration: 30
   chanceP: 0.5
   chanceF: 0.5
@@ -7624,12 +7626,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 9022608941610747884, guid: f1b67cae9e5dd5a40947d09f73acce06, type: 3}
       insertIndex: -1
       addedObject: {fileID: 952766438}
-    - targetCorrespondingSourceObject: {fileID: 9022608941610747884, guid: f1b67cae9e5dd5a40947d09f73acce06, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 952766442}
-    - targetCorrespondingSourceObject: {fileID: 9022608941610747884, guid: f1b67cae9e5dd5a40947d09f73acce06, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 952766441}
   m_SourcePrefab: {fileID: 100100000, guid: f1b67cae9e5dd5a40947d09f73acce06, type: 3}
 --- !u!4 &952766435 stripped
 Transform:
@@ -7767,7 +7763,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1008829152}
   m_CullTransparentMesh: 1
-
 --- !u!1 &1020634008
 GameObject:
   m_ObjectHideFlags: 0

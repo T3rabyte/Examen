@@ -50,8 +50,16 @@ public class GameManager : MonoBehaviour
     public Timer timer;
 
     
+    
+    private float timeBetweenQuestions;
 
-    private float timeBetweenQuestions = 10f;
+    private bool incorrect = false;
+    
+    [SerializeField]
+    private float newtimeBetweenQuestions;
+
+    [SerializeField]
+    private float originaltimeBetweenQuestions;
 
     private int correctAnswers = 0;
 
@@ -175,6 +183,8 @@ public class GameManager : MonoBehaviour
         int randomQuestionIndex = UnityEngine.Random.Range(0, unansweredQuestions.Count-1);
         currentQuestion = unansweredQuestions[randomQuestionIndex];
 
+        incorrect = false;
+
         
 
         foreach (Question question in questions)
@@ -213,6 +223,16 @@ public class GameManager : MonoBehaviour
     IEnumerator TransitionToNextQuestion()
     {
 
+
+        if(incorrect == true)
+        {
+            timeBetweenQuestions = newtimeBetweenQuestions;
+        }
+        else
+        {
+            timeBetweenQuestions = originaltimeBetweenQuestions;
+        }
+
         yield return new WaitForSeconds(timeBetweenQuestions);
 
         //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
@@ -234,6 +254,8 @@ public class GameManager : MonoBehaviour
             }
             correctAnswers += 1;
             Debug.Log("CORRECT!");
+
+            StartCoroutine(TransitionToNextQuestion());
             
         }else
         {
@@ -253,9 +275,12 @@ public class GameManager : MonoBehaviour
                 StartCoroutine(DoFreeze());
                 Debug.Log("DoFreeze");
             }
+
+            incorrect = true;
+            StartCoroutine(TransitionToNextQuestion());
         }
 
-        StartCoroutine(TransitionToNextQuestion());
+        
     }
 
 
@@ -272,6 +297,8 @@ public class GameManager : MonoBehaviour
             {
                 StartCoroutine(DoFreeze());
             }
+
+            StartCoroutine(TransitionToNextQuestion());
             
         }else
         {
@@ -291,8 +318,11 @@ public class GameManager : MonoBehaviour
             }
 
             Debug.Log("WRONG!");
+
+            incorrect = true;
+            StartCoroutine(TransitionToNextQuestion());
         }
-        StartCoroutine(TransitionToNextQuestion());
+        
     }
 
 
