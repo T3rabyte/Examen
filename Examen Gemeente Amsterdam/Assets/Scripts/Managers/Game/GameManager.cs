@@ -25,6 +25,7 @@ public class GameManager : MonoBehaviour
     private Question currentQuestion;
 
     [SerializeField] private TMP_Text factText;
+    [SerializeField] private TMP_Text explanationText;
 
     [SerializeField] private Text trueAnswerText;
 
@@ -50,7 +51,7 @@ public class GameManager : MonoBehaviour
 
     
 
-    private float timeBetweenQuestions = 1f;
+    private float timeBetweenQuestions = 10f;
 
     private int correctAnswers = 0;
 
@@ -135,14 +136,16 @@ public class GameManager : MonoBehaviour
        
 
         //handles the conditions that have to be met to activate a win or a lose
-        if (correctAnswers == 20)
+        if (correctAnswers >= 25)
         {
             networkVarManager.gameFinished = true;
             networkVarManager.ShowScreenServerRpc();
+            Win();
         }
         else if (timer.TimeLeft <= 0 && correctAnswers < 20)
         {
             networkVarManager.ShowScreenServerRpc();
+            Lose();
         }
 
         if(isinstalling == true)
@@ -184,6 +187,7 @@ public class GameManager : MonoBehaviour
         }
         
         factText.text = currentQuestion.fact;
+        explanationText.text = currentQuestion.explanation;
 
         unansweredQuestions.RemoveAt(randomQuestionIndex);
 

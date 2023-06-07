@@ -3,151 +3,188 @@
 	"questions": [
 		{
 		  "fact": "Hackers kunnen toegang krijgen tot uw persoonlijke gegevens door uw wachtwoord te raden.",
-		  "isTrue": true
+		  "isTrue": true,
+		  "explanation": "Deze feit is waar omdat hackers toegang kunnen krijgen tot persoonlijke informatie door wachtwoorden te raden vanwege veelvoorkomende kwetsbaarheden. Zwakke wachtwoorden, hergebruik van wachtwoorden voor verschillende accounts, social engineering-tactieken en aanvallen met brute kracht dragen allemaal bij aan het risico."
 		},
 		{
 		  "fact": "Biometrische authenticatie is altijd veiliger dan het gebruik van een wachtwoord.",
-		  "isTrue": false
+		  "isTrue": false,
+		  "explanation": "De bewering is niet helemaal waar, want hoewel biometrische authenticatie bepaalde voordelen heeft, is het niet altijd veiliger dan het gebruik van een wachtwoord. Biometrische gegevens kunnen worden gerepliceerd of vervalst, waardoor ze kwetsbaar zijn voor ongeoorloofde toegang. Bovendien, als biometrische gegevens worden gecompromitteerd, kunnen deze niet worden gewijzigd zoals een wachtwoord, wat een veiligheidsrisico op de lange termijn vormt."
 		},
 		{
 			"fact": "Openbare Wi-Fi-netwerken zijn altijd veilig te gebruiken",
-			"isTrue": false
+			"isTrue": false,
+			"explanation": "De bewering is niet waar omdat openbare wifi-netwerken niet altijd veilig te gebruiken zijn. Open openbare Wi-Fi-netwerken zijn vaak niet-versleuteld of gebruiken zwakke versleutelingsmethoden, waardoor het voor hackers gemakkelijker wordt om gevoelige gegevens die via het netwerk worden verzonden, te onderscheppen en er mogelijk toegang toe te krijgen. Aanvallers kunnen verschillende technieken gebruiken, zoals packet sniffing, man-in-the-middle-aanvallen of het opzetten van malafide wifi-hotspots om persoonlijke gegevens van gebruikers te stelen."
 		},
 		{
 			"fact": "Het gebruik van tweefactorauthenticatie maakt het voor hackers moeilijker om toegang te krijgen tot uw accounts.",
-			"isTrue": true
+			"isTrue": true,
+			"explanation": "De bewering is waar omdat tweefactorauthenticatie (2FA) een extra beveiligingslaag toevoegt aan accountaanmeldingen, waardoor het voor hackers moeilijker wordt om ongeoorloofde toegang te krijgen. Door van gebruikers te eisen dat ze een tweede vorm van verificatie opgeven, meestal een tijdelijke code die naar een vertrouwd apparaat wordt gestuurd of wordt gegenereerd via een authenticatie-app, hebben ze, zelfs als hackers het wachtwoord achterhalen of raden, nog steeds de extra factor nodig om toegang te krijgen."
 		},
 		{
 			"fact": "Malware kan zonder uw medeweten op uw computer worden gedownload.",
-			"isTrue": true
+			"isTrue": true,
+			"explanation": "De bewering is waar omdat malware inderdaad zonder uw medeweten op uw computer kan worden gedownload. Schadelijke software kan worden vermomd of verborgen in ogenschijnlijk onschuldige bestanden, e-mailbijlagen of downloads van niet-vertrouwde websites. In sommige gevallen kan malware misbruik maken van beveiligingsproblemen in software of besturingssystemen, waardoor het zichzelf geruisloos kan installeren zonder tussenkomst van de gebruiker. Bovendien kunnen social engineering-technieken zoals phishing-e-mails of misleidende pop-upadvertenties gebruikers misleiden om onbewust malware te downloaden en uit te voeren."
 		},
 		{
 			"fact": "Cyberbeveiligingsbedreigingen treffen alleen grote bedrijven, geen individuen.",
-			"isTrue": false
+			"isTrue": false,
+			"explanation": "De bewering is niet waar omdat cyberbeveiligingsbedreigingen zowel grote bedrijven als individuen kunnen treffen. Hoewel grote bedrijven aantrekkelijke doelwitten kunnen zijn vanwege het potentieel voor waardevolle gegevens en financieel gewin, zijn individuen even kwetsbaar. Cybercriminelen richten zich op individuen via methoden zoals phishing, identiteitsdiefstal, ransomware en social engineering-aanvallen. Persoonlijke informatie, zoals financiële gegevens, inloggegevens of gevoelige gegevens, is waardevol en kan voor verschillende doeleinden worden misbruikt."
 		},
 		{
 			"fact": "Cybersecurity-aanvallen komen alleen van externe bronnen.",
-			"isTrue": false
+			"isTrue": false,
+			"explanation": "Deze bewering is niet waar, omdat cybersecurity-aanvallen niet alleen afkomstig zijn van externe bronnen. Hoewel externe bronnen zoals hackers en cybercriminelen een aanzienlijke bedreiging vormen, kunnen aanvallen ook intern plaatsvinden. Insider threats, waarbij kwaadwillige of onopzettelijke acties van werknemers of interne gebruikers betrokken zijn, kunnen ernstige gevolgen hebben. Dit kan variëren van het stelen van gevoelige gegevens tot het saboteren van systemen of het veroorzaken van datalekken. Daarom is het belangrijk om niet alleen externe bedreigingen aan te pakken, maar ook interne beveiligingsmaatregelen te implementeren, zoals het beperken van toegangsrechten, het bewaken van gebruikersactiviteiten en het bevorderen van bewustwording en training om interne risico's te verminderen."
 		},
 		{
 			"fact": "Het is veilig om op links in e-mails van onbekende afzenders te klikken zolang u antivirussoftware hebt geïnstalleerd",
-			"isTrue": false
+			"isTrue": false,
+			"explanation": "Deze bewering is niet waar, omdat het klikken op links in e-mails van onbekende afzenders niet per definitie veilig is, zelfs als u antivirussoftware hebt geïnstalleerd. E-mails van onbekende afzenders kunnen phishing-aanvallen bevatten, waarbij cybercriminelen proberen gebruikers te misleiden en persoonlijke gegevens te stelen. Ze kunnen schadelijke links bevatten die leiden naar valse websites die zijn ontworpen om inloggegevens of andere gevoelige informatie te verzamelen. Hoewel antivirussoftware bepaalde vormen van malware kan detecteren, kan het niet altijd garanderen dat alle kwaadaardige links of inhoud in e-mails worden geïdentificeerd. Het is raadzaam om voorzichtig te zijn bij het openen van e-mails van onbekende afzenders en links alleen te klikken als u de afzender vertrouwt en de authenticiteit van de link kunt verifiëren."
 		},
 		{
 			"fact": "Uw persoonlijke gegevens kunnen worden gestolen door iemand die over uw schouder meekijkt terwijl u deze in een computer invoert.",
-			"isTrue": true
+			"isTrue": true,
+			"explanation": "Deze bewering is waar, omdat persoonlijke gegevens daadwerkelijk kunnen worden gestolen door iemand die over uw schouder meekijkt terwijl u deze in een computer invoert. Dit staat bekend als \"shoulder surfing\" en is een vorm van visuele hacking. Door uw toetsaanslagen of scherm af te lezen, kan een kwaadwillende persoon in de buurt uw wachtwoorden, inloggegevens, creditcardnummers of andere vertrouwelijke informatie verzamelen. Het is belangrijk om op openbare plaatsen, zoals cafés of luchthavens, bewust te zijn van uw omgeving en ervoor te zorgen dat niemand ongeoorloofd kan meekijken terwijl u gevoelige informatie invoert. Het gebruik van privacyfilters op uw scherm en het afschermen van het toetsenbord bij het invoeren van gegevens kunnen ook helpen om dit risico te verminderen."
 		},
 		{
 			"fact": "U kunt uw persoonlijke gegevens beschermen door deze nooit online te delen.",
-			"isTrue": true
+			"isTrue": true,
+			"explanation": "Deze bewering is deels waar, omdat het nooit online delen van persoonlijke gegevens geen volledige bescherming biedt. Hoewel het beperken van het delen van persoonlijke gegevens online een verstandige voorzorgsmaatregel is, zijn er nog steeds manieren waarop persoonlijke gegevens kunnen worden blootgesteld of gecompromitteerd. Hackers kunnen bijvoorbeeld systemen binnendringen en persoonlijke gegevens stelen zonder dat u er controle over heeft. Daarnaast kunnen er ook andere bronnen van datalekken zijn, zoals phishing-aanvallen, gegevensinbreuken bij bedrijven waar u gegevens hebt gedeeld, of zelfs verlies of diefstal van fysieke apparaten waarop uw gegevens zijn opgeslagen."
 		},
 		{
 			"fact": "Sterke wachtwoorden zijn gemakkelijk te onthouden.",
-			"isTrue": false
+			"isTrue": false,
+			"explanation": "Deze bewering is niet waar, omdat sterke wachtwoorden over het algemeen moeilijker te onthouden zijn. Sterke wachtwoorden bestaan meestal uit een combinatie van verschillende tekens, waaronder letters (hoofdletters en kleine letters), cijfers en symbolen. Deze complexiteit vergroot de beveiliging van het wachtwoord, maar kan het ook lastiger maken om ze te onthouden. Mensen hebben vaak de neiging om zwakke wachtwoorden te gebruiken omdat ze gemakkelijker te onthouden zijn, zoals eenvoudige woorden of herhaalde tekens. "
 		},
 		{
 			"fact": "U moet altijd hetzelfde wachtwoord gebruiken voor al uw accounts.",
-			"isTrue": false
+			"isTrue": false,
+			"explanation": "Deze bewering is niet waar, omdat het altijd hetzelfde wachtwoord gebruiken voor al uw accounts een onveilige praktijk is. Als u hetzelfde wachtwoord voor al uw accounts gebruikt en een van die accounts wordt gecompromitteerd, kan een aanvaller toegang krijgen tot al uw andere accounts. Dit kan leiden tot identiteitsdiefstal, gegevensverlies en andere ernstige gevolgen. Het is sterk aanbevolen om voor elk online account een uniek wachtwoord te gebruiken. Hierdoor wordt het risico beperkt als een enkel account wordt gecompromitteerd. Om het beheer van meerdere wachtwoorden te vergemakkelijken, kunt u een wachtwoordmanager gebruiken om sterke, unieke wachtwoorden te genereren en op te slaan. Dit verhoogt de beveiliging van uw accounts en verkleint de kans op ongeautoriseerde toegang."
 		},
 		{
 			  "fact": "Als u een VPN gebruikt, worden uw persoonlijke gegevens altijd beschermd.",
-			  "isTrue": false
+			  "isTrue": false,
+			  "explanation": "Deze bewering is niet waar omdat het gebruik van een VPN geen absolute garantie biedt voor de bescherming van uw persoonlijke gegevens. Terwijl een VPN uw internetverbinding versleutelt en uw IP-adres verbergt, zijn er andere factoren om rekening mee te houden. Ten eerste kan de effectiviteit van een VPN variëren afhankelijk van de provider en de gekozen instellingen. Niet alle VPN's bieden dezelfde mate van beveiliging en privacybescherming. Ten tweede beschermt een VPN alleen de gegevens die via uw verbinding worden verzonden en ontvangen, maar het beschermt niet automatisch andere aspecten zoals de beveiliging van websites die u bezoekt, de veiligheid van uw apparaten tegen andere vormen van aanvallen, of de bescherming tegen kwaadwillige software."
 		},
 		{
 			  "fact": "Cyberbeveiligingsbedreigingen zijn altijd opzettelijk.",
-			  "isTrue": false
+			  "isTrue": false,
+			  "explanation": "Deze bewering is niet waar omdat cyberbeveiligingsbedreigingen niet altijd opzettelijk zijn. Hoewel veel bedreigingen worden veroorzaakt door kwaadwillende actoren zoals hackers en cybercriminelen die opzettelijk proberen systemen te infiltreren, zijn er ook andere oorzaken van bedreigingen die onbedoeld kunnen zijn. Bijvoorbeeld menselijke fouten, zoals per ongeluk openbaar maken van gevoelige informatie, het klikken op schadelijke links of het verliezen van apparaten met gevoelige gegevens, kunnen leiden tot cyberbeveiligingsincidenten."
 		},
 		{
 			  "fact": "Hackers richten zich alleen op computers met verouderde besturingssystemen.",
-			  "isTrue": false
+			  "isTrue": false,
+			  "explanation": "Deze bewering is niet waar omdat hackers zich niet uitsluitend richten op computers met verouderde besturingssystemen. Hoewel verouderde besturingssystemen vaak kwetsbaarheden kunnen bevatten die bekend zijn bij hackers, betekent dit niet dat moderne besturingssystemen volledig immuun zijn voor aanvallen. Het is essentieel om alle besturingssystemen, ongeacht hun leeftijd, up-to-date te houden met de nieuwste beveiligingsupdates, goede beveiligingspraktijken te volgen en een gelaagde beveiligingsaanpak te hanteren om hackers af te weren."
 		},
 		{
 			  "fact": "U kunt uw persoonlijke gegevens beschermen door uw socialemediaprofielen in te stellen op privé.",
-			  "isTrue": true
+			  "isTrue": true,
+			  "explanation": "Deze bewering is waar, omdat het instellen van uw socialemediaprofielen op privé-instellingen een effectieve manier is om uw persoonlijke gegevens te beschermen. Door uw profielen op privé te zetten, beperkt u de toegang tot uw posts, foto's en andere informatie tot alleen uw goedgekeurde volgers of vrienden. Dit vermindert de zichtbaarheid van uw persoonlijke gegevens voor onbekende personen, zoals potentiële oplichters of identiteitsdieven."
 		},
 		{
 			  "fact": "Wachtwoordmanagers zijn een veilige manier om uw wachtwoorden op te slaan.",
-			  "isTrue": true
+			  "isTrue": true,
+			  "explanation": "Deze bewering is waar, omdat wachtwoordmanagers over het algemeen beschouwd worden als een veilige manier om uw wachtwoorden op te slaan. Wachtwoordmanagers zijn ontworpen om sterke, unieke wachtwoorden voor elk van uw online accounts te genereren en op te slaan. Ze versleutelen uw wachtwoorden met sterke encryptie-algoritmen en slaan ze veilig op, meestal achter een hoofdwachtwoord of biometrische authenticatie. Het is echter belangrijk om een betrouwbare wachtwoordmanager te kiezen van een gerenommeerde leverancier en ervoor te zorgen dat u sterke beveiligingspraktijken volgt, zoals het instellen van een sterk hoofdwachtwoord en het regelmatig bijwerken van uw wachtwoorden, om uw wachtwoordmanager effectief te gebruiken en uw gegevens te beschermen."
 		},
 		{
 			  "fact": "U kunt uw persoonlijke gegevens beschermen door niet online te winkelen.",
-			  "isTrue": false
+			  "isTrue": false,
+			  "explanation": "Deze bewering is niet helemaal waar omdat persoonlijke gegevens niet alleen blootgesteld kunnen worden door online winkelen. Hoewel online winkelen een potentieel risico met zich meebrengt, zijn er ook andere situaties waarin persoonlijke gegevens kunnen worden gedeeld en blootgesteld, zelfs als u niet online winkelt. Het invullen van fysieke formulieren, het verstrekken van gegevens aan overheidsinstanties, het delen van persoonlijke informatie met andere mensen, of zelfs het gebruik van niet-online diensten kunnen allemaal leiden tot het delen en blootstellen van persoonlijke gegevens."
 		},
 		{
 			  "fact": "Cyberbeveiligingsaanvallen kunnen fysieke schade aan uw apparaten veroorzaken.",
-			  "isTrue": true
+			  "isTrue": true,
+			  "explanation": "Deze bewering is waar, omdat bepaalde vormen van cyberbeveiligingsaanvallen fysieke schade aan uw apparaten kunnen veroorzaken. Bijvoorbeeld, malware zoals destructieve virussen of wormen kan zich verspreiden naar systemen en schadelijke code uitvoeren die de werking van hardwarecomponenten beïnvloedt. Dit kan leiden tot het oververhitten van apparaten, het beschadigen van interne circuits of het onherstelbaar beschadigen van essentiële onderdelen. Bovendien kunnen sommige cyberaanvallen, zoals Distributed Denial of Service (DDoS)-aanvallen, gericht zijn op het overbelasten van netwerken en systemen, wat kan resulteren in fysieke schade aan infrastructuurapparaten. "
 		},
 		{
 			  "fact": "Het is veilig om hetzelfde wachtwoord voor meerdere accounts te gebruiken, zolang het maar sterk is.",
-			  "isTrue": false
+			  "isTrue": false,
+			  "explanation": "Deze bewering is niet waar. Het is niet veilig om hetzelfde wachtwoord voor meerdere accounts te gebruiken, zelfs als het wachtwoord sterk is. Hoewel een sterk wachtwoord de kans op wachtwoordkraken verkleint, blijft het een risico om hetzelfde wachtwoord op meerdere accounts te gebruiken. Als één van de accounts wordt gecompromitteerd, kunnen kwaadwillende actoren toegang krijgen tot uw andere accounts met hetzelfde wachtwoord."
 		},
 		{
 			"fact": "Het is veilig om software van elke website te downloaden.",
-			"isTrue": false
+			"isTrue": false,
+			"explanation": "Deze bewering is niet waar. Het is niet veilig om software van elke willekeurige website te downloaden. Het downloaden van software van onbekende of niet-vertrouwde bronnen brengt aanzienlijke risico's met zich mee. Malware, zoals virussen, spyware of ransomware, kan worden vermomd als legitieme software en uw computer infecteren zodra u het downloadt en installeert. Deze schadelijke software kan uw persoonlijke gegevens stelen, uw systeem verstoren of uw privacy in gevaar brengen."
 		},
 		{
 			"fact": "Persoonlijke informatie is alleen waardevol voor hackers als het financiële informatie bevat.",
-			"isTrue": false
+			"isTrue": false,
+			"explanation": "Deze bewering is niet waar. Persoonlijke informatie is waardevol voor hackers, zelfs als het geen financiële informatie bevat. Hoewel financiële informatie zoals creditcardgegevens of bankrekeningnummers zeker aantrekkelijk is voor hackers, kunnen andere vormen van persoonlijke informatie ook waardevol zijn. Identiteitsinformatie zoals volledige naam, geboortedatum, adres en zelfs socialezekerheidsnummers kunnen worden gebruikt voor identiteitsdiefstal en frauduleuze activiteiten."
 		},
 		{
 			  "fact": "U kunt uw persoonlijke gegevens beschermen door cookies in uw webbrowser uit te schakelen.",
-			  "isTrue": true
+			  "isTrue": true,
+			  "explanation": "Deze bewering is gedeeltelijk waar. Het uitschakelen van cookies in uw webbrowser kan een bepaalde mate van bescherming bieden voor uw persoonlijke gegevens. Cookies zijn kleine bestanden die door websites op uw computer worden geplaatst en informatie bevatten zoals uw voorkeuren en browsegedrag. Hoewel cookies nuttig kunnen zijn voor het verbeteren van de gebruikerservaring, kunnen ze ook worden gebruikt voor het bijhouden van uw activiteiten en het verzamelen van persoonlijke gegevens."
 		},
 		{
 			  "fact": "Het is veilig om uw persoonlijke apparaten aan te sluiten op openbare laadstations.",
-			  "isTrue": false
+			  "isTrue": false,
+			  "explanation": "Deze bewering is niet waar. Het is niet veilig om uw persoonlijke apparaten aan te sluiten op openbare laadstations. Openbare laadstations, zoals die in luchthavens, treinstations of cafés, kunnen kwetsbaar zijn voor kwaadwillende acties. Hackers kunnen deze laadstations manipuleren door bijvoorbeeld USB-poorten of kabels te vervangen door hun eigen apparaten die zijn ontworpen om gegevens te stelen of malware op uw apparaat te installeren. Dit staat bekend als \"juice jacking\"."
 		},
 		{
 			  "fact": "Als u een wachtwoordbeheerder gebruikt, hoeft u geen wachtwoorden te onthouden.",
-			  "isTrue": true
+			  "isTrue": true,
+			  "explanation": "This statement is true because..."
 		},
 		{
 			  "fact": "Cybersecurity-bedreigingen worden altijd onmiddellijk gedetecteerd.",
-			  "isTrue": false
+			  "isTrue": false,
+			  "explanation": "Deze bewering is gedeeltelijk waar. Het gebruik van een wachtwoordbeheerder kan u helpen bij het beheren van uw wachtwoorden, maar u moet nog steeds enkele belangrijke wachtwoorden te onthouden."
 		},
 		{
 			  "fact": "Uw persoonlijke gegevens kunnen worden gestolen door een skimming-apparaat dat op een geldautomaat is geplaatst.",
-			  "isTrue": true
+			  "isTrue": true,
+			  "explanation": "Deze bewering is waar. Skimming-apparaten worden vaak gebruikt door criminelen om persoonlijke gegevens van mensen te stelen wanneer ze een geldautomaat gebruiken. Skimming-apparaten worden discreet op de geldautomaat geplaatst en zijn ontworpen om betaalkaartgegevens, inclusief pincode, te kopiëren zonder dat de gebruiker het merkt. Deze apparaten kunnen kaartlezers bevatten die de magnetische stripgegevens van de kaart kopiëren, of zelfs overlay-apparaten die het toetsenbord van de geldautomaat nabootsen om de pincode te onderscheppen. "
 		},
 		{
 			  "fact": "U kunt uw persoonlijke gegevens beschermen door sociale media helemaal te vermijden.",
-			  "isTrue": false
+			  "isTrue": false,
+			  "explanation": "Deze bewering is niet helemaal waar. Hoewel het vermijden van sociale media kan helpen om uw persoonlijke gegevens in zekere mate te beschermen, is het niet de enige oplossing. Sociale media kunnen een platform zijn waar u verbinding maakt met anderen, informatie deelt en deelneemt aan online activiteiten. Het vermijden van sociale media betekent echter niet automatisch dat uw persoonlijke gegevens volledig beschermd zijn."
 		},
 		{
 			  "fact": "Het gebruik van een wachtwoordzin is een veiligere manier om uw accounts te beschermen dan het gebruik van een wachtwoord van één woord.",
-			  "isTrue": true
+			  "isTrue": true,
+			  "explanation": "Deze bewering is waar. Het gebruik van een wachtwoordzin is over het algemeen veiliger dan het gebruik van een wachtwoord van één woord. Een wachtwoordzin is een reeks woorden die samen een zin vormen en is langer en complexer dan een enkel woord. Het hebben van een langere wachtwoordzin maakt het moeilijker voor aanvallers om het wachtwoord te raden of te kraken met behulp van zogenaamde brute-force-technieken. Bovendien biedt een wachtwoordzin de mogelijkheid om een combinatie van woorden, cijfers en symbolen op te nemen, wat de complexiteit verhoogt."
 		},
 		{
 			  "fact": "U moet altijd uw persoonlijke gegevens verstrekken als iemand hier online om vraagt.",
-			  "isTrue": false
+			  "isTrue": false,
+			  "explanation": "Deze bewering is niet waar. U moet nooit zomaar uw persoonlijke gegevens verstrekken als iemand er online om vraagt. Het delen van uw persoonlijke gegevens, zoals uw naam, adres, geboortedatum, financiële informatie of sofinummer, kan leiden tot identiteitsdiefstal, fraude en andere vormen van misbruik. Het is belangrijk om voorzichtig te zijn en uw persoonlijke gegevens alleen te verstrekken aan vertrouwde en legitieme bronnen."
 		},
 		{
 			"fact": "Uw persoonlijke gegevens kunnen worden gestolen door een hacker die toegang krijgt tot de database van een bedrijf.",
-			"isTrue": true
+			"isTrue": true,
+			"explanation": "Deze bewering is waar. Hackers kunnen toegang krijgen tot de database van een bedrijf door kwetsbaarheden in de beveiliging uit te buiten. Als ze eenmaal toegang hebben, kunnen ze persoonlijke gegevens van gebruikers stelen, zoals namen, adressen, geboortedata, e-mailadressen, en in sommige gevallen zelfs financiële gegevens. Deze gestolen gegevens kunnen vervolgens worden verkocht op de zwarte markt of worden gebruikt voor identiteitsdiefstal, fraude of andere vormen van misbruik."
 	  	},
 	  	{
 			"fact": "Het is altijd veilig om bijlagen van e-mails te downloaden, zolang ze afkomstig zijn van een betrouwbare bron.",
-			"isTrue": false
+			"isTrue": false,
+			"explanation": "Deze bewering is niet waar. Het is niet altijd veilig om bijlagen van e-mails te downloaden, zelfs als ze afkomstig zijn van een vertrouwde bron. Hackers en cybercriminelen kunnen valse e-mails verzenden die lijken alsof ze afkomstig zijn van bekende bronnen. Deze e-mails kunnen kwaadaardige bijlagen bevatten, zoals geïnfecteerde documenten of uitvoerbare bestanden, die schadelijke software op uw computer kunnen installeren zodra ze worden geopend. Zelfs als een e-mail afkomstig lijkt te zijn van een bekend persoon of bedrijf, kan het zijn dat hun account is gecompromitteerd."
 	  	},
 	  	{
 			"fact": "U kunt uw persoonlijke gegevens beschermen door gebruik te maken van een kredietbewakingsdienst.",
-			"isTrue": true
+			"isTrue": true,
+			"explanation": "Deze bewering is waar. Het gebruik van een kredietbewakingsdienst kan helpen bij het beschermen van uw persoonlijke gegevens. Kredietbewakingsdiensten houden voortdurend toezicht op uw kredietrapporten en waarschuwen u voor verdachte activiteiten, zoals ongeautoriseerde aanvragen voor nieuwe kredietlijnen of veranderingen in uw bestaande accounts. Door regelmatige monitoring kunt u snel op de hoogte worden gebracht van verdachte activiteiten die kunnen wijzen op identiteitsdiefstal of fraude."
 	  	},
 	  	{
 			"fact": "Cyberbeveiligingsbedreigingen kunnen worden voorkomen door simpelweg uw computer uit te zetten.",
-			"isTrue": false
+			"isTrue": false,
+			"explanation": "Deze bewering is niet waar. Hoewel het uitschakelen van uw computer tijdelijk kan helpen bij het verminderen van blootstelling aan directe online bedreigingen, biedt het geen volledige bescherming tegen cyberbeveiligingsbedreigingen. Veel cyberaanvallen vinden plaats via andere kanalen, zoals phishing-e-mails, besmette websites, schadelijke downloads of geïnfecteerde externe apparaten. Zelfs wanneer uw computer is uitgeschakeld, kunnen aanvallers nog steeds toegang krijgen tot uw gegevens en systemen als er kwetsbaarheden bestaan die ze kunnen exploiteren."
 	  	},
 	  	{
 			"fact": "Hackers richten zich alleen op personen die rijk of beroemd zijn.",
-			"isTrue": false
+			"isTrue": false,
+			"explanation": "Deze bewering is niet waar. Hackers richten zich niet alleen op personen die rijk of beroemd zijn, maar kunnen iedereen als potentieel doelwit beschouwen. In feite is niemand immuun voor cyberaanvallen, ongeacht hun financiële status of bekendheid. Hackers kunnen gemotiveerd zijn door verschillende factoren, zoals financieel gewin, politieke redenen, ideologische overtuigingen of gewoon het verstoren van systemen."
 	  	},
 	  	{
 			"fact": "Wachtwoorden moeten om de zes maanden worden gewijzigd om veilig te blijven.",
-			"isTrue": true
+			"isTrue": true,
+			"explanation": "Deze bewering is waar, maar het heeft enige nuance. Het regelmatig wijzigen van wachtwoorden om de zes maanden is een goede praktijk om de veiligheid van uw accounts te behouden. Door wachtwoorden regelmatig te wijzigen, verkleint u het risico dat ze worden blootgesteld in het geval van een datalek of een ongeautoriseerde toegang tot uw account. Als u een uniek en sterk wachtwoord gebruikt voor elk account, kan regelmatige wijziging ervoor zorgen dat eventuele gecompromitteerde wachtwoorden slechts een beperkte tijd bruikbaar zijn voor aanvallers. Het is echter belangrijk om te benadrukken dat het niet voldoende is om alleen wachtwoorden regelmatig te wijzigen. "
 	  	},
 	  	{
 			"fact": "Het is veilig om hetzelfde wachtwoord voor meerdere accounts te gebruiken, zolang ze niet verbonden zijn.",
-			"isTrue": false
+			"isTrue": false,
+			"explanation": "Deze bewering is niet waar. Zelfs als uw accounts niet direct met elkaar verbonden lijken te zijn, is het gebruik van hetzelfde wachtwoord voor meerdere accounts een onveilige praktijk. Als een van uw accounts wordt gecompromitteerd en het wachtwoord in handen van een aanvaller valt, kan de aanvaller dit wachtwoord proberen te gebruiken om toegang te krijgen tot uw andere accounts. Veel aanvallers gebruiken geautomatiseerde tools die bekende combinaties van gebruikersnamen en wachtwoorden uitproberen op verschillende websites en diensten."
 	  	}
 
 	]
