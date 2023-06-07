@@ -337,6 +337,11 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene("Menu");
     }
 
+    public void CloseGame()
+    {
+        Application.Quit();
+    }
+
     public void ShowMenu()
     {
         menu.SetActive(true);
