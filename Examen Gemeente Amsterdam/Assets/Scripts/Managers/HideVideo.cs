@@ -12,8 +12,15 @@ public class HideVideo : MonoBehaviour
 
     [SerializeField] private GameObject video;
 
+    [SerializeField] private GameObject SkipBtn;
+
     public bool isPlayerStarted = false;
  
+
+    private void Awake()
+    {
+        SkipBtn.SetActive(true);
+    }
 
     void Update() {
         if (isPlayerStarted == false && VideoPlayer.isPlaying == true) {
@@ -30,6 +37,7 @@ public class HideVideo : MonoBehaviour
         {
             VideoPlayer.gameObject.SetActive(false);
             video.SetActive(false);
+            SkipBtn.SetActive(false);
         }
     }   
 }
