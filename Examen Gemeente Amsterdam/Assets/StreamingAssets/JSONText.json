@@ -124,7 +124,7 @@
 		{
 			  "fact": "Als u een wachtwoordbeheerder gebruikt, hoeft u geen wachtwoorden te onthouden.",
 			  "isTrue": true,
-			  "explanation": "This statement is true because..."
+			  "explanation": "Als u een wachtwoordbeheerder gebruikt, hoeft u geen wachtwoorden te onthouden omdat de softwarefuncties biedt om uw wachtwoorden veilig op te slaan en te beheren. Een wachtwoordbeheerder genereert sterke en unieke wachtwoorden voor al uw accounts en slaat deze versleuteld op in een gecodeerde database. U hoeft slechts één hoofdwachtwoord te onthouden om toegang te krijgen tot de wachtwoordbeheerder. Wanneer u toegang nodig hebt tot een specifieke account, kunt u eenvoudig het relevante wachtwoord ophalen uit de wachtwoordbeheerder, zonder dat u zich zorgen hoeft te maken over het onthouden of hergebruiken van dezelfde wachtwoorden. Dit verhoogt de beveiliging van uw accounts aanzienlijk, aangezien sterke en unieke wachtwoorden worden aanbevolen om uw gegevens te beschermen tegen ongeoorloofde toegang."
 		},
 		{
 			  "fact": "Cybersecurity-bedreigingen worden altijd onmiddellijk gedetecteerd.",

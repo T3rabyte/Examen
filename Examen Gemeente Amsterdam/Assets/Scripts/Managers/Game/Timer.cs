@@ -17,21 +17,19 @@ public class Timer : MonoBehaviour
     [SerializeField]
     private Text TimerText;
 
-    /// <summary>
-    /// Update is called every frame, if the MonoBehaviour is enabled.
-    /// </summary>
+
     private void Update()
     {
          //handles the tiemr
         if (TimerOn)
         {
-            if (TimeLeft > 0)
+            if (TimeLeft > 0f)
             {
                 TimeLeft -= Time.deltaTime;
                 updateTimer(TimeLeft);
-            }else
+            }else if (TimeLeft <= 0f)
             {
-                TimeLeft = 0;
+                TimeLeft = 0f;
                 TimerOn = false;
             }
             

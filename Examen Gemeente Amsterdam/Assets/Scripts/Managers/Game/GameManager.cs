@@ -26,6 +26,7 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private TMP_Text factText;
     [SerializeField] private TMP_Text explanationText;
+    [SerializeField] public TMP_Text corrAnswTxt;
 
     [SerializeField] private Text trueAnswerText;
 
@@ -39,6 +40,9 @@ public class GameManager : MonoBehaviour
 
     public GameObject antiVirus;
 
+    [SerializeField]
+    private GameObject menu;
+
     public GameObject progressbar;
 
     public GameObject installertextA;
@@ -49,19 +53,13 @@ public class GameManager : MonoBehaviour
 
     public Timer timer;
 
+    private bool menuOn = false;
+
     
-    
+    [SerializeField]
     private float timeBetweenQuestions;
 
-    private bool incorrect = false;
-    
-    [SerializeField]
-    private float newtimeBetweenQuestions;
-
-    [SerializeField]
-    private float originaltimeBetweenQuestions;
-
-    private int correctAnswers = 0;
+    private int correctAnswers;
 
     public float duration = 5f;
 
@@ -74,10 +72,6 @@ public class GameManager : MonoBehaviour
     [SerializeField] private float chanceP;
 
     [SerializeField] private float chanceF;
-
-    float pendingFreezeDuration = 0f;
-
-    bool isFrozen = false;
 
 
 
@@ -140,20 +134,19 @@ public class GameManager : MonoBehaviour
     
     private void Update()
     {
-
-       
-
         //handles the conditions that have to be met to activate a win or a lose
-        if (correctAnswers >= 25)
+        if (correctAnswers >= 15)
         {
+            Win();
             networkVarManager.gameFinished = true;
             networkVarManager.ShowScreenServerRpc();
-            Win();
+            
         }
-        else if (timer.TimeLeft <= 0 && correctAnswers < 20)
+        else if (timer.TimeLeft <= 0f && correctAnswers <= 14)
         {
-            networkVarManager.ShowScreenServerRpc();
             Lose();
+            networkVarManager.ShowScreenServerRpc();
+            
         }
 
         if(isinstalling == true)
@@ -172,6 +165,27 @@ public class GameManager : MonoBehaviour
             
             Slider.value += 0.01f * Time.deltaTime;
         }
+        
+        if(!menuOn)
+        {
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                ShowMenu();
+                menuOn = true;
+            }
+            
+        }
+        else
+        {
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                HideMenu();
+                menuOn = false;
+            }
+        }
+
+        UpdateText();
+        
 
         
     }
@@ -182,8 +196,6 @@ public class GameManager : MonoBehaviour
     {
         int randomQuestionIndex = UnityEngine.Random.Range(0, unansweredQuestions.Count-1);
         currentQuestion = unansweredQuestions[randomQuestionIndex];
-
-        incorrect = false;
 
         
 
@@ -218,20 +230,10 @@ public class GameManager : MonoBehaviour
 
     
 
-
+    
     //gives the program some time to register the next question
     IEnumerator TransitionToNextQuestion()
     {
-
-
-        if(incorrect == true)
-        {
-            timeBetweenQuestions = newtimeBetweenQuestions;
-        }
-        else
-        {
-            timeBetweenQuestions = originaltimeBetweenQuestions;
-        }
 
         yield return new WaitForSeconds(timeBetweenQuestions);
 
@@ -248,10 +250,7 @@ public class GameManager : MonoBehaviour
         if (currentQuestion.isTrue)
         {
 
-            if (isFrozen == true)
-            {
-                StartCoroutine(DoFreeze());
-            }
+            
             correctAnswers += 1;
             Debug.Log("CORRECT!");
 
@@ -270,14 +269,7 @@ public class GameManager : MonoBehaviour
             {
                 Popup.SetActive(true);
             }
-            else if(random >= chanceF)
-            {
-                StartCoroutine(DoFreeze());
-                Debug.Log("DoFreeze");
-            }
-
-            incorrect = true;
-            StartCoroutine(TransitionToNextQuestion());
+            
         }
 
         
@@ -293,10 +285,7 @@ public class GameManager : MonoBehaviour
             correctAnswers += 1;
             Debug.Log("CORRECT!");
 
-            if (isFrozen == true)
-            {
-                StartCoroutine(DoFreeze());
-            }
+            
 
             StartCoroutine(TransitionToNextQuestion());
             
@@ -311,16 +300,11 @@ public class GameManager : MonoBehaviour
             {
                 Popup.SetActive(true);
             }
-            else if(random >= chanceF)
-            {
-                Debug.Log("DoFreeze");
-                StartCoroutine(DoFreeze());
-            }
+            
 
             Debug.Log("WRONG!");
 
-            incorrect = true;
-            StartCoroutine(TransitionToNextQuestion());
+            
         }
         
     }
@@ -330,6 +314,7 @@ public class GameManager : MonoBehaviour
     public void Win()
     {
         win.SetActive(true);
+        Debug.Log("gewonnen");
     }
 
     public void Lose()
@@ -337,38 +322,33 @@ public class GameManager : MonoBehaviour
         lose.SetActive(true);
     }
 
+    public void transition()
+    {
+        StartCoroutine(TransitionToNextQuestion());
+    }
 
+    public void UpdateText()
+    {
+        corrAnswTxt.text = "Correcte Antwoorden: " + correctAnswers.ToString() + " / 15";
+    }
   
     public void MMButton()
     {
         SceneManager.LoadScene("Menu");
     }
-    
-    
 
-    //sets the freezeduration to the set duration making it so the "DoFreeze" if statement in update() is valid
-    public void Freeze()
+    public void ShowMenu()
     {
-        pendingFreezeDuration = duration;
-        Debug.Log(pendingFreezeDuration);
-
+        menu.SetActive(true);
+        Time.timeScale = 0;
     }
 
-
-    //freezes the cursor to simulate a freeze effect
-    IEnumerator DoFreeze()
-        {
-            isFrozen = true;
-            Debug.Log("freeze");
-            Cursor.lockState = CursorLockMode.Locked;
-
-            yield return new WaitForSeconds(duration);
-
-            Cursor.lockState = CursorLockMode.None;
-            pendingFreezeDuration = 0;
-            Debug.Log("unfreeze");
-            isFrozen = false;
-        }
+    public void HideMenu()
+    {
+        menu.SetActive(false);
+        Time.timeScale = 1;
+    }
+    
 
     public void startinstall()
     {
@@ -382,6 +362,8 @@ public class GameManager : MonoBehaviour
         chanceF += 0.1f ; 
         chanceP -= 0.1f;
     }
+
+    
 
     
 }
