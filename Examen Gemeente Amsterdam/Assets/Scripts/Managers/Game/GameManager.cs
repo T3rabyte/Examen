@@ -115,7 +115,13 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        networkVarManager = GameObject.Find("NetworkVarManager(Clone)").GetComponent<NetworkVarManager>();
+        try {
+            networkVarManager = GameObject.Find("NetworkVarManager(Clone)").GetComponent<NetworkVarManager>();
+        }
+        catch (Exception ex) 
+        {
+            Debug.Log("Network manager not found");
+        }
     }
 
     public class QuestionData
