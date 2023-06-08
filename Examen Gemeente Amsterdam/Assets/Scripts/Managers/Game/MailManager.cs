@@ -20,6 +20,9 @@ public class MailManager : MonoBehaviour
     [SerializeField]
     private TMP_Text factText;
 
+    [SerializeField] 
+    private TMP_Text explanationText;
+
     [SerializeField]
     private Text trueAnswerText;
 
@@ -44,7 +47,7 @@ public class MailManager : MonoBehaviour
     
     private void Awake()
     {
-         string filePath = Path.Combine(Application.streamingAssetsPath, "mails.json");
+         string filePath = Path.Combine(Application.dataPath, "Json/mails.json");
         if (File.Exists(filePath))
         {
             string data = File.ReadAllText(filePath);

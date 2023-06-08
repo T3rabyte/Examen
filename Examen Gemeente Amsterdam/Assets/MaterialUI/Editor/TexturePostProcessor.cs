@@ -22,7 +22,7 @@ namespace MaterialUI
 {
     public class TexturePostProcessor : AssetPostprocessor
     {
-
+        [System.Obsolete]
         void OnPreprocessTexture()
         {
 

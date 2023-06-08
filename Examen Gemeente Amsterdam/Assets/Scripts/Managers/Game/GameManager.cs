@@ -7,6 +7,7 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using TMPro;
 using System;
+using UnityEngine.Audio;
 
 public class GameManager : MonoBehaviour
 {
@@ -25,6 +26,8 @@ public class GameManager : MonoBehaviour
     private Question currentQuestion;
 
     [SerializeField] private TMP_Text factText;
+    [SerializeField] private TMP_Text explanationText;
+    [SerializeField] public TMP_Text corrAnswTxt;
 
     [SerializeField] private Text trueAnswerText;
 
@@ -38,6 +41,9 @@ public class GameManager : MonoBehaviour
 
     public GameObject antiVirus;
 
+    [SerializeField]
+    private GameObject menu;
+
     public GameObject progressbar;
 
     public GameObject installertextA;
@@ -48,15 +54,22 @@ public class GameManager : MonoBehaviour
 
     public Timer timer;
 
+    private bool menuOn = false;
+
     
+    [SerializeField]
+    private float timeBetweenQuestions;
 
-    private float timeBetweenQuestions = 1f;
-
-    private int correctAnswers = 0;
+    private int correctAnswers;
 
     public float duration = 5f;
 
     private bool isinstalling = false;
+
+    [SerializeField]
+    private GameObject introAud;
+    [SerializeField]
+    private GameObject skipPanel;
 
     
 
@@ -65,10 +78,6 @@ public class GameManager : MonoBehaviour
     [SerializeField] private float chanceP;
 
     [SerializeField] private float chanceF;
-
-    float pendingFreezeDuration = 0f;
-
-    bool isFrozen = false;
 
 
 
@@ -96,7 +105,7 @@ public class GameManager : MonoBehaviour
     //if for whatever reason the file cannot be found it will throw an error. 
     void Awake()
     {
-        string filePath = Path.Combine(Application.streamingAssetsPath, "JSONText.json");
+        string filePath = Path.Combine(Application.dataPath, "Json/JSONText.json");
         if (File.Exists(filePath))
         {
             string data = File.ReadAllText(filePath);
@@ -111,11 +120,19 @@ public class GameManager : MonoBehaviour
         //gets the timer script so we can use it's values
         timer = GetComponent<Timer>();
 
+        
+
     }
 
     private void Start()
     {
-        networkVarManager = GameObject.Find("NetworkVarManager(Clone)").GetComponent<NetworkVarManager>();
+        try {
+            networkVarManager = GameObject.Find("NetworkVarManager(Clone)").GetComponent<NetworkVarManager>();
+        }
+        catch (Exception ex) 
+        {
+            Debug.Log("Network manager not found");
+        }
     }
 
     public class QuestionData
@@ -125,18 +142,19 @@ public class GameManager : MonoBehaviour
     
     private void Update()
     {
-
-       
-
         //handles the conditions that have to be met to activate a win or a lose
-        if (correctAnswers == 20)
+        if (correctAnswers >= 15)
         {
+            Win();
             networkVarManager.gameFinished = true;
             networkVarManager.ShowScreenServerRpc();
+            
         }
-        else if (timer.TimeLeft <= 0 && correctAnswers < 20)
+        else if (timer.TimeLeft <= 0f && correctAnswers <= 14)
         {
+            Lose();
             networkVarManager.ShowScreenServerRpc();
+            
         }
 
         if(isinstalling == true)
@@ -155,6 +173,36 @@ public class GameManager : MonoBehaviour
             
             Slider.value += 0.01f * Time.deltaTime;
         }
+        
+        if(!menuOn)
+        {
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                ShowMenu();
+                menuOn = true;
+                Cursor.visible = true;
+            }
+
+            
+            
+        }
+        else
+        {
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                HideMenu();
+                menuOn = false;
+                Cursor.visible = false;
+            }
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            SkipIntroCall();
+        }
+
+        UpdateText();
+        
 
         
     }
@@ -178,6 +226,7 @@ public class GameManager : MonoBehaviour
         }
         
         factText.text = currentQuestion.fact;
+        explanationText.text = currentQuestion.explanation;
 
         unansweredQuestions.RemoveAt(randomQuestionIndex);
 
@@ -198,7 +247,7 @@ public class GameManager : MonoBehaviour
 
     
 
-
+    
     //gives the program some time to register the next question
     IEnumerator TransitionToNextQuestion()
     {
@@ -218,12 +267,11 @@ public class GameManager : MonoBehaviour
         if (currentQuestion.isTrue)
         {
 
-            if (isFrozen == true)
-            {
-                StartCoroutine(DoFreeze());
-            }
+            
             correctAnswers += 1;
             Debug.Log("CORRECT!");
+
+            StartCoroutine(TransitionToNextQuestion());
             
         }else
         {
@@ -238,14 +286,10 @@ public class GameManager : MonoBehaviour
             {
                 Popup.SetActive(true);
             }
-            else if(random >= chanceF)
-            {
-                StartCoroutine(DoFreeze());
-                Debug.Log("DoFreeze");
-            }
+            
         }
 
-        StartCoroutine(TransitionToNextQuestion());
+        
     }
 
 
@@ -258,10 +302,9 @@ public class GameManager : MonoBehaviour
             correctAnswers += 1;
             Debug.Log("CORRECT!");
 
-            if (isFrozen == true)
-            {
-                StartCoroutine(DoFreeze());
-            }
+            
+
+            StartCoroutine(TransitionToNextQuestion());
             
         }else
         {
@@ -274,15 +317,13 @@ public class GameManager : MonoBehaviour
             {
                 Popup.SetActive(true);
             }
-            else if(random >= chanceF)
-            {
-                Debug.Log("DoFreeze");
-                StartCoroutine(DoFreeze());
-            }
+            
 
             Debug.Log("WRONG!");
+
+            
         }
-        StartCoroutine(TransitionToNextQuestion());
+        
     }
 
 
@@ -290,6 +331,14 @@ public class GameManager : MonoBehaviour
     public void Win()
     {
         win.SetActive(true);
+        Debug.Log("gewonnen");
+    }
+
+    private void SkipIntroCall()
+    {
+        introAud.SetActive(false);
+        skipPanel.SetActive(false);
+        
     }
 
     public void Lose()
@@ -297,38 +346,38 @@ public class GameManager : MonoBehaviour
         lose.SetActive(true);
     }
 
+    public void transition()
+    {
+        StartCoroutine(TransitionToNextQuestion());
+    }
 
+    public void UpdateText()
+    {
+        corrAnswTxt.text = "Correcte Antwoorden: " + correctAnswers.ToString() + " / 15";
+    }
   
     public void MMButton()
     {
         SceneManager.LoadScene("Menu");
     }
-    
-    
 
-    //sets the freezeduration to the set duration making it so the "DoFreeze" if statement in update() is valid
-    public void Freeze()
+    public void CloseGame()
     {
-        pendingFreezeDuration = duration;
-        Debug.Log(pendingFreezeDuration);
-
+        Application.Quit();
     }
 
+    public void ShowMenu()
+    {
+        menu.SetActive(true);
+        Time.timeScale = 0;
+    }
 
-    //freezes the cursor to simulate a freeze effect
-    IEnumerator DoFreeze()
-        {
-            isFrozen = true;
-            Debug.Log("freeze");
-            Cursor.lockState = CursorLockMode.Locked;
-
-            yield return new WaitForSeconds(duration);
-
-            Cursor.lockState = CursorLockMode.None;
-            pendingFreezeDuration = 0;
-            Debug.Log("unfreeze");
-            isFrozen = false;
-        }
+    public void HideMenu()
+    {
+        menu.SetActive(false);
+        Time.timeScale = 1;
+    }
+    
 
     public void startinstall()
     {
@@ -342,6 +391,8 @@ public class GameManager : MonoBehaviour
         chanceF += 0.1f ; 
         chanceP -= 0.1f;
     }
+
+    
 
     
 }
