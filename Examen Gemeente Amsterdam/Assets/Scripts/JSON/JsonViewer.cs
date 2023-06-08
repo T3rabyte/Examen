@@ -21,8 +21,8 @@ public class JsonViewer : MonoBehaviour
     [SerializeField]
     private GameObject explanationText;
 
-    private List<Mails> mailList;
-    private List<Question> questionList;
+    private List<Mails> mailList = new();
+    private List<Question> questionList = new();
     public List<GameObject> instUIObjList;
 
     private void Start()
