@@ -27,6 +27,8 @@ public class MainMenuUI : MonoBehaviour
     public  List<GameObject> roomListItems = new();
 
     private LobbyManager lobbyManager;
+    [SerializeField]
+    private JsonViewer jsonViewer;
 
     private void Start()
     {
@@ -67,10 +69,10 @@ public class MainMenuUI : MonoBehaviour
 
     public void ShowPanel(string panelName) 
     {
-        DestroyItemsOnList(new List<List<GameObject>> { lobbyListItems, roomListItems });
+        DestroyItemsOnList(new List<List<GameObject>> { lobbyListItems, roomListItems, jsonViewer.instUIObjList});
         if (panelName == lobbyPanel.name)
             InstantiateLobbyList();
-
+        
         if (panelName == "Quit Game Panel")
         {
             panelList.Where(obj => obj.name == "Quit Game Panel").SingleOrDefault().SetActive(true);
@@ -88,6 +90,9 @@ public class MainMenuUI : MonoBehaviour
             else
                 panel.SetActive(true);
         }
+
+        if (panelName == "Question Panel")
+            jsonViewer.InstantiateJson();
     }
 
     public void ShowError(string message) 

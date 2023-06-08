@@ -99,7 +99,7 @@ public class GameManager : MonoBehaviour
     //if for whatever reason the file cannot be found it will throw an error. 
     void Awake()
     {
-        string filePath = Path.Combine(Application.streamingAssetsPath, "JSONText.json");
+        string filePath = Path.Combine(Application.dataPath, "Json/JSONText.json");
         if (File.Exists(filePath))
         {
             string data = File.ReadAllText(filePath);

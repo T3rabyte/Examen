@@ -8,6 +8,5 @@ public class Mails
 
     public string fact;
     public bool isTrue;
-    public string explanation;
     
 }
