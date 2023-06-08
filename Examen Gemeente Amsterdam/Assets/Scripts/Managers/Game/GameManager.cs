@@ -7,6 +7,7 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using TMPro;
 using System;
+using UnityEngine.Audio;
 
 public class GameManager : MonoBehaviour
 {
@@ -65,6 +66,11 @@ public class GameManager : MonoBehaviour
 
     private bool isinstalling = false;
 
+    [SerializeField]
+    private GameObject introAud;
+    [SerializeField]
+    private GameObject skipPanel;
+
     
 
 
@@ -113,6 +119,8 @@ public class GameManager : MonoBehaviour
         
         //gets the timer script so we can use it's values
         timer = GetComponent<Timer>();
+
+        
 
     }
 
@@ -172,7 +180,10 @@ public class GameManager : MonoBehaviour
             {
                 ShowMenu();
                 menuOn = true;
+                Cursor.visible = true;
             }
+
+            
             
         }
         else
@@ -181,7 +192,13 @@ public class GameManager : MonoBehaviour
             {
                 HideMenu();
                 menuOn = false;
+                Cursor.visible = false;
             }
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            SkipIntroCall();
         }
 
         UpdateText();
@@ -315,6 +332,13 @@ public class GameManager : MonoBehaviour
     {
         win.SetActive(true);
         Debug.Log("gewonnen");
+    }
+
+    private void SkipIntroCall()
+    {
+        introAud.SetActive(false);
+        skipPanel.SetActive(false);
+        
     }
 
     public void Lose()
