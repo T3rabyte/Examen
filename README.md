@@ -7,6 +7,8 @@
 [![GitHub download (downloads)](https://img.shields.io/github/downloads/T3rabyte/Examen/total)](https://github.com/T3rabyte/Examen/releases/latest)
 [![GitHub download (downloads)](https://img.shields.io/github/commit-activity/w/T3rabyte/Examen)](https://github.com/T3rabyte/Examen/releases/latest)
 
+## Development aan dit project is gestopt voor een onbepaalde tijd.
+
 ## ACCESS DENIED
 Voor de gemeente Amsterdam moest een game gerealiseerd worden die hun medewerkers leert bewust te worden over online privacy waarbij onderwerpen als datalekken en persoonsgegevens terug komen. Na het spelen van de game moeten de spelers meer  weten over deze onderwerpen en hoe ze hier mee om kunnen gaan. Ook moest de game makkelijk bereikbaar zijn voor hun medewerkers.
 
